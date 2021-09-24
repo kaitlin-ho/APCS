@@ -1,0 +1,9 @@
+TPNG: KHB: Kaitlin, Hugo, Brian
+
+0) The base is a constant, x, that is multiplied by itself a certain nmber of times varying based on the value of its exopnent. The exponent usually increases by increments of 1 starting at 0. So, a base 2 system would utilize 2 as the constant, x. 
+
+criticism: how is the result of this operation used in the # system? How are the #s constructed? We know base-2 binary, so how does that correspond to these powers? 
+
+1) Binary is a system of zeros and ones that represent numbers with a base 2 system. We care about this sytem because it is the simplest way to store information. There are only 2 states, with 1 representing "on" and 0 "off." 
+
+2) run through the array. if the digit is a 1, take 2^(total # of digits in the array - the position of the digit)
