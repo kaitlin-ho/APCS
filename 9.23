@@ -1,9 +1,42 @@
-TPNG: KHB: Kaitlin, Hugo, Brian
+TNPG: KHB: Kaitlin, Hugo, Brian
+APCS
+HW03 - Codify the Revisions 
+2021-09-23
 
-0) The base is a constant, x, that is multiplied by itself a certain nmber of times varying based on the value of its exopnent. The exponent usually increases by increments of 1 starting at 0. So, a base 2 system would utilize 2 as the constant, x. 
+0) The base is a constant, x, that is multiplied by itself a certain number of times varying based on the value of its exponent. The exponent usually increases by increments of 1 starting at 0. So, a base 3 system would utilize 3 as the constant, x. The first place of the number(furthest to the right would be the 3^0 place, where each digit is worth 3^0, or 1. The second number would be the 3^1 place, where each digit is worth 3^1, or 3. There are x possible digits in a base-x number system. There would be 3 possible in a base-3 system, 0,1, and 2. 
 
-criticism: how is the result of this operation used in the # system? How are the #s constructed? We know base-2 binary, so how does that correspond to these powers? 
+1) Binary is a system of zeros and ones that represent numbers with a base 2 system. We care about this system because it is the simplest way to store information, and the only way that a computer can handle. There are only 2 states, with 1 representing "on'' and 0 "off." 
 
-1) Binary is a system of zeros and ones that represent numbers with a base 2 system. We care about this sytem because it is the simplest way to store information. There are only 2 states, with 1 representing "on" and 0 "off." 
+2) Binary to decimal 
+Preset an int variable with a value of 0. Run through the binary number’s digits from left to right. If the digit is a 1, take 2^ (total # of digits in the array - the position of the digit from left to right, starting at 1). Add this number to the variable (the one initially set to 0). If the digit is a 0, add 0.
 
-2) run through the array. if the digit is a 1, take 2^(total # of digits in the array - the position of the digit)
+Example:
+1001011
+Total # of digits = 7
+Variable = 0
+
+1 → 2^(7-1) = 64 		[0+64=64]
+0 → 0 				[64+0=64]
+0 → 0 				[64+0=64]
+1 → 2^(7-4) = 8 		[64+8=72]
+0 → 0 				[72+0=72]
+1 → 2^(7-6) = 2 		[72+2=74]
+1 → 2^(7-7) = 1 		[74+1=75]
+
+
+3) Decimal to binary 
+Store your decimal number. Find the remainder and quotient of the decimal when it is divided by 2 (ex: if the decimal is x, to find the remainder, find x%2). Add the remainder into an array and repeat the first step with the quotient as the decimal (or x). Reverse the order of the array. 
+
+Example:
+14/2=7 R0 
+7/2= 3 R1
+3/2= 1 R1
+1/2 = 0 R1
+Binary number is 1110
+
+
+QCC/Notable things: 
+- How do you convert one type of thing to another? E.g. int to string
+- Not sure about terminology (ex: array, digit, position, index)
+- What other uses of binary are there?
+
