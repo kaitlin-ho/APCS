@@ -1,0 +1,8 @@
+- create a new array by doing type[] name = new type[number of elements];
+- java arrays are indexed the same ways as python does (starts at 0)
+- you cannot use negative indexing in java (like when it loops around)
+- you can access array length by calling arrayname.length 
+- you can use a foreach/enhanced loop like in python: for(type element:array)
+
+- did not know how to do the histogram for exercise 1
+- didn't know how to do exercise 8

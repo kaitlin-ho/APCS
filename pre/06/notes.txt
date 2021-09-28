@@ -1,0 +1,7 @@
+- while loops operate similarly to python's while loops
+- python for loops are actually for each loops. java for loops are a "glorified while loop"
+- for (initialization; test; increment)
+- do while loops execute something at least once and continues executing as long as a condition is true
+- break breaks you out of the current loop
+- continue skips the current iteration of the loop
+(unsure of how to do myexp)

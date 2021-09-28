@@ -1,0 +1,6 @@
+- in python, x=333 means that x is an integer. in java, you have to declare the type 
+- java has similar types to python: int, double, boolean, String, 
+- java also has similar operators to python, these include +, -, /, *, %, >, <, <=, >=, ==, and !=
+- you can take an input in java with Scanner class
+- you can use the keyword final to declare a constant 
+- you can format text in java with printf (don't really know how to use this properly)

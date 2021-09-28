@@ -1,0 +1,4 @@
+- javac File.java  compiles the code 
+- java File  runs the compiled code
+- System.out.println  prints the input and a new line 
+- System.out.print  just prints the line 

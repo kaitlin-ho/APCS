@@ -1,0 +1,6 @@
+- public static is boilerplate (need to have) 
+- public means that other files and classes can access something
+- static means that a member of a class pertains to that type
+- return types: functions usually return a value to their caller. sometimes when there is nothing to return we use the return type void
+- argument types must be declared
+- public static main is the entry point for programs  

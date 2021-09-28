@@ -1,0 +1,3 @@
+- logical operators: && is and, || is or, ! negates
+- if, else statements behave the same way as python's
+- if condition .. else if condition is the same thing as elif in python

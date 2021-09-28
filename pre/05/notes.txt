@@ -1,0 +1,2 @@
+- method overloading entails having different arguments for the same function name for it to perform different under the same name 
+- return type can be int, String, etc
