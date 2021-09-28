@@ -1,0 +1,103 @@
+public double force(double g, double m1, double m2, double r){
+  double forcefinal = (g*m1*m2)/(r*r);
+  return forcefinal;
+}
+
+public double average3(int a, int b, int c){
+  double totalnum = 3;
+  double average = (a+b+c)/totalnum;
+  return average;
+}
+
+public double radians(double x){
+    double degrees = 180;
+    double radian = (x*Math.PI)/degrees;
+    return radian;
+  }
+public double sumOfSines(double t){
+  double sin2 = Math.sin(2*(radians(t)));
+  double sin3 = Math.sin(3*(radians(t)));
+  double totalsin = sin2 + sin3;
+  double rounded = Math.round(totalsin * 1000);
+  double rounded2 = rounded/1000;
+  return rounded2;
+}
+
+public int oddsAreNegated(int x){
+  if (x%2 == 0){
+    return x;
+  }
+  else{
+    return (-1*x);
+  }
+}
+
+public int fixTeen(int n){
+  int savevalue = n;
+  if ((n >= 13 && n <= 14) || (n > 16 && n <=19)){
+    n = 0;
+  }
+  return n;
+}
+public int noTeenSum(int a, int b, int c) {
+  int total = fixTeen(a) + fixTeen(b) + fixTeen(c);
+  return total;
+}
+
+public String stringTimes(String str, int n) {
+  int count = n;
+  String endstring = "";
+  while (count > 0){
+    count --;
+    endstring += str;
+  }
+  return endstring;
+}
+
+public int countEvens(int[] nums) {
+  int numOfEven = 0;
+  for (int i = 0; i < nums.length; i++){
+    if ((nums[i]%2) == 0){
+      numOfEven++;
+    }
+  }
+  return numOfEven;
+}
+
+public boolean sum28(int[] nums) {
+  int sum = 0;
+  for (int i = 0; i < nums.length; i ++){
+    if (nums[i] == 2){
+      sum += 2;
+    }
+  }
+  if (sum == 8){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+public boolean scoresIncreasing(int[] scores) {
+  String check = "";
+  int value = scores[0];
+  int length = scores.length;
+  int currentLength = 0;
+  for (int i = 0; i < scores.length; i++){
+    if (scores[i]>=value){
+          value = scores[i];
+          currentLength ++;
+    }
+  }
+  if (length == currentLength){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+
+
+
