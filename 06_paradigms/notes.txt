@@ -1,0 +1,19 @@
+Kaitlin Ho
+APCS
+HW06
+2021-9-20
+Worked with Ariella 
+
+similarities 
+- in all programs, Hello, world! is surrounded in quotation marks because it's a string 
+- both python and netlogo use the command `print` to print the message
+- scheme and python both utilize parentheses
+
+differences
+- scheme uses `display` to print (compared to `print` in the other languages)
+- nlogo does not need parentheses (but adding them still allows you to run the code)
+- scheme surrounds the entire procedure in parentheses, python only requires the argument to be surrounded by parentheses
+
+notes:
+- I don't remember how to change the context in netlogo to observer (I only recall the ask command affecting turtles or patches
+
