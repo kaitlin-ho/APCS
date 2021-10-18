@@ -14,17 +14,18 @@ QCC
 
 */
 
-public class BigSib{
-  //instanced variable, empty string 
-  String helloMsg;
- 
-  public BigSib(){
-	helloMsg = ("Word up");
-  // constructor
-  }
-  // methods
-  public String greet(String name){
-    return(helloMsg + " " + name);
-  }
- 
+public class BigSib {
+    private String helloMsg;
+
+    public BigSib() {
+        helloMsg = "Word up";
+    }
+
+    public String greet(String name) {
+        return helloMsg + " " + name;
+    }
+
+    public void setHelloMsg(String newHelloMsg) {
+        helloMsg = newHelloMsg;
+    }
 }

@@ -34,5 +34,5 @@ public class Greet {
 
         greeting = dotCom.greet("mom");
         System.out.println(greeting);
-    } // end main()
-} // end Greet
+    }
+}

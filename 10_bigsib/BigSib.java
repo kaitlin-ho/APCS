@@ -1,9 +1,9 @@
-Kaitlin Ho
+/*Kaitlin Ho
 APCS
 HW10 - Refactor BigSib One
 2021-10-04
 
-/*
+
 DISCOVERIES
 - if you have a class that isn't void, you need to return something
 

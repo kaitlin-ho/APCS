@@ -1,7 +1,9 @@
+/*
 Kaitlin Ho
 APCS
 HW10 - Refactor Big Sib One
 2021-10-04
+*/
 
 public class Greet {
     public static void main(String[] args){
