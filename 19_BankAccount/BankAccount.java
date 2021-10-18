@@ -35,13 +35,17 @@ public class BankAccount {
   }
 
   public short setPin( short newPin ) {
-    short oldPin = pin;
-    pin = newPin;
-    return oldPin;
+    if ((newPin >= 1000) && (newPin <= 9998)) {
+      short oldPin = pin;
+      pin = newPin;
+      return oldPin;
+    }
+     else {
+        System.out.println ("The entered PIN is not a four digit number, please enter a four digit number");
   }
 
   public int setAcctNum( int newAcctNum ) {
-    if (100000000 <= newAcctNum & newAcctNum <= 999999998) {
+    if ((newAcctNum >= 100000000) && (newAcctNum <= 999999998)) {
       int oldAcctNum = acctNum;
       acctNum = newAcctNum;
       return oldAcctNum;
@@ -63,7 +67,13 @@ public class BankAccount {
   }
 
   public void withdraw( double withdrawAmount ) {
-    balance = balance - withdrawAmount;
+    if (withdrawAmount < balance) {
+      balance = balance - withdrawAmount;
+      return true;
+      }
+    else {
+       System.out.println("You do not have enough money in your account to withdraw this amount");
+       return false;
   }
 
 
@@ -79,7 +89,15 @@ public class BankAccount {
     return retStr;
   }
 
-
+  public boolean authenticate (int acctNumEnter, String passwdEnter) {
+     if ((acctNumEnter == acctNum) && (passwdEnter == passwd)) {
+        return true;
+      }
+     else {
+        return false;
+      }
+  }
+     
   //main method for testing
   public static void main( String[] args ) {
     BankAccount ba = new BankAccount();
