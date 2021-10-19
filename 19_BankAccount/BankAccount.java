@@ -118,7 +118,7 @@ public class BankAccount {
     BankAccount TEST1 = new BankAccount();
     TEST1.setName("TEST1");
     TEST1.setPasswd("testpassword");
-    TEST1.setPin((short) 3333);
+    TEST1.setPin((short) 0001);
     TEST1.setAcctNum(1234567891);
     TEST1.setBalance(1.0);
     TEST1.deposit(0.0);
