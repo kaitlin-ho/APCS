@@ -6,8 +6,12 @@
 **/
 
 /**
-   DISCO: 
-   QCC: 
+   DISCO: We can use boolean if statements within methods. We have to declare our variables outside of our if statements.
+   QCC: When we put our return line before our print line, why didn't we return anything?
+   How would we allow the user to input into the machine? (How would we implement scanners into our program?)
+   Is there any way to cheat our authentication?
+   
+   How to return 
 **/
 
 public class BankAccount {
@@ -71,14 +75,17 @@ public class BankAccount {
   }
 
   public boolean withdraw( double withdrawAmount ) {
-    if (withdrawAmount < balance) {
+    if (withdrawAmount <= balance){
       balance = balance - withdrawAmount;
       return true;
-      }
+  }
     else {
-       System.out.println("You do not have enough money in your account to withdraw this amount");
+       System.out.println("There are not enough sufficient funds to be withdrawn.");
        return false;
-   }
+    }
+  }
+ public boolean authenticate(int accountNum, String password){
+       return acctNum == accountNum && passwd == password;
   }
 
 
@@ -94,15 +101,7 @@ public class BankAccount {
     return retStr;
   }
 
-  public boolean authenticate (int acctNumEnter, String passwdEnter) {
-     if ((acctNumEnter == acctNum) && (passwdEnter == passwd)) {
-        return true;
-      }
-     else {
-        return false;
-      }
-  }
-     
+
   //main method for testing
   public static void main( String[] args ) {
     BankAccount ba = new BankAccount();
@@ -114,11 +113,19 @@ public class BankAccount {
     ba.deposit(500.0);
     ba.withdraw(241.0);
     System.out.println(ba.toString());
+    System.out.println("Bad TestID and bad password.");
+    System.out.println(ba.authenticate(123213512,"holacomaestas!"));
+    System.out.println("Good TestID and bad password.");
+    System.out.println(ba.authenticate(123456789,"holacomaestas!"));
+    System.out.println("Bad TestID and good password.");
+    System.out.println(ba.authenticate(121235,"hellotheremyfriends"));
+    System.out.println("Good TestID and good password.");
+    System.out.println(ba.authenticate(123456789, "hellotheremyfriends"));
      
     BankAccount TEST1 = new BankAccount();
     TEST1.setName("TEST1");
     TEST1.setPasswd("testpassword");
-    TEST1.setPin((short) 0001);
+    TEST1.setPin((short) 3333);
     TEST1.setAcctNum(1234567891);
     TEST1.setBalance(1.0);
     TEST1.deposit(0.0);
