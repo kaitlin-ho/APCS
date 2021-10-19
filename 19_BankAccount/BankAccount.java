@@ -115,15 +115,15 @@ public class BankAccount {
     ba.withdraw(241.0);
     System.out.println(ba.toString());
      
-    BankAccount ba = new BankAccount();
-    ba.setName("TEST1");
-    ba.setPasswd("testpassword");
-    ba.setPin((short) 3333);
-    ba.setAcctNum(1234567891);
-    ba.setBalance(1.0);
-    ba.deposit(0.0);
-    ba.withdraw(200.0);
-    System.out.println(ba.toString());
+    BankAccount TEST1 = new BankAccount();
+    TEST1.setName("TEST1");
+    TEST1.setPasswd("testpassword");
+    TEST1.setPin((short) 3333);
+    TEST1.setAcctNum(1234567891);
+    TEST1.setBalance(1.0);
+    TEST1.deposit(0.0);
+    TEST1.withdraw(200.0);
+    System.out.println(TEST1.toString());
   }
 
 }
