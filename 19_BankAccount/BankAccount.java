@@ -68,7 +68,7 @@ public class BankAccount {
     balance = balance + depositAmount;
   }
 
-  public void withdraw( double withdrawAmount ) {
+  public boolean withdraw( double withdrawAmount ) {
     if (withdrawAmount < balance) {
       balance = balance - withdrawAmount;
       return true;
