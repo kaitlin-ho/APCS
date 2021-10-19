@@ -41,7 +41,7 @@ public class BankAccount {
       return oldPin;
     }
      else {
-        System.out.println("The entered PIN is not a four digit number, please enter a four digit number");\
+        System.out.println("The entered PIN is not a four digit number, please enter a four digit number");
         return 999999999;
    }
   }
