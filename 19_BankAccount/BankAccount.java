@@ -42,7 +42,7 @@ public class BankAccount {
     }
      else {
         System.out.println("The entered PIN is not a four digit number, please enter a four digit number");\
-        retyrn 999999999;
+        return 999999999;
    }
   }
 
@@ -54,7 +54,7 @@ public class BankAccount {
     }
     else {
        System.out.println("The entered Account Number is not a 9 digit number; please enter a 9 digit number");
-       return 9999
+       return 9999;
    }
   }
 
