@@ -10,8 +10,7 @@
    QCC: When we put our return line before our print line, why didn't we return anything?
    How would we allow the user to input into the machine? (How would we implement scanners into our program?)
    Is there any way to cheat our authentication?
-   
-   How to return 
+    
 **/
 
 public class BankAccount {
