@@ -76,8 +76,8 @@ public class BankAccount {
       return true;
       }
     else {
-       System.out.println("You do not have enough money in your account to withdraw this amount");
        return false;
+       System.out.println("You do not have enough money in your account to withdraw this amount");
    }
   }
 
