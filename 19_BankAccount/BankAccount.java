@@ -42,6 +42,7 @@ public class BankAccount {
     }
      else {
         System.out.println ("The entered PIN is not a four digit number, please enter a four digit number");
+   }
   }
 
   public int setAcctNum( int newAcctNum ) {
@@ -75,6 +76,7 @@ public class BankAccount {
     else {
        System.out.println("You do not have enough money in your account to withdraw this amount");
        return false;
+   }
   }
 
 
