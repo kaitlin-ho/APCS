@@ -151,7 +151,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-    if (other.name == name){
+    if (other.upFace == upFace){
 	return true;
 	}
     else {
