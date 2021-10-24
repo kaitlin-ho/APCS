@@ -3,6 +3,7 @@
  *  by Clyde "Thluffy" Sinclair
  *  SKELETON
  ***/
+import java.lang.Math;
 
 public class Coin {
 
