@@ -14,7 +14,7 @@ public class Coin {
   int flipCtr;
   int headsCtr;
   int tailsCtr;
-  double bias = 0.50;
+  double bias = 0.50; // didn't know where to set the bias value, was not in any constructor
 
 
   /***
