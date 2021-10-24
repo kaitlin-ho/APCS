@@ -14,7 +14,7 @@ public class Coin {
   int flipCtr;
   int headsCtr;
   int tailsCtr;
-  double bias;
+  double bias = 0.50;
 
 
   /***
@@ -52,7 +52,7 @@ public class Coin {
     name = s;
     upFace = nowFace;
 //setting bias here because we don't know where else to do it
-    bias = 0.50;
+    // bias = 0.50;
   }
 
 
