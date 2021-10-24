@@ -26,8 +26,8 @@ public class Driver {
       //test toString() methods of each Coin
       System.out.println("mine: " + mine);
       System.out.println("yours: " + yours);
-    /*===================TOP==========================
       System.out.println("wayne: " + wayne);
+      /*===================TOP==========================
       //test flip() method
       System.out.println("\nAfter flipping...");
       yours.flip();
