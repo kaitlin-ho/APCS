@@ -12,8 +12,27 @@
 
 public class Driver {
 
+  public static void counter(int x, int y, Coin person1, Coin person2) {
+        int matches = 0
+  	while ((person1.headsCtr + person2.headsCtr) < x) && (matches < y) && (matches < 65536) && (!(matches % 2005 == 0))) {
+  		person1.flip();
+  		person2.flip();
+  		if person1.equals(person2) { matches += 1; } 
+  		else { matches = matches; }
+  	}
+  	System.out.println(person1);
+  	System.out.println(person2);
+  	System.out.println(matches);
+  	
+  }
+  
   public static void main( String[] args ) {
-
+  	coin person1 = new Coin("quarter");
+  	coin person2 = new Coin("dime");
+ 
+  
+  
+    /*===================TOP==========================
     //build Objects from blueprint specified by class Coin
 
 
@@ -40,7 +59,7 @@ public class Driver {
       else {
         System.out.println( "No match. Firestarter you can not be." );
       }
-      /*===================TOP==========================
+
      ====================BOTTOM======================*/
 
   }//end main()
