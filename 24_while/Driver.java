@@ -1,66 +1,48 @@
+/*
+oops: Ariella Katz, Kaitlin Ho, Tom, Apple
+APCS
+HW24 -- Get It While You Can
+2021-10-25
+time spent: 1.1 hours
+*/
+
+/*
+DISCO:
+0. In a while loop, combining boolean expressions with || ("or") will cause the loop to run
+   if at least one expression is true. Using && will cause the loop to run only if all of the
+   individual expressions are true.
+1. Using =+ instead of += will get past the compiler, but it will cause the code to run for
+   an indefintely long amount of time.
+QCC:
+0. If you don't include "public" or "private" when declaring an instance variable, is it
+   automatically public?
+*/
+
 /***
     driver for class Coin
-    ~~~ SUGGESTED WORKFLOW: ~~~
-    1. Compile this file and run. Note anything notable.
-    2. Move the "TOP" line down, so that it is below the first statement.
-    (emacs: with cursor at beginning of TOP line, C-k C-k, DOWN, DOWN, C-y)
-    (your editor: ???)
-    3. Compile and run again.
-    4. Resolve errors one at a time until it works.
-    5. Repeat 2-4 until TOP meets BOTTOM.
 ***/
 
 public class Driver {
 
   public static void counter(int x, int y, Coin person1, Coin person2) {
-        int matches = 0
-  	while ((person1.headsCtr + person2.headsCtr) < x) && (matches < y) && (matches < 65536) && (!(matches % 2005 == 0))) {
+        int matches = 0;
+  	while (((person1.headsCtr + person2.headsCtr) < x) || (y > matches)
+	|| (matches < 65536) || (!(matches % 2005 == 0))) {
   		person1.flip();
   		person2.flip();
-  		if person1.equals(person2) { matches += 1; } 
-  		else { matches = matches; }
+  		if (person1.equals(person2)) { matches += 1; }
   	}
   	System.out.println(person1);
   	System.out.println(person2);
   	System.out.println(matches);
-  	
+	System.out.println(person1.headsCtr);
+	System.out.println(person2.headsCtr);
   }
-  
+
   public static void main( String[] args ) {
-  	coin person1 = new Coin("quarter");
-  	coin person2 = new Coin("dime");
- 
-  
-  
-    /*===================TOP==========================
-    //build Objects from blueprint specified by class Coin
-
-
-    //test default constructor
-      Coin mine = new Coin();
-      //test 1st overloaded constructor
-      Coin yours = new Coin( "quarter" );
-      //test 2nd overloaded constructor
-      Coin wayne = new Coin( "dollar", "heads" );
-      //test toString() methods of each Coin
-      System.out.println("mine: " + mine);
-      System.out.println("yours: " + yours);
-      System.out.println("wayne: " + wayne);
-      //test flip() method
-      System.out.println("\nAfter flipping...");
-      yours.flip();
-      wayne.flip();
-      System.out.println("yours: " + yours);
-      System.out.println("wayne: " + wayne);
-      //test equals() method
-      if ( yours.equals(wayne) ) {
-        System.out.println( "Matchee matchee!" );
-      }
-      else {
-        System.out.println( "No match. Firestarter you can not be." );
-      }
-
-     ====================BOTTOM======================*/
+  	Coin person1 = new Coin("quarter");
+  	Coin person2 = new Coin("dime");
+	counter(10000,10000,person1,person2);
 
   }//end main()
 
