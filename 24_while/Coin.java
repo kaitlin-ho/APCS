@@ -1,20 +1,33 @@
-/***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
- ***/
-import java.lang.Math;
+/*
+oops: Ariella Katz, Kaitlin Ho, Tom, Apple
+APCS
+HW24 -- Get It While You Can
+2021-10-25
+time spent: 1.1 hours
+*/
+
+/*
+DISCO:
+0. System.out.println(objectName) automatically call's Java's toString, at which point Java 
+   looks for a toString method and sees that we have an overriden one... and uses that instead
+   (see QCC).
+QCC:
+0. How can we make it so that creating a new objecting and printing that object doesn't 
+   automatically call our overridden toString?
+1. Why is it that Java uses our overriden toString and not Java's toString, since they both 
+   have the same parameter lists?
+*/
 
 public class Coin {
 
   //attributes aka instance vars
-  double value;
-  String upFace;
-  String name;
-  int flipCtr;
-  int headsCtr;
-  int tailsCtr;
-  double bias = 0.50; // didn't know where to set the bias value, was not in any constructor
+  public double value;
+  public String upFace;
+  public String name;
+  public int flipCtr;
+  public int headsCtr;
+  public int tailsCtr;
+  public double bias = 0.50; //didn't know where else to set this
 
 
   /***
@@ -23,7 +36,7 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-
+    reset("heads", 0.5);
   }
 
 
@@ -39,6 +52,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
+    this();
     name = s;
   }
 
@@ -49,10 +63,9 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
+    this(s);
     name = s;
     upFace = nowFace;
-//setting bias here because we don't know where else to do it
-    // bias = 0.50;
   }
 
 
@@ -115,6 +128,9 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
+    flipCtr = 0;
+    tailsCtr = 0;
+    headsCtr = 0;
     upFace = s;
     bias = d; //is d for bias? the value can't be 0, so we're assuming so
   }
@@ -134,12 +150,14 @@ public class Coin {
     if (ht < bias) {
       flipCtr = flipCtr + 1;
       headsCtr = headsCtr + 1;
-      return "heads";
+      upFace = "heads";
+      return upFace;
     }
     else {
       flipCtr = flipCtr + 1;
       tailsCtr = tailsCtr + 1;
-      return "tails";
+      upFace = "tails";
+      return upFace;
     }
   }
 
@@ -151,12 +169,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-    if (other.upFace == upFace){
-	return true;
-	}
-    else {
-	return false;
-	}
+    return (upFace == other.upFace);
   }
 
 
@@ -166,7 +179,6 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-    upFace = flip();
     return name + " -- " +  upFace; 
   }
 
