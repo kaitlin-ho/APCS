@@ -12,6 +12,11 @@
    smaller number. Therefore, we can find the GCD of a pair of numbers if we keep replacing the bigger number of the pair with the bigger number minus the
    smaller one, until we get zero for one of the numbers. The other number will be our gcd.
    QCC:
+   What is the logic behind gcd staying same even if we subtract smaller number from bigger number?
+   Algo:
+   We keep subtracting the smaller number from the bigger number out of the pair, and then taking the GCD of those too numbers. We continue
+   this process until we reach 0 with one of the numbers, and then the other number that is nonzero will be our GCD. If the two numbers are equal at any time
+   of the process, then that number will just be the GCD.
 **/
 
 
