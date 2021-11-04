@@ -37,7 +37,7 @@ public class Pig
     =====================================*/
   public static boolean hasA( String w, String letter ) 
   {
-    for (int i = 0; i < w.length; i = i + 1){
+    for (int i = 0; i < w.length(); i = i + 1){
       if (w.substring(i,i+1).equals(letter)){
         return true;
       }
