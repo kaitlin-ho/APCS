@@ -69,6 +69,7 @@ public class Pig
         count += 1;
       }
     }
+    return count;
   }
 
 
