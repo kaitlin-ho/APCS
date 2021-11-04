@@ -111,7 +111,15 @@ public class Pig
   {
     /* YOUR TEST CALLS HERE */
     System.out.println(hasA("cat", "a"));
-    System.out.println(hasA("cat", "p"));
+		System.out.println(hasA("cat", "p"));
+		System.out.println(isAVowel("o"));
+		System.out.println(isAVowel("k"));
+		System.out.println(countVowels("meatball"));
+		System.out.println(countVowels("b1g"));
+		System.out.println(hasAVowel("cat"));
+		System.out.println(hasAVowel("zzz"));
+		System.out.println(allVowels("meatball"));
+		System.out.println(allVowels("soy de los eeuu"));
   }//end main()
 
 }//end class Pig
