@@ -52,12 +52,7 @@ public class Pig
     =====================================*/
   public static boolean isAVowel( String letter ) 
   {
-    for(int i = 0; i < VOWELS.length(); i = i + 1){
-      if (VOWELS.substring(i, i+1).equals(letter)){
-        return true;
-        }
-      }
-    return false;
+    return hasA(VOWELS, letter);
   }
 
 
