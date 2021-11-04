@@ -53,7 +53,7 @@ public class Pig
   public static boolean isAVowel( String letter ) 
   {
     for(int i = 0; i < VOWELS.length(); i = i + 1){
-      if (VOWEL.substring(i, i+1).equals(letter)){
+      if (VOWELS.substring(i, i+1).equals(letter)){
         return true;
         }
       }
