@@ -38,7 +38,7 @@ public class Pig
   public static boolean hasA( String w, String letter ) 
   {
     for (int i = 0; i < w.length; i = i + 1){
-      if (s.substring(i,i+1).equals(letter)){
+      if (w.substring(i,i+1).equals(letter)){
         return true;
       }
     }
@@ -93,6 +93,8 @@ public class Pig
   public static void main( String[] args ) 
   {
     /* YOUR TEST CALLS HERE */
+    hasA("cat", "a");
+    hasA("cat", "p");
   }//end main()
 
 }//end class Pig
