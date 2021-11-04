@@ -25,6 +25,7 @@
 public class Pig
 {
   //Q: How does this initialization make your life easier?
+  //A: Can be used as a comparison to our values; we don't need to keep writing out the vowels
   private static final String VOWELS = "aeiou";
 
 
@@ -36,7 +37,12 @@ public class Pig
     =====================================*/
   public static boolean hasA( String w, String letter ) 
   {
-    /* YOUR IMPLEMENTATION HERE */
+    for (int i = 0; i < w.length; i = i + 1){
+      if (s.substring(i,i+1).equals(letter)){
+        return true;
+      }
+    }
+    return false;
   }//end hasA()
 
 
