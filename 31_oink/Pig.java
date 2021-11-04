@@ -61,10 +61,15 @@ public class Pig
     pre:  w != null
     post: countVowels("meatball") -> 3
     =====================================*/
-  //public static int countVowels( String w ) 
-  //{
-    /* YOUR IMPLEMENTATION HERE */
-  //}
+  public static int countVowels( String w ) 
+  {
+    int count = 0;
+    for (int i = 0; i < w.length(); i = i + 1){
+      if (isAVowel(w.substring(i, i+1)) == true) {
+        count += 1;
+      }
+    }
+  }
 
 
   /*=====================================
