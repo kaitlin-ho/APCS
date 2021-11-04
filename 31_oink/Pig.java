@@ -79,10 +79,12 @@ public class Pig
     post: hasAVowel("cat") -> true
     hasAVowel("zzz")       -> false
     =====================================*/
-  //public static boolean hasAVowel( String w ) 
-  //{
-    /* YOUR IMPLEMENTATION HERE */
-  //}
+  public static boolean hasAVowel( String w ) 
+  {
+    if (countVowels(w) > 0){
+      return true;
+    }
+  }
 
 
   /*=====================================
