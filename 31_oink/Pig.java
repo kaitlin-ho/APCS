@@ -50,10 +50,15 @@ public class Pig
     boolean isAVowel(String) -- tells whether a letter is a vowel
     precondition: letter.length() == 1
     =====================================*/
-  //public static boolean isAVowel( String letter ) 
-  //{
-    /* YOUR IMPLEMENTATION HERE */
-  //}
+  public static boolean isAVowel( String letter ) 
+  {
+    for(int i = 0; i < VOWELS.length(); i = i + 1){
+      if (VOWEL.substring(i, i+1).equals(letter)){
+        return true;
+        }
+      }
+    return false;
+  }
 
 
   /*=====================================
@@ -93,8 +98,8 @@ public class Pig
  public static void main( String[] args ) 
   {
     /* YOUR TEST CALLS HERE */
-    hasA("cat", "a");
-    hasA("cat", "p");
+    System.out.println(hasA("cat", "a"));
+    System.out.println(hasA("cat", "p"));
   }//end main()
 
 }//end class Pig
