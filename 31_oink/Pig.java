@@ -1,31 +1,26 @@
-/***
- * Clyde "Thluffy" Sinclair
- * APCS
- * HW31 --
- * 2021-11-04r
- * time spent: _hrs
- *
- * class Pig
- * a Pig Latin translator
- * ~~~~~~~~~~~~~~~~~~~ SKELETON ~~~~~~~~~~~~~~~~~~~
- *           9
- *     ,--.-'-,--.
- *     \  /-~-\  /
- *    / )' a a `( \
- *   ( (  ,---.  ) )
- *    \ `(_o_o_)' /
- *     \   `-'   /
- *      | |---| |
- *      [_]   [_]
- *      PROTIP: Make this class compilable first,
- *      then develop and test one method at a time.
- *      NEVER STRAY TOO FAR FROM COMPILABILITY/RUNNABILITY!
- ***/
+/*
+NIWWD: Kevin Xiao + Mr. Swag, Jeffery Tang + Mathias, Kaitlin Ho + Apple
+APCS
+HW31 -- Otnay Ybay ethay Airhay Onway Ymay Inneechay Inchay Inchay
+2021-11-03
+time spent: 0.5
+*/
+
+/*
+DISCO:
+- Makes things way easier if previously coded methods are called upon.
+- indexOf() was not needed
+- We can modify this code so it can be compatible with capital lettersby either adding the captial letters into the initial VOWELS string or using .lowercase.
+
+QCC:
+- Why is final useful in this case?
+
+*/
 
 public class Pig
 {
   //Q: How does this initialization make your life easier?
-  //A: Can be used as a comparison to our values; we don't need to keep writing out the vowels
+  //A: Can be used as a comparison; we don't need to keep writing out the vowels
   private static final String VOWELS = "aeiou";
 
 
@@ -119,6 +114,7 @@ public class Pig
 	System.out.println(hasAVowel("cat"));
 	System.out.println(hasAVowel("zzz"));
 	System.out.println(allVowels("meatball"));
+	System.out.println(allVowels("soy de los eeuu"));
 	System.out.println(allVowels("soy de los eeuu"));
   }//end main()
 
