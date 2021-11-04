@@ -95,10 +95,16 @@ public class Pig
     pre:  w != null
     post: allVowels("meatball") -> "eaa"
     =====================================*/
-  //public static String allVowels( String w ) 
-  //{
-    /* YOUR IMPLEMENTATION HERE */
-  //}
+  public static String allVowels( String w ) 
+  {
+    String result = "";
+    for (int i = 0; i < w.length(); i = i + 1){
+      if (isAVowel(w.substring(i, i+1)) == true) {
+        result += w.substring(i, i+1);
+      }
+    }
+    return result;
+  }
 
 
  public static void main( String[] args ) 
