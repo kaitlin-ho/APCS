@@ -84,6 +84,7 @@ public class Pig
     if (countVowels(w) > 0){
       return true;
     }
+    return false;
   }
 
 
