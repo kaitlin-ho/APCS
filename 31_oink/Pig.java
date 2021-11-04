@@ -50,10 +50,10 @@ public class Pig
     boolean isAVowel(String) -- tells whether a letter is a vowel
     precondition: letter.length() == 1
     =====================================*/
-  public static boolean isAVowel( String letter ) 
-  {
+  //public static boolean isAVowel( String letter ) 
+  //{
     /* YOUR IMPLEMENTATION HERE */
-  }
+  //}
 
 
   /*=====================================
@@ -61,10 +61,10 @@ public class Pig
     pre:  w != null
     post: countVowels("meatball") -> 3
     =====================================*/
-  public static int countVowels( String w ) 
-  {
+  //public static int countVowels( String w ) 
+  //{
     /* YOUR IMPLEMENTATION HERE */
-  }
+  //}
 
 
   /*=====================================
@@ -73,10 +73,10 @@ public class Pig
     post: hasAVowel("cat") -> true
     hasAVowel("zzz")       -> false
     =====================================*/
-  public static boolean hasAVowel( String w ) 
-  {
+  //public static boolean hasAVowel( String w ) 
+  //{
     /* YOUR IMPLEMENTATION HERE */
-  }
+  //}
 
 
   /*=====================================
@@ -84,13 +84,13 @@ public class Pig
     pre:  w != null
     post: allVowels("meatball") -> "eaa"
     =====================================*/
-  public static String allVowels( String w ) 
-  {
+  //public static String allVowels( String w ) 
+  //{
     /* YOUR IMPLEMENTATION HERE */
-  }
+  //}
 
 
-  public static void main( String[] args ) 
+ public static void main( String[] args ) 
   {
     /* YOUR TEST CALLS HERE */
     hasA("cat", "a");
