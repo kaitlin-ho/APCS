@@ -42,13 +42,16 @@ QCC:
 0. How to use the scanner to read a file?
 */
 
+/*import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;*/
+
 public class Pig
 {
-//  import java.util.Scanner;
 
   //Q: How does this initialization make your life easier?
   //A: We can use VOWELS in any method without creating a local variable whenever we need it.
-  private static final String VOWELS = "aeiouy";
+  private static final String VOWELS = "aeiouyAEIOUY";
   private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   private static final String PUNCS = ".,:;!?";
 
@@ -151,12 +154,15 @@ public class Pig
 
     String ans = "";
 
-    if ( beginsWithVowel(w) )
-      ans = w + "way";
+    if ( beginsWithVowel(w) ) { ans = w + "way"; }
 
     else {
       int vPos = w.indexOf( firstVowel(w) );
-      ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+      if (beginsWithUpper(w)) {
+        ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1)
+        + (w.substring(0,vPos)).toLowerCase() + "ay";
+      }
+      else { ans = w.substring(vPos) + w.substring(0,vPos) + "ay"; }
     }
 
     return ans;
@@ -211,11 +217,21 @@ public class Pig
 
   public static void main( String[] args ) {
 
-     /*Scanner in = new Scanner(in.words);
-     String line = in.nextLine();
-     while (in.hasNextLine()) {
-       String word = in.nextLin();
-     }*/
+/*     File words = new File("in.words");
+     Scanner scanner = new Scanner(words);
+     String[] wordList = new String[5];
+     int n = 0;
+     while (n < 5) {
+       String word = scanner.nextLine();
+       wordList[n] = word;
+       n++;
+     }
+     String results = "";
+     for (int i = 0; i < wordList.length; i++) {
+       results += (engToPig(wordList[i]) + "\n");
+     }
+     System.out.println(results);
+*/
 
      for( String word : args ) {
        System.out.println( "allVowels \t" + allVowels(word) );

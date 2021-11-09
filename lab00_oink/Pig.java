@@ -1,9 +1,9 @@
 /***
- * The Greyducks: Ariella Katz, Kaitlin Ho, Hugo Jenkins, Tom, __, __
+ * The Greyducks: Ariella Katz, Kaitlin Ho, Hugo Jenkins, Tom, Apple, Boary
  * APCS
  * L00 -- Etterbay Odincay Oughthray Ollaborationcay
  * 2021-11-08
- * time spent: 2 hrs
+ * time spent: 0.5hrs
  *
  * class Pig
  * a Pig Latin translator
@@ -24,7 +24,7 @@
 
 /*
 To-Do:
-X Debug Thluffy’s Pig.java 
+X Debug Thluffy’s Pig.java
 X Adding methods and instance variables supplied
 Multiple consonants at the beginning of the word
 X Capitalization
@@ -37,12 +37,13 @@ Improve readability (with more methods so nothing is too crowded)
 
 /*
 DISCO:
-0. 
-
+0.
 QCC:
 0. How to use the scanner to read a file?
-
 */
+
+
+import java.util.Scanner;  //Scanner is not part of java's std lib
 
 public class Pig
 {
@@ -227,23 +228,17 @@ public class Pig
 	     return isUpperCase(w.substring(0,1) );
     }
 
+
+
   public static void main( String[] args ) {
 
-/*     File words = new File("in.words");
-     Scanner scanner = new Scanner(words);
-     String[] wordList = new String[5];
-     int n = 0;
-     while (n < 5) {
-       String word = scanner.nextLine();
-       wordList[n] = word;
-       n++;
-     }
-     String results = "";
-     for (int i = 0; i < wordList.length; i++) {
-       results += (engToPig(wordList[i]) + "\n");
-     }
-     System.out.println(results);
-*/
+//instantiate a Scanner with STDIN as its bytestream
+    Scanner sc = new Scanner( System.in );
+
+    while( sc.hasNext() ) {
+      System.out.println(engToPig(sc.next()) );
+      System.out.println(engToPig(sc.next()) );
+      }
 
      for( String word : args ) {
        System.out.println( "allVowels \t" + allVowels(word) );

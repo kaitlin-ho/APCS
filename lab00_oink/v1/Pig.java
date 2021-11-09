@@ -3,7 +3,7 @@
  * APCS
  * L00 -- Etterbay Odincay Oughthray Ollaborationcay
  * 2021-11-08
- * time spent: 2 hrs
+ * time spent: 0.5hrs
  *
  * class Pig
  * a Pig Latin translator
@@ -37,17 +37,21 @@ Improve readability (with more methods so nothing is too crowded)
 
 /*
 DISCO:
-0. 
+0.
 QCC:
 0. How to use the scanner to read a file?
 */
+
+/*import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;*/
 
 public class Pig
 {
 
   //Q: How does this initialization make your life easier?
   //A: We can use VOWELS in any method without creating a local variable whenever we need it.
-  private static final String VOWELS = "aeiouyAEIOUY";
+  private static final String VOWELS = "aeiouy";
   private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   private static final String PUNCS = ".,:;!?";
 
@@ -150,31 +154,14 @@ public class Pig
 
     String ans = "";
 
-    if ( beginsWithVowel(w) ) { 
-      if (isPunc(w.substring(w.length()-1))) {
-        ans = w.substring(0,w.length()-1) + "way" + w.substring(w.length()-1);
-      }
-      else {ans = w + "way";} 
-    }
+    if ( beginsWithVowel(w) )
+      ans = w + "way";
 
     else {
       int vPos = w.indexOf( firstVowel(w) );
-      if (beginsWithUpper(w)) {
-        if (!hasPunc(w)) {
-          ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1)
-          + (w.substring(0,vPos)).toLowerCase() + "ay";
-        }
-        else {ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1,w.length()-1)
-              + (w.substring(0,vPos)).toLowerCase() + "ay" + w.substring(w.length()-1);}
-      }
-      else {
-        if (!hasPunc(w)) { 
-          ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
-        }
-        else {ans = w.substring(vPos,w.length()-1) + w.substring(0,vPos) + "ay" + 
-              w.substring(w.length()-1);}
+      ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
     }
-    }
+
     return ans;
   }
 
