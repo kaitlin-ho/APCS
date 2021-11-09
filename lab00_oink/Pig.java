@@ -156,18 +156,18 @@ public class Pig
     if ( beginsWithVowel(w){
 	 if beginsWithUpper(w){
 	    	ans = w.toLowerCase() + "way";
-		ans = (ans.substring(0,1)).toUpperCase + ans.substring(1);
+		ans = (ans.substring(0,1)).toUpperCase() + ans.substring(1);
 	    }
      	 else{ ans = w + "way"; }
 
     else {
-	    if beginsWithUpper(w){
-		int vPos = w.indexOf( firstVowel(w) );
-      		ans = (w.substring(vPos, vPos+1)).toUpperCase + w.substring(vPos+1) + (w.substring(0,vPos)).toLowerCase + "ay";
+	if beginsWithUpper(w){
+	   int vPos = w.indexOf( firstVowel(w) );
+	   ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1) + (w.substring(0,vPos)).toLowerCase() + "ay";
 	    }
 	else {
-      int vPos = w.indexOf( firstVowel(w) );
-      ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+           int vPos = w.indexOf( firstVowel(w) );
+           ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
 	}
     }
 
