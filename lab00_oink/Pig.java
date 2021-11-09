@@ -50,7 +50,7 @@ public class Pig
 
   //Q: How does this initialization make your life easier?
   //A: We can use VOWELS in any method without creating a local variable whenever we need it.
-  private static final String VOWELS = "aeiouy";
+  private static final String VOWELS = "aeiouyAEIOU";
   private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   private static final String PUNCS = ".,:;!?";
 
