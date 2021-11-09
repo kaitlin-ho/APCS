@@ -153,15 +153,19 @@ public class Pig
 
     String ans = "";
 
-    if (beginsWithVowel(w)){
+    if (beginsWithVowel(w) && !hasPunc(w)){
 	  ans = w + "way";
+    else if (isPunc(w.substring(w.length()-1))) {
+    	String punc = w.substring(w.length()-1);
+	ans = w.substring(0, w.length()) + "way" + punc;
+    	}
     }
 
     else {
 	if (beginsWithUpper(w)){
 	   int vPos = w.indexOf( firstVowel(w) );
 	   ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1) + (w.substring(0,vPos)).toLowerCase() + "ay";
-	    }
+	   }
 	else {
            int vPos = w.indexOf( firstVowel(w) );
            ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
