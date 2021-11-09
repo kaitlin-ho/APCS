@@ -158,7 +158,7 @@ public class Pig
     }
     else if (isPunc(w.substring(w.length()-1))) {
     	String punc = w.substring(w.length()-1);
-	ans = w.substring(0, w.length()) + "way" + punc;
+	ans = w.substring(0, w.length()-1) + "way" + punc;
     	}
 
     else {
