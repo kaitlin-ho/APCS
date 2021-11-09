@@ -3,7 +3,7 @@
  * APCS
  * L00 -- Etterbay Odincay Oughthray Ollaborationcay
  * 2021-11-08
- * time spent: 0.5hrs
+ * time spent: 2 hrs
  *
  * class Pig
  * a Pig Latin translator
@@ -24,21 +24,24 @@
 
 /*
 To-Do:
-Debug Thluffy’s Pig.java
-Adding methods and instance variables supplied
+X Debug Thluffy’s Pig.java 
+X Adding methods and instance variables supplied
 Multiple consonants at the beginning of the word
-Capitalization
-Punctuation
-Apostrophes
+X Capitalization
+X Punctuation (at the end)
+Apostrophes (Or punctuation in the middle of words))
 Numbers
 Words with no vowels
+Improve readability (with more methods so nothing is too crowded)
 */
 
 /*
 DISCO:
-0.
+0. 
+
 QCC:
-0.
+0. How to use the scanner to read a file?
+
 */
 
 /*import java.util.Scanner;
