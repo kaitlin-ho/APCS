@@ -44,16 +44,12 @@ QCC:
 
 */
 
-/*import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;*/
-
 public class Pig
 {
 
   //Q: How does this initialization make your life easier?
   //A: We can use VOWELS in any method without creating a local variable whenever we need it.
-  private static final String VOWELS = "aeiouyAEIOU";
+  private static final String VOWELS = "aeiouyAEIOUY";
   private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   private static final String PUNCS = ".,:;!?";
 
@@ -156,25 +152,31 @@ public class Pig
 
     String ans = "";
 
-    if (beginsWithVowel(w) && !hasPunc(w)){
-	  ans = w + "way";
+    if ( beginsWithVowel(w) ) { 
+      if (isPunc(w.substring(w.length()-1))) {
+        ans = w.substring(0,w.length()-1) + "way" + w.substring(w.length()-1);
+      }
+      else {ans = w + "way";} 
     }
-    else if (isPunc(w.substring(w.length()-1))) {
-    	String punc = w.substring(w.length()-1);
-	ans = w.substring(0, w.length()-1) + "way" + punc;
-    	}
 
     else {
-	if (beginsWithUpper(w)){
-	   int vPos = w.indexOf( firstVowel(w) );
-	   ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1) + (w.substring(0,vPos)).toLowerCase() + "ay";
-	   }
-	else {
-           int vPos = w.indexOf( firstVowel(w) );
-           ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
-	}
+      int vPos = w.indexOf( firstVowel(w) );
+      if (beginsWithUpper(w)) {
+        if (!hasPunc(w)) {
+          ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1)
+          + (w.substring(0,vPos)).toLowerCase() + "ay";
+        }
+        else {ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1,w.length()-1)
+              + (w.substring(0,vPos)).toLowerCase() + "ay" + w.substring(w.length()-1);}
+      }
+      else {
+        if (!hasPunc(w)) { 
+          ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+        }
+        else {ans = w.substring(vPos,w.length()-1) + w.substring(0,vPos) + "ay" + 
+              w.substring(w.length()-1);}
     }
-
+    }
     return ans;
   }
 
