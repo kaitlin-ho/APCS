@@ -153,12 +153,8 @@ public class Pig
 
     String ans = "";
 
-    if ( beginsWithVowel(w)){
-	 if (beginsWithUpper(w)){
-	    	ans = w.toLowerCase() + "way";
-		ans = (ans.substring(0,1)).toUpperCase() + ans.substring(1);
-	    }
-     	 else{ ans = w + "way"; }
+    if (beginsWithVowel(w)){
+	  ans = w + "way";
     }
 
     else {
