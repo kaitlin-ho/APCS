@@ -159,6 +159,7 @@ public class Pig
 		ans = (ans.substring(0,1)).toUpperCase() + ans.substring(1);
 	    }
      	 else{ ans = w + "way"; }
+    }
 
     else {
 	if (beginsWithUpper(w)){
