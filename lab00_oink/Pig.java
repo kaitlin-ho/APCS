@@ -155,11 +155,11 @@ public class Pig
 
     if (beginsWithVowel(w) && !hasPunc(w)){
 	  ans = w + "way";
+    }
     else if (isPunc(w.substring(w.length()-1))) {
     	String punc = w.substring(w.length()-1);
 	ans = w.substring(0, w.length()) + "way" + punc;
     	}
-    }
 
     else {
 	if (beginsWithUpper(w)){
