@@ -2,7 +2,7 @@
  * The Greyducks: Ariella Katz, Kaitlin Ho, Hugo Jenkins, Tom, Apple, Boary
  * APCS
  * L00 -- Etterbay Odincay Oughthray Ollaborationcay
- * 2021-11-08
+ * 2021-11-09
  * time spent: 0.5hrs
  *
  * class Pig
@@ -37,9 +37,12 @@ Improve readability (with more methods so nothing is too crowded)
 
 /*
 DISCO:
-0.
+0. next() returns all of the characters up to the first space in a line and leaves the cursor at
+   there, so it's necessary to call next() again to get the cursor to the next line. nextLine()
+   returns all of the characters up to the end of the line and automatically moves the cursor
+   to the beginning of the next line, if there is one.
 QCC:
-0. How to use the scanner to read a file?
+0. 
 */
 
 
