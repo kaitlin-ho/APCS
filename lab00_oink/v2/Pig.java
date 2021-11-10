@@ -24,7 +24,7 @@
 
 /*
 To-Do:
-X Debug Thluffy’s Pig.java 
+X Debug Thluffy’s Pig.java
 X Adding methods and instance variables supplied
 Multiple consonants at the beginning of the word
 X Capitalization
@@ -40,6 +40,8 @@ DISCO:
 0.
 QCC:
 0. How to use the scanner to read a file?
+NEW IN:
+Extra rules: Punctuation
 */
 
 /*import java.util.Scanner;
@@ -154,17 +156,31 @@ public class Pig
 
     String ans = "";
 
-    if ( beginsWithVowel(w) ) { ans = w + "way"; }
+    if ( beginsWithVowel(w) ) { 
+      if (isPunc(w.substring(w.length()-1))) {
+        ans = w.substring(0,w.length()-1) + "way" + w.substring(w.length()-1);
+      }
+      else {ans = w + "way";} 
+    }
 
     else {
       int vPos = w.indexOf( firstVowel(w) );
       if (beginsWithUpper(w)) {
-        ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1)
-        + (w.substring(0,vPos)).toLowerCase() + "ay";
+        if (!hasPunc(w)) {
+          ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1)
+          + (w.substring(0,vPos)).toLowerCase() + "ay";
+        }
+        else {ans = (w.substring(vPos, vPos+1)).toUpperCase() + w.substring(vPos+1,w.length()-1)
+              + (w.substring(0,vPos)).toLowerCase() + "ay" + w.substring(w.length()-1);}
       }
-      else { ans = w.substring(vPos) + w.substring(0,vPos) + "ay"; }
+      else {
+        if (!hasPunc(w)) { 
+          ans = w.substring(vPos) + w.substring(0,vPos) + "ay";
+        }
+        else {ans = w.substring(vPos,w.length()-1) + w.substring(0,vPos) + "ay" + 
+              w.substring(w.length()-1);}
     }
-
+    }
     return ans;
   }
 
@@ -216,22 +232,6 @@ public class Pig
     }
 
   public static void main( String[] args ) {
-
-/*     File words = new File("in.words");
-     Scanner scanner = new Scanner(words);
-     String[] wordList = new String[5];
-     int n = 0;
-     while (n < 5) {
-       String word = scanner.nextLine();
-       wordList[n] = word;
-       n++;
-     }
-     String results = "";
-     for (int i = 0; i < wordList.length; i++) {
-       results += (engToPig(wordList[i]) + "\n");
-     }
-     System.out.println(results);
-*/
 
      for( String word : args ) {
        System.out.println( "allVowels \t" + allVowels(word) );
