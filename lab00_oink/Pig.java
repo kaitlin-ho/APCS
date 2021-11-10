@@ -235,9 +235,8 @@ public class Pig
 //instantiate a Scanner with STDIN as its bytestream
     Scanner sc = new Scanner( System.in );
 
-    while( sc.hasNext() ) {
-      System.out.println(engToPig(sc.next()) );
-      System.out.println(engToPig(sc.next()) );
+    while( sc.hasNextLine() ) {
+      System.out.println(engToPig(sc.nextLine()));
       }
 
      for( String word : args ) {
