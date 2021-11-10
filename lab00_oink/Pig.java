@@ -50,7 +50,7 @@ WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
 After it gets to the last word, the second next() call tells Java to move the cursor to the next
 line, but there isn't a next line.
 NEW IN:
-Improving readability
+Make it work for phrases, not just words
 */
 
 
@@ -208,6 +208,23 @@ public class Pig
     return ans;
   }
 
+   public static String phraseToPig (String phrase) {
+      String ans = "";
+      int i = 0;
+      int len = phrase.length();
+       while (i < len) {
+        if (phrase.indexOf(" ") != -1) {
+          int n = phrase.indexOf(" ");
+          ans += engToPig(phrase.substring(0,n)) + " ";
+          phrase = phrase.substring(n+1);
+          i = n+1; }
+        else {
+          ans += engToPig(phrase);
+          i = len;
+        }
+       }
+      return ans; 
+   }
 
   /*=====================================
       boolean isPunc(String) -- tells whether a character is punctuation
@@ -263,7 +280,7 @@ public class Pig
     Scanner sc = new Scanner( System.in );
 
     while( sc.hasNext() ) {
-      System.out.println(engToPig(sc.nextLine()));
+      System.out.println(phraseToPig(sc.nextLine()));
       }
 
      for( String word : args ) {
