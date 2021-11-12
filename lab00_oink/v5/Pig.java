@@ -37,19 +37,17 @@ Improve readability (with more methods so nothing is too crowded)
 
 /*
 DISCO:
-0. next() returns all of the characters up to the first space in a line and leaves the cursor at
-   there, so it's necessary to call next() again to get the cursor to the next line. nextLine()
-   returns all of the characters up to the end of the line and automatically moves the cursor
-   to the beginning of the next line, if there is one.
+0. next() considers any blank space (line breaks or spaces) to divide tokens.
 QCC:
-0. Is it in fact built into nextLine() to not move the cursor to the next line if there isn't
+0. Is it built into nextLine() to not move the cursor to the next line if there isn't
    one?
 HOW WE UTILIZED SCANNER DEMO (v4):
 Used the while loop and creation of a new scanner, sc, but used nextLine() instead of next().
 WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
-After it gets to the last word, the second next() call tells Java to move the cursor to the next
-line, but there isn't a next line.
-NEW IN:
+next() is called twice, so once the loop gets to the last token, it still runs because the code
+does have one more line, but the second next() is called for another token, which Java looks for
+in the next next line (since there is a line break), and there isn't actually another line, so 
+there is an error.
 Make it work for phrases, not just words
 */
 
