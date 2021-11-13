@@ -88,10 +88,12 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 	
 	public static void main(String[] args){
 		System.out.println(sVer(popInt(test)));
-		System.out.println(linSearch(test2, 1));
-		System.out.println(freq(test2, 1));
+		System.out.println(linSearch(test2, 1)); // should be 0
+		System.out.println(freq(test2, 1)); //should be 4
 		System.out.println(linSearchR(test2, 4)); // should be -1
       		System.out.println(linSearchR(test2,3)); // should be 2
+		System.out.println(freqR(test2, 1)); // should be 4
+		System.out.println(freqR(test2, 24100)); // should be -1
 	}
 
 }
