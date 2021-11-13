@@ -35,8 +35,8 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 	
 	//Recursive
 	public static int linSearchR(int[] a, int target) {
-		//precon
-                if (a.length == 0) { return -1;}
+
+                if (a.length == 0) { return -1; }
 		
                 else {
 			//base case
@@ -48,7 +48,8 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
                                 for (int i = 1; i < a.length; i++) {
                                         aNew[i-1] = a[i];
                                 }
-
+				
+				if (aNew.length == 0) { return linSearchR(a, target) - 1;}
 				//recursive call
                                 return 1 + linSearchR(aNew, target);
                         }
