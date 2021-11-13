@@ -15,9 +15,10 @@ static int[] test = new int [10];
 		for(int i = 0; i < A.length; i++){
 			result = result + A[i];
 		}
+		return result;
 	}
 	public static void main(String[] args){
-		System.out.println(popInt(test));
+		System.out.println(sVer(popInt(test)));
 	}
 
 }
