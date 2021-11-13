@@ -50,7 +50,7 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
                                 }
 
 				//recursive call
-                                return 1 + linSearchR1(aNew, target);
+                                return 1 + linSearchR(aNew, target);
                         }
                 }
         }
