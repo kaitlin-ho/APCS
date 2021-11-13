@@ -17,7 +17,7 @@ static int[] test2 = {1,2,3,30};
 		for(int i = 0; i < A.length; i++){
 			result = result + A[i] + ", ";
 		}
-		return result.substring(0,result.length());
+		return result.substring(0,result.length()-1);
 	}
 	
 	//public static implementations of a linear search function that will return 
