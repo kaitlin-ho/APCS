@@ -13,7 +13,7 @@ static int[] test = new int [10];
 	public static String sVer(int[] A) {
 		String result = "";
 		for(int i = 0; i < A.length; i++){
-			result +=
+			result = result + A[i];
 		}
 	}
 	public static void main(String[] args){
