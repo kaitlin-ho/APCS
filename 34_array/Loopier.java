@@ -19,7 +19,7 @@ static int[] test2 = {1,2,3,30};
 		return result;
 	}
 	public static void main(String[] args){
-		System.out.println(popInt(test));
+		System.out.println(popInt(test[]));
 		//System.out.println(sVer(test2));
 	}
 
