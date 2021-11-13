@@ -45,14 +45,15 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 			for (int i = 1; i < a.length; i++) {
 				aNew[i-1] = a[i];
 			}
-      }
+  
 			//base case
 		if (aNew[0] == target) {return 0;}
 			
 			//recursive case
-	      	return 1+linSearchR1(aNew, target);
+     		 else {return 1+linSearchR1(aNew, target);}
 	
         }
+}
 	
 	//public, static implementations of a frequency function that will return the number of 
 	//occurrences of a target in an existing array
