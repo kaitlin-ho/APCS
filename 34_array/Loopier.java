@@ -34,15 +34,22 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 	}
 	
 	//Recursive
-	public static int linSearchR1(int[] a, int target) {
+	public static int linSearchR(int[] a, int target) {
+		//precon
                 if (a.length == 0) { return -1;}
+		
                 else {
+			//base case
                         if (a[0] == target) { return 0;}
                         else {
+				//new array that is essentially the input array without index 0
                                 int[] aNew = new int[a.length-1];
+				//filling new array
                                 for (int i = 1; i < a.length; i++) {
                                         aNew[i-1] = a[i];
                                 }
+
+				//recursive call
                                 return 1 + linSearchR1(aNew, target);
                         }
                 }
