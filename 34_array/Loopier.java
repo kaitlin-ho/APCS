@@ -34,26 +34,11 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 	}
 	
 	//Recursive
-	public static int linSearchR1(int[] a, int target) {
-		if (a.length == 0) { return -1;}
-		//creates a new array that would be the old array without the first index
-      		int[] aNew = new int[a.length-1];
-		if (aNew.length == 0) {return -1;}
+	/*
+	public static int linSearchR1(int[] a, int target){
 		
-		else {
-			//creating the new array
-			for (int i = 1; i < a.length; i++) {
-				aNew[i-1] = a[i];
-			}
-  
-			//base case
-		if (aNew[0] == target) {return 0;}
-			
-			//recursive case
-     		 else {return 1+linSearchR1(aNew, target);}
-	
-        }
-}
+	}
+	*/
 	
 	//public, static implementations of a frequency function that will return the number of 
 	//occurrences of a target in an existing array
@@ -69,12 +54,19 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 		return freqCount;
 	}
 	
+	//Recursive
+	/*
+	public static int freqR(int[] a, int target){
+		
+	}
+	*/
+	
 	public static void main(String[] args){
 		System.out.println(sVer(popInt(test)));
 		System.out.println(linSearch(test2, 1));
 		System.out.println(freq(test2, 1));
-		System.out.println(linSearchR1(test, 4)); // should be -1
-      		System.out.println(linSearchR1(test,3)); // should be 2
+		System.out.println(linSearchR1(test2, 4)); // should be -1
+      		System.out.println(linSearchR1(test2,3)); // should be 2
 	}
 
 }
