@@ -74,6 +74,7 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1, 3};
 		if (a.length == 0){
 			if (a[0] == target) {return 1;}
 			else {return 0;}
+		}
 		else {
 			if (a[0] == target) {return 1;}
 			int[] aNew = new int[a.length-1];
