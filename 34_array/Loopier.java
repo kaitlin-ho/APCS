@@ -35,7 +35,7 @@ static int[] test2 = {1,2,3,30};
 	
 	public static void main(String[] args){
 		System.out.println(sVer(popInt(test)));
-		System.out.println(linSearch(test2));
+		System.out.println(linSearch(test2, 3));
 	}
 
 }
