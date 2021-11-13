@@ -27,7 +27,7 @@ static int[] test2 = {1,2,3,30};
 	public static int linSearch(int[] A, int target){
 		for(int i = 0; i < A.length; i++){
 			if (A[i] == target){
-				return target;
+				return i;
 			}
 		}
 		return -1;
