@@ -15,7 +15,7 @@ static int[] test2 = {1,2,3,30};
 	public static String sVer(int[] A) {
 		String result = "";
 		for(int i = 0; i < A.length; i++){
-			result = result + ", " + A[i];
+			result = result + A[i] + ", ";
 		}
 		return result;
 	}
