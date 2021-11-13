@@ -2,7 +2,7 @@ public class Loopier {
 
 
 static int[] test = new int [10];
-static int[] test2 = {1,2,3,30};
+static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 	
 	//A static method to populate an existing array with randomly generated ints
 	public static int[] popInt(int[] a) {
@@ -49,7 +49,8 @@ static int[] test2 = {1,2,3,30};
 	
 	public static void main(String[] args){
 		System.out.println(sVer(popInt(test)));
-		System.out.println(linSearch(test2, 3));
+		System.out.println(linSearch(test2, 1));
+		System.out.println(freqRec(test2, 1));
 	}
 
 }
