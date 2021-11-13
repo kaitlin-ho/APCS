@@ -33,6 +33,25 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1};
 		return -1;
 	}
 	
+	//Recursive
+	public static int linSearchR1(int[] a, int target) {
+                int[] aNew = new int[a.length-1];
+		if (aNew.length == 0) {return -1}
+		else {
+			for (int i = 1; i < a.length; i++) {
+				aNew[i-1] = a[i];
+			}
+			if (a.length == 0) { return -1;}
+			else {
+				if (a[0] == target) { return 0;}
+				else {
+					if (aNew.length == 0) { return -1; }
+					else { return 1+linSearchR1(aNew, target); }
+				}
+			}
+		}
+        }
+	
 	//public, static implementations of a frequency function that will return the number of 
 	//occurrences of a target in an existing array
 	
