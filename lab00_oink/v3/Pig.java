@@ -2,7 +2,7 @@
  * The Greyducks: Ariella Katz, Kaitlin Ho, Hugo Jenkins, Tom, Apple, Boary
  * APCS
  * L00 -- Etterbay Odincay Oughthray Ollaborationcay
- * 2021-11-08
+ * 2021-11-09
  * time spent: 0.5hrs
  *
  * class Pig
@@ -37,14 +37,24 @@ Improve readability (with more methods so nothing is too crowded)
 
 /*
 DISCO:
-0.
+0. next() returns all of the characters up to the first space in a line and leaves the cursor at
+   there, so it's necessary to call next() again to get the cursor to the next line. nextLine()
+   returns all of the characters up to the end of the line and automatically moves the cursor
+   to the beginning of the next line, if there is one.
 QCC:
-0. How to use the scanner to read a file?
+0. Is it in fact built into nextLine() to not move the cursor to the next line if there isn't
+   one?
+HOW WE UTILIZED SCANNER DEMO (v4):
+Used the while loop and creation of a new scanner, sc, but used nextLine() instead of next().
+WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
+After it gets to the last word, the second next() call tells Java to move the cursor to the next
+line, but there isn't a next line.
+NEW IN:
+Adding scanner functionality
 */
 
-/*import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;*/
+
+import java.util.Scanner;  //Scanner is not part of java's std lib
 
 public class Pig
 {
@@ -229,23 +239,16 @@ public class Pig
 	     return isUpperCase(w.substring(0,1) );
     }
 
+
+
   public static void main( String[] args ) {
 
-/*     File words = new File("in.words");
-     Scanner scanner = new Scanner(words);
-     String[] wordList = new String[5];
-     int n = 0;
-     while (n < 5) {
-       String word = scanner.nextLine();
-       wordList[n] = word;
-       n++;
-     }
-     String results = "";
-     for (int i = 0; i < wordList.length; i++) {
-       results += (engToPig(wordList[i]) + "\n");
-     }
-     System.out.println(results);
-*/
+//instantiate a Scanner with STDIN as its bytestream
+    Scanner sc = new Scanner( System.in );
+
+    while( sc.hasNext() ) {
+      System.out.println(engToPig(sc.nextLine()));
+      }
 
      for( String word : args ) {
        System.out.println( "allVowels \t" + allVowels(word) );
