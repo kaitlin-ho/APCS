@@ -70,7 +70,7 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1, 3};
 	}
 	
 	//Recursive
-	/* public static int freqR(int[] a, int target){
+	public static int freqR(int[] a, int target){
 		if (a[0] == target) {return 1;}
 
 		int[] aNew = new int[a.length-1];
@@ -81,7 +81,6 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1, 3};
 		
 		return 1 + freqR(aNew, target);
 	}
-	*/
 	
 	public static void main(String[] args){
 		// System.out.println(sVer(popInt(test)));
