@@ -38,7 +38,7 @@ static int[] test2 = {1,2,3,30};
 	
 	//Iterative
 	public static int freq(int[] a, int target){
-		int freqCount;
+		int freqCount = 0;
 		for(int i = 0; i < a.length; i++){
 			if (a[i] == target){
 				freqCount += 1;
