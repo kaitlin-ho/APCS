@@ -80,6 +80,7 @@ static int[] test2 = {1,2,3,30, 2140, 222, 124, 1, 1, 24, 30, 1, 3};
 			for (int i = 1; i < a.length; i++){
 				aNew[i-1] = a[i];
 				}
+			if (aNew[0] == target) {return 1;}
 			return 1 + freqR(aNew, target);
 		}	
 	}
