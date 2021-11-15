@@ -4,7 +4,13 @@
 * HW34 -- A Pirate's Life for Me
 * 2021-11-15
 * time spent: 30
+
+DISCO: N/A
+QCC:
+1. When does recursion become easier to code than iteration? 
 */
+
+
 
 public class Loopier {
 
