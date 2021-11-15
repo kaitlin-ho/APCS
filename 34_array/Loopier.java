@@ -3,7 +3,7 @@
 * APCS
 * HW34 -- A Pirate's Life for Me
 * 2021-11-15
-* time spent: 30
+* time spent: 3
 
 DISCO: N/A
 QCC:
