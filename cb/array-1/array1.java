@@ -109,6 +109,9 @@ public static int[] fix23(int[] nums) {
 
 
   public static void main(String args[]){
+    /*
+   NOTE: [] for arrays do not work in this case, arrays must be declared outside (but I ran out of time, will fix later)
+   
     System.out.println(firstLast6([1, 2, 6]) + "... true");
     System.out.println(firstLast6([6, 1, 2, 3]) + "... true");
     System.out.println(firstLast6([13, 6, 1, 2, 3]) + "... false");
@@ -170,5 +173,7 @@ public static int[] fix23(int[] nums) {
     System.out.println(fix23([1, 2, 3]) + "... [1, 2, 0]");
     System.out.println(fix23([2, 3, 5]) + "... [2, 0, 5]");
     System.out.println(fix23([1, 2, 1]) + "... [1, 2, 1]");
+    
+    */
   }
 }
