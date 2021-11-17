@@ -109,66 +109,66 @@ public static int[] fix23(int[] nums) {
 
 
   public static void main(String args[]){
-    System.out.println(firstLast6([1, 2, 6]) + "... true";
-    System.out.println(firstLast6([6, 1, 2, 3]) + "... true";
-    System.out.println(firstLast6([13, 6, 1, 2, 3]) + "... false";
+    System.out.println(firstLast6([1, 2, 6]) + "... true");
+    System.out.println(firstLast6([6, 1, 2, 3]) + "... true");
+    System.out.println(firstLast6([13, 6, 1, 2, 3]) + "... false");
 
-    System.out.println(sameFirstLast([1, 2, 3]) + "... false";
-    System.out.println(sameFirstLast([1, 2, 3, 1]) + "... true";
-    System.out.println(sameFirstLast([1, 2, 1]) + "... true";
+    System.out.println(sameFirstLast([1, 2, 3]) + "... false");
+    System.out.println(sameFirstLast([1, 2, 3, 1]) + "... true");
+    System.out.println(sameFirstLast([1, 2, 1]) + "... true");
 
     System.out.println(makePi() + "... [3, 1, 4]";
 
-    System.out.println(commonEnd([1, 2, 3], [7, 3]) + "... true";
-    System.out.println(commonEnd([1, 2, 3], [7, 3, 2]) + "... false";
-    System.out.println(commonEnd([1, 2, 3], [1, 3]) + "... true";
+    System.out.println(commonEnd([1, 2, 3], [7, 3]) + "... true");
+    System.out.println(commonEnd([1, 2, 3], [7, 3, 2]) + "... false");
+    System.out.println(commonEnd([1, 2, 3], [1, 3]) + "... true");
 
-    System.out.println(sum3([1, 2, 3]) + "... 6";
-    System.out.println(sum3([5, 11, 2]) + "... 18";
-    System.out.println(sum3([7, 0, 0]) + "... 7";
+    System.out.println(sum3([1, 2, 3]) + "... 6");
+    System.out.println(sum3([5, 11, 2]) + "... 18");
+    System.out.println(sum3([7, 0, 0]) + "... 7");
 
-    System.out.println(rotateLeft3([1, 2, 3]) + "... [2, 3, 1]";
-    System.out.println(rotateLeft3([5, 11, 9]) + "... [11, 9, 5]";
-    System.out.println(rotateLeft3([7, 0, 0]) + "... [0, 0, 7]";
+    System.out.println(rotateLeft3([1, 2, 3]) + "... [2, 3, 1]");
+    System.out.println(rotateLeft3([5, 11, 9]) + "... [11, 9, 5]");
+    System.out.println(rotateLeft3([7, 0, 0]) + "... [0, 0, 7]");
 
-    System.out.println(reverse3([1, 2, 3]) + "... [3, 2, 1]";
-    System.out.println(reverse3([5, 11, 9]) + "... [9, 11, 5]";
-    System.out.println(reverse3([7, 0, 0]) + "... [0, 0, 7]";
+    System.out.println(reverse3([1, 2, 3]) + "... [3, 2, 1]");
+    System.out.println(reverse3([5, 11, 9]) + "... [9, 11, 5]");
+    System.out.println(reverse3([7, 0, 0]) + "... [0, 0, 7]");
 
-    System.out.println(maxEnd3([1, 2, 3]) + "... [3, 3, 3]";
-    System.out.println(maxEnd3([11, 5, 9]) + "... [11, 11, 11]";
-    System.out.println(maxEnd3([2, 11, 3]) + "... [3, 3, 3]";
+    System.out.println(maxEnd3([1, 2, 3]) + "... [3, 3, 3]");
+    System.out.println(maxEnd3([11, 5, 9]) + "... [11, 11, 11]");
+    System.out.println(maxEnd3([2, 11, 3]) + "... [3, 3, 3]");
 
     System.out.println(sum2([1, 2, 3]) + "... 3";
-    System.out.println(sum2([1, 1]) + "... 2";
-    System.out.println(sum2([1, 1, 1, 1]) + "... 2";
+    System.out.println(sum2([1, 1]) + "... 2");
+    System.out.println(sum2([1, 1, 1, 1]) + "... 2");
 
-    System.out.println(middleWay([1, 2, 3], [4, 5, 6]) + "... [2, 5]";
-    System.out.println(middleWay([7, 7, 7], [3, 8, 0]) + "... [7, 8]";
-    System.out.println(middleWay([5, 2, 9], [1, 4, 5]) + "... [2, 4]";
+    System.out.println(middleWay([1, 2, 3], [4, 5, 6]) + "... [2, 5]");
+    System.out.println(middleWay([7, 7, 7], [3, 8, 0]) + "... [7, 8]");
+    System.out.println(middleWay([5, 2, 9], [1, 4, 5]) + "... [2, 4]");
 
-    System.out.println(makeEnds([1, 2, 3]) + "... [1, 3]";
-    System.out.println(makeEnds([1, 2, 3, 4]) + "... [1, 4]";
-    System.out.println(makeEnds([7, 4, 6, 2]) + "... [7, 2]";
+    System.out.println(makeEnds([1, 2, 3]) + "... [1, 3]");
+    System.out.println(makeEnds([1, 2, 3, 4]) + "... [1, 4]");
+    System.out.println(makeEnds([7, 4, 6, 2]) + "... [7, 2]");
 
-    System.out.println(has23([2, 5]) + "... true";
-    System.out.println(has23([4, 3]) + "... true";
-    System.out.println(has23([4, 5]) + "... false";
+    System.out.println(has23([2, 5]) + "... true");
+    System.out.println(has23([4, 3]) + "... true");
+    System.out.println(has23([4, 5]) + "... false");
 
-    System.out.println(no23([4, 5]) + "... true";
-    System.out.println(no23([4, 2]) + "... false";
-    System.out.println(no23([3, 5]) + "... false";
+    System.out.println(no23([4, 5]) + "... true");
+    System.out.println(no23([4, 2]) + "... false");
+    System.out.println(no23([3, 5]) + "... false");
 
-    System.out.println(makeLast([4, 5, 6]) + "... [0, 0, 0, 0, 0, 6]";
-    System.out.println(makeLast([1, 2]) + "... [0, 0, 0, 2]";
-    System.out.println(makeLast([3]) + "... [0, 3]";
+    System.out.println(makeLast([4, 5, 6]) + "... [0, 0, 0, 0, 0, 6]");
+    System.out.println(makeLast([1, 2]) + "... [0, 0, 0, 2]");
+    System.out.println(makeLast([3]) + "... [0, 3]");
 
-    System.out.println(double23([2, 2]) + "... true";
-    System.out.println(double23([3, 3]) + "... true";
-    System.out.println(double23([2, 3]) + "... false";
+    System.out.println(double23([2, 2]) + "... true");
+    System.out.println(double23([3, 3]) + "... true");
+    System.out.println(double23([2, 3]) + "... false");
 
-    System.out.println(fix23([1, 2, 3]) + "... [1, 2, 0]";
-    System.out.println(fix23([2, 3, 5]) + "... [2, 0, 5]";
-    System.out.println(fix23([1, 2, 1]) + "... [1, 2, 1]";
+    System.out.println(fix23([1, 2, 3]) + "... [1, 2, 0]");
+    System.out.println(fix23([2, 3, 5]) + "... [2, 0, 5]");
+    System.out.println(fix23([1, 2, 1]) + "... [1, 2, 1]");
   }
 }
