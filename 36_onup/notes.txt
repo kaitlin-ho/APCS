@@ -1,1 +1,60 @@
+Kaitlin Ho
+APCS
+HW36 - All Quacked Up
+2021-11-18
+time spent: 1.0
+
+compile time - syntax error
+- only first error is reliable; gives guideline (only given when compiler notices an issue)
+- indent correctly
+- common errors:
+    - () / {} / ; / "" / ''
+    - assignment types should match
+    - arguments in order / obj method invoked should be the right type
+- make backup, delete half, run, rinse + repeat
+
+
+runtime - errors while progam is running
+- "hanging" stops and does nothing - infinite loop/recursion
+    - loop: print statements before and after loop
+        - print statement w/ values of variables in condition and boolean value of condition
+    - recursion: stackoverflow
+        - check for base case
+        - print statement at the beginning of a method for paramaters (to check progress)
+- flow of execution - print statments to each method so it can be traced 
+    - common error: arguments in the wrong order
+- exceptions
+    - error msg: name, line, statck trace
+    - null pointer - access null variable
+    - array index out of bound
+    - stackoverflow
+    - FileNotFound - make sure the file exists and is in the right path
+    - arithmetic exception
+- too many outputs; remove print statements and simplify the problem
+
+
+logic - program does not do what's expected
+- hypothesis
+    - program is supposed to do something?
+    - something that shouldn't be happening?
+    - section of code producing unexpected effect? (make sure you know what the methods in Java library does)
+- mental model; components of classes/methods
+- common errors
+    - integer division rounds toward 0
+    - float point numbers are approx
+    - == is identical, .equals is equivalence
+- complex expressions: break into series of assignments and smaller variables (so you can display/check things)
+- print (sometimes stored until the code ends) vs println (immediate display)
+
+Stuck? Touch grass
+
+When asking for review
+- type of bug
+- recent things you did
+- error msg
+
+ducky. also reflect on the bug
+
+
+
 
