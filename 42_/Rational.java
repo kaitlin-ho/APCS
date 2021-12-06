@@ -1,7 +1,7 @@
 // Team Four {Fang, Kaitlin, Jing}
 // APCS PD06
-// HW41 -- Be Rational
-// 2021-11-30
+// HW42 -- Be More Rational
+// 2021-12-05
 
 /*
 DISCO
@@ -13,8 +13,8 @@ QCC
 
 public class Rational {
 
-	public int p;
-	public int q;
+	private int p;
+	private int q;
 
 	public Rational() {
 		p = 0;
@@ -35,8 +35,8 @@ public class Rational {
 		return p + "/" + q;
 	}
 
-	public float floatValue() {
-		return (float) (1.0 * p)/q;
+	public double floatValue() {
+		return (1.0 * p)/q;
 	}
 
 	public void multiply(Rational a) {
@@ -49,47 +49,54 @@ public class Rational {
 		q = this.q * a.p;
 	}
 
-  public void simplify(){
-    p = p / gcd(p, q);
-    q = q / gcd(p, q);
+  public void reduce(){
+    int greatestCom = gcd(p, q);
+    p = p / greatestCom;
+    q = q / greatestCom;
   }
 
   public int gcd(int a, int b){
-    int counter = 1;
-    int g = 1;
-    if (a > b) {
-      while (counter <= b) {
-        if (a % counter == 0 && b % counter = 0){
-          g = counter;
+   int gcd = 1;
+        for (int i = 1; i <= Math.min(a, b); i++) {
+            if ((a % i == 0) & (b % i == 0)) {
+                gcd = i;
+            }
         }
-        counter += 1;
-      }
-    }
-    return g;
+   return gcd;
   }
 
-  public void add(){
-
-  }
-
-  public int lcm(int a, int b){
-    int c;
-    int d;
+  public void add(Rational a){
+     int leastCom = lcm(this.q, a.q);
+     p = p * leastCom + (a.p)*leastCom;
+     q = q * leastCom;
   }
 
   public void subtract(){
-
+     int leastCom = lcm(this.q, a.q);
+     p = p * leastCom - (a.p)*leastCom;
+     q = q * leastCom;
+  }
+	
+  public int lcm(int a, int b){
+     int result;
+     result = a * (b / gcd(a, b));
+     return result;
   }
 
-  public String compareTo(Rational a){
 
+
+  public int compareTo(Rational a){
+     reduce(a);
+     reduce(this);
+     this.subtract(a);
+     return this.p;
   }
 
 	public static void main(String[] args) {
 		Rational r = new Rational(2,3);
 		Rational s = new Rational(1,2);
 
-		// Print inital values of r and s
+		/* // Print inital values of r and s
 		System.out.println(r.toString()); // "2/3"
 		System.out.println(s.toString()); // "1/2"
 		System.out.println(r.floatValue()); // "0.6666667"
@@ -107,6 +114,14 @@ public class Rational {
 
 		// Ensure s did not change
 		System.out.println(s.toString()); // "1/2"
+		*/
+		System.out.println(r.toString());
+		System.out.println(s.toString());
+		r.add(s);
+		System.out.println(r.toString());
+		r.subtract(s);
+		System.out.println(r.toString());
+		System.out.println(r.compareTo(s));
 
 
 	}
