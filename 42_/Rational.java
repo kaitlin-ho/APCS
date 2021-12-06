@@ -71,7 +71,7 @@ public class Rational {
      q = q * leastCom;
   }
 
-  public void subtract(){
+  public void subtract(Rational a){
      int leastCom = lcm(this.q, a.q);
      p = p * leastCom - (a.p)*leastCom;
      q = q * leastCom;
@@ -86,8 +86,8 @@ public class Rational {
 
 
   public int compareTo(Rational a){
-     reduce(a);
-     reduce(this);
+     a.reduce();
+     this.reduce();
      this.subtract(a);
      return this.p;
   }
