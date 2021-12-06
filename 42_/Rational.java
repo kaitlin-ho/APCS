@@ -5,10 +5,12 @@
 
 /*
 DISCO
-- By using instance variables p and q instead of storing the double value of the Rational in a single variable makes mathematical operations a lot neater and more precise.
+- Using LCM for the add and subtract functions makes it alot easier. 
+- LCM can be found by taking the GCD of two numbers, dividing one by the result, and then multiplying it by the other
+
 QCC
-- How can we make a function that simplifies the fraction present when using this class?
-- Why would making multiply() and divide() void work better than having the functions return another Rational instance?
+- 
+
 */
 
 public class Rational {
@@ -69,7 +71,7 @@ public class Rational {
      int leastCom = lcm(this.q, a.q);
      p = (leastCom/q)*this.p + (leastCom/a.q)*a.p;
      q = leastCom;
-     this.reduce();
+     reduce();
   }
 
   public void subtract(Rational a){
@@ -95,7 +97,7 @@ public class Rational {
   }
 
 	public static void main(String[] args) {
-		Rational r = new Rational(1,2);
+		Rational r = new Rational(2,3);
 		Rational s = new Rational(1,2);
 
 		/* // Print inital values of r and s
@@ -117,13 +119,14 @@ public class Rational {
 		// Ensure s did not change
 		System.out.println(s.toString()); // "1/2"
 		*/
+		
 		System.out.println(r.toString());
 		System.out.println(s.toString());
 		r.add(s);
 		System.out.println(r.toString());
-		r.subtract(s);
+		r.subtract(s); //should be 2/3
 		System.out.println(r.toString());
-		System.out.println(r.compareTo(s));
+		System.out.println(r.compareTo(s)); // should be 1
 
 
 	}
