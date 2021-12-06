@@ -14,8 +14,8 @@ QCC
 
 public class Rational {
 
-	public int p;
-	public int q;
+	private int p;
+	private int q;
 
 	public Rational() {
 		p = 0;
@@ -36,8 +36,8 @@ public class Rational {
 		return p + "/" + q;
 	}
 
-	public float floatValue() {
-		return (float) (1.0 * p)/q;
+	public double floatValue() {
+		return (1.0 * p)/q;
 	}
 
 	public void multiply(Rational a) {
