@@ -73,7 +73,7 @@ public class Rational {
 
   public void subtract(Rational a){
      int leastCom = lcm(this.q, a.q);
-     p = (leastCom/q)*this.p - (leastCom/a.q)*a.p;
+     p = ((leastCom / this.q) * this.p) - ((leastCom / a.q) * a.p);
      q = leastCom;
   }
 	
