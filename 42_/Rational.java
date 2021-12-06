@@ -2,6 +2,7 @@
 // APCS PD06
 // HW42 -- Be More Rational
 // 2021-12-05
+// time spent: .7
 
 /*
 DISCO
@@ -9,7 +10,7 @@ DISCO
 - LCM can be found by taking the GCD of two numbers, dividing one by the result, and then multiplying it by the other
 
 QCC
-- 
+- If you create an instance of Rational in another class, can methods still access the private variables p and q?
 
 */
 
@@ -71,7 +72,7 @@ public class Rational {
      int leastCom = lcm(this.q, a.q);
      p = (leastCom/q)*this.p + (leastCom/a.q)*a.p;
      q = leastCom;
-     reduce();
+     this.reduce();
   }
 
   public void subtract(Rational a){
