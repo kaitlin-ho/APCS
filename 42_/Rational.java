@@ -95,7 +95,7 @@ public class Rational {
   }
 
 	public static void main(String[] args) {
-		Rational r = new Rational(2,3);
+		Rational r = new Rational(1,2);
 		Rational s = new Rational(1,2);
 
 		/* // Print inital values of r and s
