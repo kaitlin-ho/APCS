@@ -101,8 +101,8 @@ public class SuperArray
     
     _size = _size + 1;
     
-    for(int i = index; index < _size; index ++){
-      _data[i + 1] = temp[i];
+    for(int i = index + 1; index <= _size; index ++){
+      _data[i] = temp[i-1];
     }
     
   }
