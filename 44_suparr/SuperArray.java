@@ -77,7 +77,7 @@ public class SuperArray
   {
     _size = _size + 1;
     // {1, 2, 0, 0 ,,,}
-    if (_data.length > _size){
+    if (_data.length < _size){
       _data[_size] = newVal;
     }
     else{
@@ -90,7 +90,24 @@ public class SuperArray
   //inserts an item at index
   public void add( int index, int newVal )
   {
-    
+    // {0, 1, 2, 3, 4}
+    _size = _size + 1;
+    int[] temp = new int[_data.length];
+    for(int i = 1; index < _size; i++){
+      temp[i] = data[i];
+    }
+    if (_data.length < _size){
+      _data[index] = newVal;
+      for(int i = index; index < _size; i++){
+        data[i+1] = temp[i];
+      }
+    }
+    else{
+      this.expand();
+      _data[index] = newVal;
+      for(int i = index; index < _size; i++){
+        data[i+1] = temp[i];
+      }
   }
 
 
