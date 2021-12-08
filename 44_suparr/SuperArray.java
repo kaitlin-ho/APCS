@@ -87,31 +87,25 @@ public class SuperArray
   }
 
 
-//   //inserts an item at index
-//   public void add( int index, int newVal )
-//   {
-//     // {0, 1, 2, 3, 4}
-//     _size = _size + 1;
-//     int[] temp = new int[_data.length];
-//     for(int i = 1; index < _size; i++){
-//       temp[i] = _data[i];
-//     }
-//     if (_data.length < _size){
-//       _data[index] = newVal;
-//       for(int i = index; i < _size; i++){
-//         _data[i+1] = temp[i];
-//       }
-//     }
-//     else{
-//       while(_data.length < _size){
-//       this.expand();
-//       }
-//       _data[index] = newVal;
-//       for(int i = index; i < _size; i++){
-//         _data[i+1] = temp[i];
-//       }
-//     }
-//   }
+  //inserts an item at index
+  public void add( int index, int newVal )
+  {
+    //temp copy of the array
+    int[] temp = new int[_size];
+    for(int i = 0; i < _size; i+_){
+      temp[i] = _data[i];
+    }
+   
+    //inserting element
+    _data[index] = newVal;
+    
+    _size = _size + 1;
+    
+    for(int i = index; index < _size; index ++){
+      _data[i + 1] = temp[i];
+    }
+    
+  }
 
 
   //removes the item at index
@@ -125,11 +119,11 @@ public class SuperArray
   }
 
 
-//   //return number of meaningful items in _data
-//   public int size()
-//   {
-//     /* YOUR IMPLEMENTATION HERE */
-//   }
+  //return number of meaningful items in _data
+  public int size()
+  {
+    return _size;
+  }
 
 
 
@@ -160,6 +154,7 @@ public class SuperArray
       mayfield.add(3);
       mayfield.add(2);
       mayfield.add(1);
+    // extra tests
       mayfield.add(5);
       mayfield.add(4);
       mayfield.add(3);
@@ -179,15 +174,15 @@ public class SuperArray
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
-//       mayfield.add(3,99);
-//       System.out.println("Printing SuperArray mayfield post-insert...");
-//       System.out.println(mayfield);
-//       mayfield.add(2,88);
-//       System.out.println("Printing SuperArray mayfield post-insert...");
-//       System.out.println(mayfield);
-//       mayfield.add(1,77);
-//       System.out.println("Printing SuperArray mayfield post-insert...");
-//       System.out.println(mayfield);
+      mayfield.add(3,99);
+      System.out.println("Printing SuperArray mayfield post-insert...");
+      System.out.println(mayfield);
+      mayfield.add(2,88);
+      System.out.println("Printing SuperArray mayfield post-insert...");
+      System.out.println(mayfield);
+      mayfield.add(1,77);
+      System.out.println("Printing SuperArray mayfield post-insert...");
+      System.out.println(mayfield);
      /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
