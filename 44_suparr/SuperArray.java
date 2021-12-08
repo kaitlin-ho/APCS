@@ -160,6 +160,16 @@ public class SuperArray
       mayfield.add(3);
       mayfield.add(2);
       mayfield.add(1);
+      mayfield.add(5);
+      mayfield.add(4);
+      mayfield.add(3);
+      mayfield.add(2);
+      mayfield.add(1);
+      mayfield.add(5);
+      mayfield.add(4);
+      mayfield.add(3);
+      mayfield.add(2);
+      mayfield.add(1);
       System.out.println("Printing populated SuperArray mayfield...");
       System.out.println(mayfield);
    
