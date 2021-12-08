@@ -133,13 +133,13 @@ public class SuperArray
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
       mayfield.add(5);
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       mayfield.add(4);
       mayfield.add(3);
       mayfield.add(2);
       mayfield.add(1);
       System.out.println("Printing populated SuperArray mayfield...");
       System.out.println(mayfield);
+    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
