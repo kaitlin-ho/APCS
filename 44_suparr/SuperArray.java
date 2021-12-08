@@ -108,6 +108,7 @@ public class SuperArray
       for(int i = index; index < _size; i++){
         data[i+1] = temp[i];
       }
+    }
   }
 
 
