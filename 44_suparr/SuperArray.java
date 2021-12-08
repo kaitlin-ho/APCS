@@ -98,7 +98,7 @@ public class SuperArray
     }
     if (_data.length < _size){
       _data[index] = newVal;
-      for(int i = index; index < _size; i++){
+      for(int i = index; i < _size; i++){
         _data[i+1] = temp[i];
       }
     }
@@ -107,19 +107,22 @@ public class SuperArray
       this.expand();
       }
       _data[index] = newVal;
-      for(int i = index; index < _size; i++){
+      for(int i = index; i < _size; i++){
         _data[i+1] = temp[i];
       }
     }
   }
 
 
-//   //removes the item at index
-//   //shifts elements left to fill in newly-empted slot
-//   public void remove( int index )
-//   {
-//     /* YOUR IMPLEMENTATION HERE */
-//   }
+  //removes the item at index
+  //shifts elements left to fill in newly-empted slot
+  public void remove( int index )
+  {
+    for( int i = index; i < _size; i++){
+      _data[i] = _data[i+1];
+    }
+    _size = _size - 1;
+  }
 
 
 //   //return number of meaningful items in _data
