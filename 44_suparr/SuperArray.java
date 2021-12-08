@@ -75,7 +75,15 @@ public class SuperArray
   //adds an item after the last item
   public void add( int newVal )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    _size = _size + 1;
+    // {1, 2, 0, 0 ,,,}
+    if (_data.length < _size){
+      _data[_size] = newVal;
+    }
+    else{
+      _data.expand();
+      _data[_size] = newVal;
+    }
   }
 
 
@@ -105,7 +113,7 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
+    
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
@@ -125,6 +133,7 @@ public class SuperArray
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
       mayfield.add(5);
+    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       mayfield.add(4);
       mayfield.add(3);
       mayfield.add(2);
