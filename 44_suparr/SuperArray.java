@@ -103,7 +103,9 @@ public class SuperArray
       }
     }
     else{
+      while(_data.length < size){
       this.expand();
+      }
       _data[index] = newVal;
       for(int i = index; index < _size; i++){
         _data[i+1] = temp[i];
