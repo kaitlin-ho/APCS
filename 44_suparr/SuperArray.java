@@ -1,11 +1,11 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
+// Four {Fang, Jing, Kaitlin}
+// APCS1 pd06
 // HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08w
+// 2021-12-08
+// time spent: 1 hr
 
 /***************************
  * class SuperArray version 2.0
- * (SKELETON)
  * Wrapper class for array. Facilitates
  * resizing
  * expansion
@@ -14,6 +14,15 @@
  * adding an element at specified index
  * removing an element at specified index
  ***************************/
+
+/*
+DISCO
+- To do an insertion or remove, we created a temporary array to store the values that will be moved. 
+- That said, it's possible to do it without the temporary array; we just found it to be more interpretable.
+QCC
+- Is there a limit to how many elements can be in a SuperArray? In other words, what's the limit length of an int[] array?
+  - A scenario where expand() wouldn't work?
+*/
 
 public class SuperArray
 {
@@ -75,7 +84,6 @@ public class SuperArray
   //adds an item after the last item
   public void add( int newVal )
   {
-    _size = _size + 1;
     // {1, 2, 0, 0 ,,,}
     if (_data.length < _size){
       _data[_size] = newVal;
@@ -84,26 +92,38 @@ public class SuperArray
       this.expand();
       _data[_size] = newVal;
     }
+    _size = _size + 1;
   }
 
 
   //inserts an item at index
   public void add( int index, int newVal )
   {
-        
-    _size = _size + 1;
-   
-    //temp copy of the array
-    int[] temp = new int[_data.length];
-    for(int i = 0; i < _data.length; i++){
-      temp[i] = _data[i];
+    if (index > _size + 1) {
+      System.out.println("Invalid index");
+    } else {
+
+      // expand if necessary
+      if (index == _data.length) {
+        expand();
+      }
+
+      //temp copy of the array
+      int[] temp = new int[_data.length];
+      for(int i = 0; i < _size; i++){
+        temp[i] = _data[i];
+      }
+     
+      //inserting element
+      _data[index] = newVal;
+      _size = _size + 1;
+
+      for(int i = index + 1; i < _size; i ++){
+        _data[i] = temp[i-1];
+      }
+
     }
-   
-    //inserting element
-    _data[index] = newVal;
-    
-    //shifting 
-    
+      
   }
 
 
@@ -170,9 +190,10 @@ public class SuperArray
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
+      // System.out.println(mayfield.temp);
+      // mayfield.remove(3);
+      // System.out.println("Printing SuperArray mayfield post-remove...");
+      // System.out.println(mayfield);
       mayfield.add(3,99);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
