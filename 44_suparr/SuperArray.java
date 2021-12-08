@@ -92,7 +92,7 @@ public class SuperArray
   {
     //temp copy of the array
     int[] temp = new int[_size];
-    for(int i = 0; i < _size; i+_){
+    for(int i = 0; i < _size; i++){
       temp[i] = _data[i];
     }
    
