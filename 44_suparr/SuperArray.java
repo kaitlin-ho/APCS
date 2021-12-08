@@ -91,8 +91,8 @@ public class SuperArray
   public void add( int index, int newVal )
   {
     //temp copy of the array
-    int[] temp = new int[_size];
-    for(int i = 0; i < _size; i++){
+    int[] temp = new int[_data.length];
+    for(int i = 0; i < _data.length; i++){
       temp[i] = _data[i];
     }
    
