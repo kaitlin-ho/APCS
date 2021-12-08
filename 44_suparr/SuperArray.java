@@ -90,6 +90,9 @@ public class SuperArray
   //inserts an item at index
   public void add( int index, int newVal )
   {
+        
+    _size = _size + 1;
+   
     //temp copy of the array
     int[] temp = new int[_data.length];
     for(int i = 0; i < _data.length; i++){
@@ -98,12 +101,11 @@ public class SuperArray
    
     //inserting element
     _data[index] = newVal;
-    
-    _size = _size + 1;
-    
-    for(int i = index + 1; index <= _size; index ++){
-      _data[i] = temp[i-1];
+
+    for (int i = index; index < _size; i++){
+      _data[i + 1] = temp[i];
     }
+    
     
   }
 
@@ -171,7 +173,6 @@ public class SuperArray
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
-      System.out.println(mayfield.temp);
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
