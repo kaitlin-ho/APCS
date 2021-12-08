@@ -130,7 +130,6 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
@@ -145,7 +144,6 @@ public class SuperArray
       System.out.println(curtis);
       System.out.println("new length of underlying array: "
       + curtis._data.length );
-      }
       SuperArray mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
