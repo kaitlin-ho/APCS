@@ -81,32 +81,32 @@ public class SuperArray
       _data[_size] = newVal;
     }
     else{
-      _data.expand();
+      this.expand();
       _data[_size] = newVal;
     }
   }
 
 
-  //inserts an item at index
-  public void add( int index, int newVal )
-  {
-    /* YOUR IMPLEMENTATION HERE */
-  }
+//   //inserts an item at index
+//   public void add( int index, int newVal )
+//   {
+//     /* YOUR IMPLEMENTATION HERE */
+//   }
 
 
-  //removes the item at index
-  //shifts elements left to fill in newly-empted slot
-  public void remove( int index )
-  {
-    /* YOUR IMPLEMENTATION HERE */
-  }
+//   //removes the item at index
+//   //shifts elements left to fill in newly-empted slot
+//   public void remove( int index )
+//   {
+//     /* YOUR IMPLEMENTATION HERE */
+//   }
 
 
-  //return number of meaningful items in _data
-  public int size()
-  {
-    /* YOUR IMPLEMENTATION HERE */
-  }
+//   //return number of meaningful items in _data
+//   public int size()
+//   {
+//     /* YOUR IMPLEMENTATION HERE */
+//   }
 
 
 
