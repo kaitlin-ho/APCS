@@ -94,19 +94,19 @@ public class SuperArray
     _size = _size + 1;
     int[] temp = new int[_data.length];
     for(int i = 1; index < _size; i++){
-      temp[i] = data[i];
+      temp[i] = _data[i];
     }
     if (_data.length < _size){
       _data[index] = newVal;
       for(int i = index; index < _size; i++){
-        data[i+1] = temp[i];
+        _data[i+1] = temp[i];
       }
     }
     else{
       this.expand();
       _data[index] = newVal;
       for(int i = index; index < _size; i++){
-        data[i+1] = temp[i];
+        _data[i+1] = temp[i];
       }
     }
   }
