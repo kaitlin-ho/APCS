@@ -101,11 +101,8 @@ public class SuperArray
    
     //inserting element
     _data[index] = newVal;
-
-    for (int i = index; index < _size; i++){
-      _data[i + 1] = temp[i];
-    }
     
+    //shifting 
     
   }
 
