@@ -156,13 +156,13 @@ public class SuperArray
       mayfield.add(1);
       System.out.println("Printing populated SuperArray mayfield...");
       System.out.println(mayfield);
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
+   
+     // mayfield.remove(3);
+     // System.out.println("Printing SuperArray mayfield post-remove...");
+     // System.out.println(mayfield);
+     // mayfield.remove(3);
+     // System.out.println("Printing SuperArray mayfield post-remove...");
+     // System.out.println(mayfield);
       mayfield.add(3,99);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
@@ -172,6 +172,7 @@ public class SuperArray
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
+     /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
