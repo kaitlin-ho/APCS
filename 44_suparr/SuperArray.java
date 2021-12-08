@@ -103,7 +103,7 @@ public class SuperArray
       }
     }
     else{
-      while(_data.length < size){
+      while(_data.length < _size){
       this.expand();
       }
       _data[index] = newVal;
