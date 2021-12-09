@@ -85,7 +85,7 @@ public class SuperArray
   public void add( int newVal )
   {
     // {1, 2, 0, 0 ,,,}
-    if (_data.length < _size){
+    if (_data.length > _size){
       _data[_size] = newVal;
     }
     else{
