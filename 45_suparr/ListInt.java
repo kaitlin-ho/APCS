@@ -1,8 +1,8 @@
 public interface ListInt
 {
   
-  public boolean add(int x);
-  public add-at-index (int index, int x);
+  public boolean add(int newVal);
+  public add (int index, int newVal);
   public remove (int index);
   public size ();
   public get(int index);
