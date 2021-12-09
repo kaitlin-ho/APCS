@@ -1,9 +1,9 @@
 
 // Four {Fang, Jing, Kaitlin}
 // APCS1 pd06
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08
-// time spent: 1 hr
+// HW45 -- Array of Titanium
+// 2021-12-09
+// time spent: .4 hr
 
 /***************************
  * class SuperArray version 2.0
@@ -18,11 +18,10 @@
 
 /*
 DISCO
-- To do an insertion or remove, we created a temporary array to store the values that will be moved. 
-- That said, it's possible to do it without the temporary array; we just found it to be more interpretable.
+- An interface can't contain a constructor and cannot be used to create objects. 
 QCC
-- Is there a limit to how many elements can be in a SuperArray? In other words, what's the limit length of an int[] array?
-  - A scenario where expand() wouldn't work?
+-Why does public int set(int index) not work in ListInt?
+-
 */
 
 public class SuperArray implements ListInt
