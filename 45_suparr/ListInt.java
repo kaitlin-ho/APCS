@@ -6,6 +6,6 @@ public interface ListInt
   public void remove(int index);
   public int size();
   public int get(int index);
-  public int set(int index);
+  //public int set(int index);
   
 }
