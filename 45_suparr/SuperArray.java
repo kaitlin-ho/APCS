@@ -86,9 +86,12 @@ public class SuperArray implements ListInt
   public void add( int newVal )
   {
     // {1, 2, 0, 0 ,,,}
-    if (_data.length < _size){
+    if (_data.length > _size){
       _data[_size] = newVal;
     }
+    // when we use "<" rather than ">", _data.length increases from 10 to 10240 to 20480 instead of 10, 10, 40
+    // according to our print statements. we could not figure out why.
+    
     else{
       this.expand();
       _data[_size] = newVal;
