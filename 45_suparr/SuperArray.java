@@ -172,6 +172,7 @@ public class SuperArray implements ListInt
       SuperArray mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
+      System.out.println(mayfield._data.length);
       mayfield.add(5);
       mayfield.add(4);
       mayfield.add(3);
@@ -183,7 +184,9 @@ public class SuperArray implements ListInt
       mayfield.add(3);
       mayfield.add(2);
       mayfield.add(1);
+      System.out.println(mayfield._data.length);
       mayfield.add(5);
+      System.out.println(mayfield._data.length);
       mayfield.add(4);
       mayfield.add(3);
       mayfield.add(2);
