@@ -1,7 +1,6 @@
 public interface ListInt
 {
-  private int[] _data;
-  private int _size;
+  //error: modifer private not allowed
   public void add(int newVal);
   public void add(int index, int newVal);
   public void remove(int index);
