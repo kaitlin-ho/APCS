@@ -7,7 +7,7 @@ public static void main(String[] args) {
 		Object notRat = new Object();
 
 		System.out.println(r.equals(r)); // should be true
-		System.out.println(r.equals(t)); // should be true
+		System.out.println(r.equals(t)); // should be true // printed false
 		System.out.println(r.equals(s)); // should be false
 		System.out.println(r.equals(notRat)); // should be false
 
