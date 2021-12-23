@@ -1,13 +1,16 @@
 // Team Four {Fang, Kaitlin, Jing}
 // APCS PD06
-// HW42 -- Be More Rational
+// HW49 -- Rational Standards Compliance
 // 2021-12-22
-// time spent: 
+// time spent: 1
 
 /*
-DISCO
+DISCO:
+- Typecast was needed even after checking if Object was a Rational because even if the boolean returned was TRUE, java still sees the class as object and not rational. 
+	We can typecast without fear because the typecast will only run if Object is an instance of class Rational
 
-QCC
+QCC:
+- Why can't compareTo be modified and used instead of using the equals method?
 
 */
 
