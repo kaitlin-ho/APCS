@@ -14,7 +14,7 @@ QCC:
 
 */
 
-public class Rational {
+public class Rational implements Comparable{
 
 	private int p;
 	private int q;
@@ -94,19 +94,18 @@ public class Rational {
 		this.reduce();
 	}
 
-	public int compareTo(Rational a){
-		a.reduce();
-		this.reduce();
-		this.subtract(a);
-		return this.p;
+	// public int compareTo(Rational a){
+	// 	a.reduce();
+	// 	this.reduce();
+	// 	this.subtract(a);
+	// 	return this.p;
+	// }
+
+	// HW 49 Modifications
+
+	public int compareTo(Object a) {
+		((Rational) a).reduce();
+		((Rational) this).reduce();
+		((Rational) this).subtract((Rational) a);
+		return ((Rational) this).p;
 	}
-
-	public boolean equals(Object other) {
-		if (other instanceof Rational) {
-			return (this.compareTo((Rational) other) == 0);
-		}
-		return false;
-	}
-
-
-}
