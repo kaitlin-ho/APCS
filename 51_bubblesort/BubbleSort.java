@@ -96,7 +96,7 @@ public class BubbleSort
   public static void main( String [] args )
   {
 
-    
+    /*
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -113,6 +113,7 @@ public class BubbleSort
       bubbleSortV(coco);
       System.out.println( "ArrayList coco after sorting:\n" + coco );
 
+*/
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
