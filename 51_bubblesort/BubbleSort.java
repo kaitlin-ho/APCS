@@ -61,16 +61,17 @@ public class BubbleSort
   public static void bubbleSortV( ArrayList<Comparable> data )
   {
     /* YOUR IMPLEMENTATION HERE */
+    return true;
   }
 
 
-  // ArrayList-returning bubbleSort
-  // postcondition: order of input ArrayList's elements unchanged
-  //                Returns sorted copy of input ArrayList.
-//   public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
-//   {
-//     /* YOUR IMPLEMENTATION HERE */
-//   }
+//   ArrayList-returning bubbleSort
+//   postcondition: order of input ArrayList's elements unchanged
+//                  Returns sorted copy of input ArrayList.
+  public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
+  {
+    /* YOUR IMPLEMENTATION HERE */
+  }
 
 
   public static void main( String [] args )
