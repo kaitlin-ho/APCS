@@ -61,12 +61,14 @@ public class BubbleSort
   public static void bubbleSortV( ArrayList<Comparable> data )
   {
     /* YOUR IMPLEMENTATION HERE */
-    for (int num = 0; num < data.size() - 1; num ++){
-      Comparable test = data.get(num);
-      Comparable adj = data.get(num+1);
-      if (test.compareTo(adj) > 1){
-        data.set(num, adj);
-        data.set(num+1, test);
+    for (int passes = 0; passes < data.size() - 2; passes++){
+      for (int num = 0; num < data.size() - 1; num ++){
+        Comparable test = data.get(num);
+        Comparable adj = data.get(num+1);
+        if (test.compareTo(adj) > 1){
+          data.set(num, adj);
+          data.set(num+1, test);
+        }
       }
     }
   }
