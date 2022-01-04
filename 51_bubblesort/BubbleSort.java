@@ -25,8 +25,7 @@ import java.util.ArrayList;
 
 public class BubbleSort
 {
-
-  //~~~~~~~~~~~~~~~~~~~ HELPER METHODS ~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~ HELPER METHODS ~~~~~~~~~~~~~~~~~~~
   //precond:  lo < hi && size > 0
   //postcond: returns an ArrayList of random integers
   //          from lo to hi, inclusive
@@ -53,6 +52,7 @@ public class BubbleSort
     }
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
   // VOID version of bubbleSort
