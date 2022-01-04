@@ -61,11 +61,11 @@ public class BubbleSort
   public static void bubbleSortV( ArrayList<Comparable> data )
   {
     /* YOUR IMPLEMENTATION HERE */
-    for (int passes = 0; passes < data.size() - 2; passes++){
+    for (int passes = 0; passes < data.size() - 1; passes++){
       for (int num = 0; num < data.size() - 1; num ++){
         Comparable test = data.get(num);
         Comparable adj = data.get(num+1);
-        if (test.compareTo(adj) > 1){
+        if (test.compareTo(adj) > 0){
           data.set(num, adj);
           data.set(num+1, test);
         }
@@ -96,7 +96,7 @@ public class BubbleSort
   public static void main( String [] args )
   {
 
-    /*
+
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -105,15 +105,13 @@ public class BubbleSort
       glen.add(3);
       System.out.println( "ArrayList glen before sorting:\n" + glen );
       
-
       bubbleSortV(glen);
       System.out.println( "ArrayList glen after sorting:\n" + glen );
       ArrayList coco = populate( 10, 1, 1000 );
       System.out.println( "ArrayList coco before sorting:\n" + coco );
       bubbleSortV(coco);
       System.out.println( "ArrayList coco after sorting:\n" + coco );
-
-*/
+/*
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -132,7 +130,7 @@ public class BubbleSort
       + cocoSorted );
       System.out.println( "ArrayList coco after sorting:\n" + coco );
       System.out.println( coco );
-
+*/
 
   }//end main
 
