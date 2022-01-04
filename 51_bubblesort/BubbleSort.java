@@ -61,7 +61,14 @@ public class BubbleSort
   public static void bubbleSortV( ArrayList<Comparable> data )
   {
     /* YOUR IMPLEMENTATION HERE */
-    return true;
+    for (int num = 0; num < data.size - 1; num ++){
+      Comparable test = data.get(num);
+      Comparable adj = data.get(num+1);
+      if (test.compareTo(adj) > 1){
+        data[num] = data[adj];
+        data[num+1] = data[test];
+      }
+    }
   }
 
 
