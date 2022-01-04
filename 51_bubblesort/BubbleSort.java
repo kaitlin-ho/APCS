@@ -77,10 +77,20 @@ public class BubbleSort
 //   ArrayList-returning bubbleSort
 //   postcondition: order of input ArrayList's elements unchanged
 //                  Returns sorted copy of input ArrayList.
-//   public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
-//   {
-//     /* YOUR IMPLEMENTATION HERE */
-//   }
+  public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
+  {
+    /* YOUR IMPLEMENTATION HERE */
+    ArrayList<Comparable> result = new ArrayList();
+    
+    // copying arraylist 
+    for(int i = 0; i < input.size(); i++){
+      result.add(input.get(i));
+    }
+    
+    // sorting new arraylist
+    bubbleSortV(result);
+    return result;
+  }
 
 
   public static void main( String [] args )
@@ -103,8 +113,6 @@ public class BubbleSort
       bubbleSortV(coco);
       System.out.println( "ArrayList coco after sorting:\n" + coco );
 
-
-    /*==========for AL-returning methods==========
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -123,7 +131,7 @@ public class BubbleSort
       + cocoSorted );
       System.out.println( "ArrayList coco after sorting:\n" + coco );
       System.out.println( coco );
-      ============================================*/
+
 
   }//end main
 
