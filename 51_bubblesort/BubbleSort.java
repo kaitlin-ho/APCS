@@ -2,7 +2,7 @@
 // APCS pd06
 // HW51 -- implementing bubblesort
 // 2022-01-04
-// time spent:  hrs
+// time spent: 1 hrs
 
 /******************************
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
