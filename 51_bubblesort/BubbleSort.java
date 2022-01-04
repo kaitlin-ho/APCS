@@ -8,10 +8,14 @@
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  *
  * ALGO:
- * 
- * DISCO
+ * 1) (Begin at index 0) Compare the element at index with the element at index+1 and swap the two if the latter is greater
+ * 2) Repeat with index+1 as index
+ * 3) Traverse the list arraylength-1 times
  *
- * QCC
+ * DISCO:
+ * 
+ *
+ * QCC:
  * q0: If a pass requires no swaps, what do you know?
  * a0: The array is sorted
  * q1: After pass p, what do you know?
@@ -19,6 +23,10 @@
  * q2: How many passes are necessary to completely sort?
  * a2: One less than the array length
  * 
+ * Running javac -Xlint BubbleSort.java gave [rawtypes], [unchecked], missing type arguments,
+ *    and more errors (NOTE: only on my (Kaitlin) end)
+ * It worked for everyone else who ran my code; it also worked with an online compiler.
+ *
  ******************************/
 
 import java.util.ArrayList;
