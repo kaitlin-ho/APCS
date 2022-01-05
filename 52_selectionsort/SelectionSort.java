@@ -144,8 +144,7 @@ public class SelectionSort
       ArrayList cocoSorted = selectionSort( coco );
       System.out.println( "sorted version of ArrayList coco:\n"
       + cocoSorted );
-      System.out.println( "ArrayList coco after sorting:\n" + cocoSorted );
-      System.out.println( cocoSorted );
+      System.out.println( "ArrayList coco after sorting:\n" + coco );
 	  /*
       ============================================*/
 
