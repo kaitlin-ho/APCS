@@ -44,8 +44,7 @@ public class SelectionSort
   }
 
   //randomly rearrange elements of an ArrayList
-  public static void shuffle( ArrayList al )
-  {
+  public static void shuffle( ArrayList al ){
     int randomIndex;
     for( int i = al.size()-1; i > 0; i-- ) {
       //pick an index at random
@@ -70,11 +69,6 @@ public class SelectionSort
     for(int pass = 1; pass < data.size(); pass++) {
         maxPos=0;
 	System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-	    
-    for(int pass = data.size()-1; pass >= 0; pass--) {
-      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-
-
 
       for(int i = 0; i < data.size()-pass+1; i++ ) {
         if (data.get(i).compareTo(data.get(maxPos))>0) {
@@ -98,7 +92,7 @@ public class SelectionSort
   // ArrayList-returning selectionSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
-  /*
+/*
   public static ArrayList<Comparable> selectionSort( ArrayList<Comparable> input )
   {
     //declare and initialize empty ArrayList for copying
@@ -111,6 +105,7 @@ public class SelectionSort
     return data;
   }//end selectionSort
 */
+	  
   public static void main( String [] args )
   {
 
