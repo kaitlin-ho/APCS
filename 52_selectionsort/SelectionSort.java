@@ -109,7 +109,7 @@ public class SelectionSort
   public static void main( String [] args )
   {
 
-    
+       /*===============for VOID methods=============
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -124,10 +124,10 @@ public class SelectionSort
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
     System.out.println( "ArrayList coco after sorting:\n" + coco );
-    /*===============for VOID methods=============
+ 
       ============================================*/
 
-   /*
+   
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -144,8 +144,8 @@ public class SelectionSort
       ArrayList cocoSorted = selectionSort( coco );
       System.out.println( "sorted version of ArrayList coco:\n"
       + cocoSorted );
-      System.out.println( "ArrayList coco after sorting:\n" + coco );
-      System.out.println( coco );
+      System.out.println( "ArrayList coco after sorting:\n" + cocoSorted );
+      System.out.println( cocoSorted );
 	  /*
       ============================================*/
 
