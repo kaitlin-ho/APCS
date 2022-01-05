@@ -23,6 +23,7 @@
  * a2: if the last element is swapped with itself
  * q3: What does a pass boil down to?
  * a3: linear search and swap
+ * Pass = 0 gives an index out of bounds error while pass = 1 doesn't
  ******************************/
 
 
