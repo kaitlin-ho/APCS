@@ -23,7 +23,6 @@
  * a2: if the last element is swapped with itself
  * q3: What does a pass boil down to?
  * a3: linear search and swap
- * Pass = 0 gives an index out of bounds error while pass = 1 doesn't
  ******************************/
 
 
@@ -70,11 +69,11 @@ public class SelectionSort
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos = 0;
 
-    for(int pass = 1; pass < data.size(); pass++) {
+    for(int pass = 0; pass < data.size(); pass++) {
         maxPos=0;
-	System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
+	System.out.println( "\nbegin pass " + (data.size()-1-pass) );//diag
 
-      for(int i = 0; i < data.size()-pass+1; i++ ) {
+      for(int i = 0; i < data.size()-pass; i++ ) {
         if (data.get(i).compareTo(data.get(maxPos))>0) {
           maxPos = i;
         }
@@ -83,8 +82,8 @@ public class SelectionSort
 
 
       }
-      Comparable x= data.get(data.size()-pass);
-      data.set(data.size()-pass, data.get(maxPos));
+      Comparable x= data.get(data.size()-1-pass);
+      data.set(data.size()-1-pass, data.get(maxPos));
       data.set(maxPos, x);
 
 
@@ -121,7 +120,6 @@ public class SelectionSort
     System.out.println( "ArrayList glen before sorting:\n" + glen );
     selectionSortV(glen);
     System.out.println( "ArrayList glen after sorting:\n" + glen );
-
     ArrayList coco = populate( 10, 1, 1000 );
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
