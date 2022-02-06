@@ -1,6 +1,6 @@
 Soggy Crackers
 APCS pd06
-L05 -- pulling it together
+L05 -- Stats on Stats
 2022-02-03r
 time spent:  hrs
 
@@ -13,7 +13,8 @@ DISCO
 
 QCC
 ------------------------------------------------
-*
+* What is the point of local modes?
+* How long should this take? (On paper?)
 ================================================
 
 
