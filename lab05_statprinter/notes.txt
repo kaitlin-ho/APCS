@@ -7,10 +7,11 @@ time spent: 03 hrs
 
 DISCO
 ------------------------------------------------
-*
+*Local modes in a data set will never occur consecutively.
+*An arrayList cannot be initialized with a set size.
 ================================================
 
-
+a
 QCC
 ------------------------------------------------
 * What is the point of local modes?
@@ -22,3 +23,4 @@ MISC
 ------------------------------------------------
 *
 ================================================
+
