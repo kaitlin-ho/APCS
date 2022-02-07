@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// L05 -- pulling it together
-// 2022-02-03r
-// time spent:  hrs
+// Soggy Crackers
+// APCS pd06
+// L05 -- Stats on Stats
+// 2022-02-03
+// time spent: 03 hrs
 
 /***
  * class StatPrinterApp
