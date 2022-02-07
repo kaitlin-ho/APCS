@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// L05 -- pulling it together
-// 2022-02-03r
-// time spent:  hrs
+// Soggy Crackers
+// APCS pd06
+// L05 -- Stats on Stats
+// 2022-02-03
+// time spent: 03 hrs
 
 
 /**
@@ -59,9 +59,11 @@ public class StatPrinter
   //  _frequency would be [0,0,3,2,0,1]
   public StatPrinter( ArrayList <Integer> data )
   {
+    //O(n^2)
+    _frequency = new ArrayList<Integer>();
     int counter = 0;
-    for (int i = 0; i < data.size(); i++){
-      for (int j = 0; j < data.size(); j++){
+    for (int i = 0; i <= max(data); i++){ //finds comparison number
+      for (int j = 0; j < data.size(); j++){ //compares against number
         if (i == data.get(j)){
           counter += 1;
         }
@@ -69,7 +71,22 @@ public class StatPrinter
       _frequency.add(counter);
       counter = 0;
     }
+    // System.out.println(_frequency); //for testing if frequency array was correct
   }
+
+  // {
+  //   /* YOUR IMPLEMENTATION HERE */
+  //   _frequency = new ArrayList<Integer>();
+  //
+  //   for (int i = 0; i < max(data) + 1; i++) {
+  //     _frequency.add(0);
+  //   }
+  //   for (Integer n : data) {
+  //     _frequency.set(n, _frequency.get(n) + 1);
+  //   }
+  //   // System.out.println(_frequency);
+  // }
+
 
 
   //*************** QUESTION 01 **************************
@@ -77,8 +94,9 @@ public class StatPrinter
   //postcond: returns largest integer in data
   public Integer max( ArrayList <Integer> data )
   {
+    //O(n)
     int maxReturn = 0;
-    for (int i = 0; i <= data.size(); i++){
+    for (int i = 0; i < data.size(); i++){ //looking for maximum number
       if (data.get(i) > maxReturn){
         maxReturn = data.get(i);
       }
@@ -100,37 +118,52 @@ public class StatPrinter
 
   public boolean isLocalMode( int i )
   {
-    if (i == 0 || i == _frequency.size()+1){
-      return false;
-    }
-    else if (_frequency.get(i-1) < _frequency.get(i) && _frequency.get(i+1) < _frequency.get(i)){
+    //O(1)
+    if (i > 0 && i < _frequency.size() - 1 && _frequency.get(i - 1) < _frequency.get(i) //looks for local mode
+        && _frequency.get(i + 1) < _frequency.get(i)) {
       return true;
     }
-    else{
-      return false;
-    }
+    return false;
   }
 
 
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
-/*
+
   public ArrayList<Integer> getLocalModes()
   {
-
-
+    //O(n)
+    ArrayList<Integer> localModes = new ArrayList<Integer>(); //creates arrayList
+    for(Integer i : _frequency){ //populates with frequency
+      if (isLocalMode(i) == true){
+        localModes.add(i);
+      }
+    }
+    return(localModes);
   }
 
-*/
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
 
-/*
+
   public void printHistogram( int longestBar )
   {
-
+    //O(n^2)
+    float prop = (longestBar / max(_frequency));
+    for (Integer i : _frequency){ //creates Histogram
+      System.out.print(i + ": ");
+      float stars = (i*prop);
+      if (stars == 0){
+        System.out.println();
+      }
+      for (int j = 1; j <= stars; j++){
+        System.out.print("*");
+        if (j == stars){
+          System.out.print("*\n");
+        }
+      }
+    }
   }
-*/
 
 }//end class StatPrinter
