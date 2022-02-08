@@ -1,1 +1,27 @@
+Soggy Crackers - Courtney, Ari, Kaitlin
+APCS pd06
+HW60 --A Termite is-a Turtle, a Thinker is-a Turtle
+2022-02-07
+time spent: 30
+
+DISCO:
+- Observed: Each thinker splits their deck of cards in half and does not keep any; the thinker assumes their deck is sorted unless it is only one card;
+- A thinker in possession of cards can only interact with 2 other people, so once they hand their cards away, they can now recieve more cards
+
+QCC:
+- If there are more cards than there are thinkers, how would the distribution of cards work? (in the case of our class)
+- Is it important to give your cards back to the person you got them from (assuming they are sorted), or will the sorting work out the same way if you hand your cards to anyone not in possession of cards?
+
+THINKER FIRMWARE (instructions each turtle follows)
+If you recieve cards: 
+- Take your deck and split it in half
+- Give each half to another thinker
+- Open your hands to indicate that you have no cards in possession
+- If you recieve more than one card, repeat from the top 
+- If you recieve one card, then realize the deck you have is sorted 
+- Give that card to a thinker who is not in possession of any cards
+- If you are not in possesion of any cards but is given two sorted decks, order them 
+- Give the sorted deck to a thinker who is not in possession of any cards
+
+
 
