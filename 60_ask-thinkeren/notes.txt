@@ -2,7 +2,7 @@ Soggy Crackers - Courtney, Ari, Kaitlin
 APCS pd06
 HW60 --A Termite is-a Turtle, a Thinker is-a Turtle
 2022-02-07
-time spent: 30
+time spent: 0.25 hrs
 
 DISCO:
 - Observed: Each thinker splits their deck of cards in half and does not keep any; the thinker assumes their deck is sorted unless it is only one card;
