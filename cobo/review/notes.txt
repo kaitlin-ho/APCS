@@ -15,5 +15,12 @@ Activity 1
 
 
 Activity 2
-1)
-  
+1) [Review.java]
+2) [Review.java]
+3) [Review.java]
+4)
+    totalSentiment works by using the existing textToString method to create a string version
+      of the input file. Then, the string is split into words and assigned to a String Array.
+      Each element (in this case, word) in the array is inputted as the parameter to sentimentVal
+      and the resulting value is added to the double variable, total, which keeps track of the
+      total sentimentVal. After the forloop iteration is finished, the total is returned.
