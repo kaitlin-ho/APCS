@@ -1,0 +1,19 @@
+Activity 1
+1)
+  a) public static double sentimentVal( String word )
+  b) This method requires a String parameter. If another type of parameter is passed,
+    there is an error.
+  c) The method returns a Double
+
+2)
+
+
+3)
+  a) It would compile. Both the return type and parameter types match
+  b) It would not compile because the return type and parameter types are swapped
+  c) It would not compile because there are more parameters than accounted for by the methods
+
+
+Activity 2
+1)
+  
