@@ -1,26 +1,22 @@
 Activity 1
-1)
-  a) public static double sentimentVal( String word )
-  b) This method requires a String parameter. If another type of parameter is passed,
-    there is an error.
-  c) The method returns a Double
+1a. public static double sentimentVal( String word )
+1b. A string parameter is required. It won't work if another parameter is passed.
+1c. The method returns a double.
 
-2)
+2.  System.out.println(sentimentVal("train"));    0.03
+    System.out.println(sentimentVal("crash"));    -2.05
+    System.out.println(sentimentVal("phone"));    0.19
 
-
-3)
-  a) It would compile. Both the return type and parameter types match
-  b) It would not compile because the return type and parameter types are swapped
-  c) It would not compile because there are more parameters than accounted for by the methods
-
+3a. It would compile because the return type and parameters match.
+3b. It would not compile because the return type and parameters don't match.
+3c. It would not compile because the method only takes one String as the parameter.
 
 Activity 2
 1) [Review.java]
 2) [Review.java]
 3) [Review.java]
-4)
-    totalSentiment works by using the existing textToString method to create a string version
-      of the input file. Then, the string is split into words and assigned to a String Array.
-      Each element (in this case, word) in the array is inputted as the parameter to sentimentVal
-      and the resulting value is added to the double variable, total, which keeps track of the
-      total sentimentVal. After the forloop iteration is finished, the total is returned.
+4) totalSentiment works by using the existing textToString method to create a string version
+   of the input file. Then, the string is split into words and assigned to a String Array.
+   Each element (in this case, word) in the array is inputted as the parameter to sentimentVal
+   and the resulting value is added to the double variable, total, which keeps track of the
+   total sentimentVal. After the forloop iteration is finished, the total is returned.
