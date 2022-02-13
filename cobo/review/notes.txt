@@ -1,15 +1,17 @@
 Activity 1
-1a. public static double sentimentVal( String word )
-1b. A string parameter is required. It won't work if another parameter is passed.
-1c. The method returns a double.
+1)
+  a) public static double sentimentVal( String word )
+  b) A string parameter is required. It won't work if another parameter is passed.
+  c)The method returns a double.
+2)
+   System.out.println(sentimentVal("train"));    0.03
+   System.out.println(sentimentVal("crash"));    -2.05
+   System.out.println(sentimentVal("phone"));    0.19
+3)
+  a) It would compile because the return type and parameters match.
+  b) It would not compile because the return type and parameters don't match.
+  c) It would not compile because the method only takes one String as the parameter.
 
-2.  System.out.println(sentimentVal("train"));    0.03
-    System.out.println(sentimentVal("crash"));    -2.05
-    System.out.println(sentimentVal("phone"));    0.19
-
-3a. It would compile because the return type and parameters match.
-3b. It would not compile because the return type and parameters don't match.
-3c. It would not compile because the method only takes one String as the parameter.
 
 Activity 2
 1) [Review.java]
@@ -20,3 +22,26 @@ Activity 2
    Each element (in this case, word) in the array is inputted as the parameter to sentimentVal
    and the resulting value is added to the double variable, total, which keeps track of the
    total sentimentVal. After the forloop iteration is finished, the total is returned.
+5)
+  a) The ratings make sense because the stars are proportional to the value of totalSentiment.
+     Any negative value of totalSentiment corresponds to 0 stars; any value greater than 9
+     corresponds to 5 stars.
+  b) totalSentiment can be adjusted
+6) The logical error in the student's code is that every value of totalSentiment less than 15
+   is counted as 4 stars, since there is no lower bound for the if statement. To fix this, the
+   student would need to create bounds in his if statements. For example:
+      if (totalSentiment < 15 && totalSentiment > 9) {}
+      else if (totalSentiment < 10 && totalSentiment > 4) {}
+   With the lower and upper bounds added to the if statements, each value of totalSentiment falls
+   into its correct range and the function will return the correct starRating.
+
+
+Activity 3
+1) [SimpleReview.txt]
+2) [SimpleReview.txt]
+3) Describe the action of the indexOf and substring methods. Explain how these methods can be
+used to divide an existing string into two parts. Why is it necessary to add 1 to the position
+of the space when copying the remainder of the string
+
+   str.indexOf(x) finds where the first occurence of x is in the specified string str. If x is a word,
+   it will return the index of the first character. The subtring method 
