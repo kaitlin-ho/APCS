@@ -1,3 +1,6 @@
+Soggy Crackers - Courtney, Kaitlin
+APCS pd06
+
 Activity 1
 1)
   a) public static double sentimentVal( String word )
@@ -39,9 +42,97 @@ Activity 2
 Activity 3
 1) [SimpleReview.txt]
 2) [SimpleReview.txt]
-3) Describe the action of the indexOf and substring methods. Explain how these methods can be
-used to divide an existing string into two parts. Why is it necessary to add 1 to the position
-of the space when copying the remainder of the string
+3) str.indexOf(x) finds where the first occurrence of x is in the specified string str. If x is a word,
+   it will return the index of the first character. substring(x, y) will return the string from index x,
+   inclusive, to index y, exclusive. To divide an existing string into two parts, we can use the
+   substring method twice. It is necessary to add 1 to the position of the space when copying
+   the remainder of the string because the ending index (y) is exclusive. substring(x, y) will return
+   the part of the string from index x to index y-1. If we want the character at index y to be included,
+   then one must be added to y.
+4) [Review.java]
+5) Static methods cannot use methods or variables that are non-static. To call a non-static method, a
+   class object needs to be created; this is not the case for a static method because they do not belong
+   to objects of a class. To call a static method, a dot-operator is used with the name of the class. Non-
+   static methods are called with the object and a dot-operator.
+6) Instead of calling on the randomAdjective method we could replace the adjectives with specifically
+   negative or positive adjectives using our two lists of positve and negative adjectives.
 
-   str.indexOf(x) finds where the first occurence of x is in the specified string str. If x is a word,
-   it will return the index of the first character. The subtring method 
+
+Activity 4
+1) A more negative review to make the restaurant seem bad.
+2) A more positve review to make the restaurant seem good a
+3) To create a stronger review, the method would have to include more adjectives (either positive or
+   negative) to replace the starred ones.
+       if (1){
+        for(){
+          review = randomPos + random Pos;
+        }
+       }
+       if (2){
+        for(){
+          review = randomNeg + randomNeg;
+        }
+       }
+4) [Review.java]
+5) oneWord is now equal to the first letter of the string oneWord.
+6) The word does not include * in cleanSentiment.csv, which is the list to get the sentiment value.
+7) We can replace the adjectives with only strong positive adjectives. We can also add multiple
+   positive adjectives in place of the one we will be replacing.
+
+
+Activity 5
+1) We chose to implement this program because censoring happens in real life and we wanted to try
+   to recreate it.
+2) We had an idea in mind, which was to replace every bad word in a text file with [REDACTED]. Then,
+   we created some simple diagrams on paper and implemented it with code.
+3) public static String removeNoNoWords( String fileName )
+   We chose the given parameter because we need to parse through a list of words from a text and
+   check if they are bad words or not. It is a String type because the file we are looking at will
+   be .txt. The method is static because we do not have the need to create objects.
+4)
+   String[] splitString = text.split(" "); This is splitting the String at each space and adding each
+   smaller piece into the array splitString. Nothing is returned.
+
+5)
+
+if (findBadWords(removePunctuation(splitString[x])) == true){
+  if (x == splitString.length-1){
+    splitString[x] = "[REDACTED].";
+  }
+  else{
+    splitString[x] = "[REDACTED]";
+  }
+
+returnText += splitString[x] + " ";
+}
+
+  One other way that this code could be written to achieve the same result is to use a while loop
+  if (findBadWords(removePunctuation(splitString[x])) == true){
+  while (x==splitString.length-1){
+    splitString[x] = "[REDACTED]";
+    break;
+  }
+  splitString[x] = "[REDACTED].";
+  }
+
+
+
+6)
+  for (int x = 0; x < splitString.length; x++){
+    if (findBadWords(splitString[x]) == true){
+      splitString[x] = "[REDACTED]";
+    }
+  returnText += splitString[x] + " ";
+  }
+
+  This loops works by iterating through splitString using a for loop during which the index the loop
+  is looking at increases by one each time.
+
+  int x = 0;
+  while (x < splitString.length){
+    if (findBadWords(splitString[x]) == true){
+      splitString[x] = "[REDACTED]";
+      }
+  x += 1;
+  returnText += splitString[x];
+  }
