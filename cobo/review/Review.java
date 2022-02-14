@@ -1,3 +1,7 @@
+// Soggy Crackers - Courtney, Kaitlin
+// APCS pd06
+// 2022-01- 13
+
 import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
@@ -37,7 +41,7 @@ public class Review {
       Scanner input = new Scanner(new File("positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
-        System.out.println(temp);
+        //System.out.println(temp); //PRINTS OUT EVERYTHING IN THE POSITIVEADJECTIVES LIST?
         posAdjectives.add(temp);
       }
       input.close();
@@ -176,13 +180,71 @@ public class Review {
   }
 
   public static int starRating(String fileName){
-    return ((int)Math.random()*5);
+    double totalSentiment = totalSentiment(fileName);
+    if (totalSentiment > 9){
+      return 4;
+    }
+    else if (totalSentiment < 10 && totalSentiment > 4){
+      return 3;
+    }
+    else if (totalSentiment < 5 && totalSentiment > -1){
+      return 2;
+    }
+    else if (totalSentiment < 0){
+      return 1;
+    }
+    else{
+      return 0;
+    }
+  }
+
+/*
+  public static String fakeReview(String fileName){
+    String review = "";
+    String text = textToString(fileName);
+    String[] splitString = text.split(" ");
+    for (int x = 0; x < splitString.length; x++){
+      if (splitString[x].charAt(0) == '*'){
+        splitString[x] = randomAdjective();
+      }
+      review += splitString[x] + " ";
+    }
+    return review;
+    }
+    */
+
+  public static String fakeReview(String fileName){
+    String review = "";
+    String text = textToString(fileName);
+    String[] splitString = text.split(" ");
+    if ((int)Math.random()*2 == 1){
+      for (int x = 0; x < splitString.length; x++){
+        if (splitString[x].charAt(0) == '*'){
+          splitString[x] = randomPositiveAdj() + " and " + randomPositiveAdj();
+        }
+        review += splitString[x] + " ";
+      }
+      return review;
+    }
+
+    else {
+      for (int x = 0; x < splitString.length; x++){
+        if (splitString[x].charAt(0) == '*'){
+          splitString[x] = randomNegativeAdj() + " and " + randomNegativeAdj();
+        }
+        review += splitString[x] + " ";
+      }
+      return review;
+      }
+
   }
 
   public static void main(String[] args){
-    System.out.println(sentimentVal("train"));
-    System.out.println(sentimentVal("crash"));
-    System.out.println(sentimentVal("phone"));
-    System.out.println(totalSentiment("SimpleReview.txt"));
+    // System.out.println(sentimentVal("train"));
+    // System.out.println(sentimentVal("crash"));
+    // System.out.println(sentimentVal("phone"));
+    // System.out.println(totalSentiment("SimpleReview.txt"));
+    // System.out.println(starRating("SimpleReview.txt"));
+    System.out.println(fakeReview("SimpleReview.txt"));
   }
 }
