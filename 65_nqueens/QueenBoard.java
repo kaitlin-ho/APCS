@@ -33,16 +33,64 @@ public class QueenBoard
    */
   public boolean solve()
   {
-    return false;
-  }
 
+    boolean solution = solveH(0);
+    printSolution();
+    return solution;
+
+
+  }
 
   /**
    *Helper method for solve.
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+_  _  _  _  _  _  _  _
+
+
    */
   private boolean solveH( int col )
   {
-    return false;
+
+/*
+    if (col == 2 || col == 3){
+      return false;
+    }
+    else {
+      return true;
+    }
+*/
+
+    for (int row = 0; row < _board.length; row++){
+      if (addQueen(row, col) == true){
+        addQueen(row, col);
+      }
+      else{
+        
+        solveH(col+1)
+      }
+
+      return false;
+
+    }
+
+    // int row = 0
+    // while (row < _board.length){
+    //   if (addQueen(row, col) == true){
+    //     row ++;
+    //   }
+    //   else{
+    //     removeQueen(row, col);
+    //     add queen at col +1
+    //   }
+    //
+    // }
+
   }
 
 
@@ -67,8 +115,6 @@ public class QueenBoard
     }
 
   }
-
-
 
   //================= YE OLDE SEPARATOR =================
 
@@ -112,8 +158,11 @@ public class QueenBoard
      indexes where other queens cannot be placed. whitItDo makes those array indexes available
      spots for queens to be placed now that the queen ruling them out has been removed. (-1
      becomes 0)
-   * precondition:
+   * precondition: The array exists with at least one row and one column
    * postcondition:
+      * If false is returned, there is no queen in the row and column specified
+      * If true is returned, it means the queen at the row and column specified was removed and
+        other spots that were made unavailable because of that queen are now available to use again.
    */
   private boolean removeQueen(int row, int col){
     if ( _board[row][col] != 1 ) {
@@ -137,9 +186,9 @@ public class QueenBoard
 
 
   /***
-   * <General description>
-   * precondition:
-   * postcondition:
+   * Prints out a string version of the board array
+   * precondition: There exists a board array
+   * postcondition: The board array is printed
    */
   public String toString()
   {
@@ -153,43 +202,68 @@ public class QueenBoard
     return ans;
   }
 
+/*
+n = 8
+your board is 8x8 then it'll print the queen configuration and return true
+
+if your board is 8x8 and you choose n = 9 it'll return false
+if your board is 8x8 and you choose n = 1 it'll just print one queen
+
+
+  public static boolean solutionFinder(int n){
+    if (n == 2 || n == 3){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+  */
+
 
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(5);
-    System.out.println(b);
-    b.printSolution();
-    /** should be...
-       0	0	0	0	0
-       0	0	0	0	0
-       0	0	0	0	0
-       0	0	0	0	0
-       0	0	0	0	0
-    */
 
-    b.addQueen(3,0);
-    b.addQueen(0,1);
-    System.out.println(b);
-    b.printSolution();
-    /** should be...
-       0	1	-1	-2	-1
-       0	0	-2	0	0
-       0	-1	0	-1	0
-       1	-1	-1	-1	-2
-       0	-1	0	0	0
-    */
+    QueenBoard x = new QueenBoard(8);
+    System.out.println(x.solve());
 
-    b.removeQueen(3,0);
-    System.out.println(b);
-    b.printSolution();
-    /** should be...
-       0	1	-1	-1	-1
-       0	0	-1	0	0
-       0	0	0	-1	0
-       0	0	0	0	-1
-       0	0	0	0	0
-    */
+
+    System.out.println("_____________________________");
+
+    // QueenBoard b = new QueenBoard(5);
+    // System.out.println(b);
+    // b.printSolution();
+    // /** should be...
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    //    0	0	0	0	0
+    // */
+    //
+    // b.addQueen(3,0);
+    // b.addQueen(0,1);
+    // System.out.println(b);
+    // b.printSolution();
+    // /** should be...
+    //    0	1	-1	-2	-1
+    //    0	0	-2	0	0
+    //    0	-1	0	-1	0
+    //    1	-1	-1	-1	-2
+    //    0	-1	0	0	0
+    // */
+    //
+    // b.removeQueen(3,0);
+    // System.out.println(b);
+    // b.printSolution();
+    // /** should be...
+    //    0	1	-1	-1	-1
+    //    0	0	-1	0	0
+    //    0	0	0	-1	0
+    //    0	0	0	0	-1
+    //    0	0	0	0	0
+    // */
 
   }
 
