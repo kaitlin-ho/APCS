@@ -44,7 +44,7 @@ public class QueenBoard
    */
    private boolean solveH( int col )
    {
-    if (col == _board.length){ // base case: you want to have the same number of queens as there are columns
+    if (col == _board.length - 1){ // base case: you want to have the same number of queens as there are columns
       return true;
     }
     for (int row = 0; row < _board.length; row++){
