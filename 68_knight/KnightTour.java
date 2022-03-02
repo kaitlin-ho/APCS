@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
-// HW68 -- recursively probing for a closed cycle
-// 2022-02-28m
-// time spent:  hrs
+// Soggy Crackers
+// APCS pd06
+// HW68 -- ...and T-,Tr-, Tri-, Tries Again Until It's Done
+// 2022-03-1
+// time spent: 1 hrs
 
 /***
  * SKELETON
@@ -15,10 +15,12 @@
  * $ java KnightTour [N]
  *
  * ALGO
- *
+ * - we did findTour on every possible move the knight could go on
+ * - If that move didn't work, it would backtrack and try the next posisble move (or branch)
  * DISCO
- *
+ * - You can just list the recursions and if the tour is solved, it will exit
  * QCC
+ * - How would you display all possible tours? Or at least the number of possible tours
  *
  * Mean execution times for boards of size n*n:
  * n=5   __s    across __ executions
@@ -28,7 +30,10 @@
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
- *
+ * real    0m17.204s
+  user    0m0.015s
+  sys     0m0.000s
+
  ***/
 
 
@@ -59,13 +64,17 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for fixed starting location, use line below:
-    tf.findTour( 2, 2, 1 );
+    //tf.findTour( 2, 2, 1 );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
-    //int startY = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
+    //int startX = (int)(Math.random()*n);
+    //int startY = (int)(Math.random()*n);
+    //if (startX == 0) { startX += 2 };
+    //if (startX == 1) { startX += 1 };
+    //if (startY == 0) { startY += 2};
+    //if (startY == 1) { startY += 1};
     //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -73,6 +82,12 @@ public class KnightTour
     // PUSHING FARTHER...
     // Systematically attempt to solve from every position on the board?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    for (int i = 2; i < n + 2; i++){ //runs through x values
+      for (int a = 2; i < n; a++){ //runs through y values
+        tf.findTour(i, a, 1);
+      }
+    }
 
   }//end main()
 
@@ -97,11 +112,23 @@ class TourFinder
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    /*
-    for the first 2 rows, -1 all the way through
-    same for the last 2 rows and the first/last two colums
 
-    */
+    for (int row = 0; row < _board.length; row++){
+      for (int col = 0; col < _board[row].length; col++){
+        if (row == 0 || row == 1 || row == _board.length-1 || row == _board.length-2){
+          _board[row][col] = -1;
+        }
+      }
+    }
+
+    for (int col = 0; col < _board.length; col++){
+      for (int row = 0; row < _board[col].length; row++){
+        if (col == 0 || col == 1 || col == _board.length-1 || col == _board.length-2){
+          _board[row][col] = -1;
+        }
+      }
+    }
+
     //---------------------------------------------------------
 
   }//end constructor
@@ -157,13 +184,13 @@ class TourFinder
     if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if () { // if n^2 is in the array (the middle board) then the tour is completed
+    if (moves == _sideLength*_sideLength + 1) { // if n^2 is in the array (the middle board) then the tour is completed
       _solved = true;
       System.out.println( this ); //refresh screen
       return;
     }
     //other base case: stepped off board or onto visited cell
-    if ( ??? ) {
+    if ( _board[x][y] != 0 ) {
       return;
     }
     //otherwise, mark current location
@@ -171,7 +198,7 @@ class TourFinder
     else {
 
       //mark current cell with current move number
-      _board[x][y] = ???
+      _board[x][y] = moves;
 
       System.out.println( this ); //refresh screen
 
@@ -180,17 +207,34 @@ class TourFinder
       /******************************************
        * Recursively try to "solve" (find a tour) from
        * each of knight's available moves.
-       *     . e . d .
-       *     f . . . c
-       *     . . @ . .
-       *     g . . . b
-       *     . h . a .
+       *     .  e  .  d  .
+       *     f  .  .  .  c
+       *     .  .  @  .  .
+       *     g  .  .  .  b
+       *     .  h  .  a  .
       ******************************************/
-      ???
+
+      // for(moves = moves + 1; moves<_sideLength*_sideLength; moves++){
+      //   findTour(x+2,y+1,moves);
+      //   if (_solved == false){
+      //     findTour(x+1, y+2, moves);
+      //   }
+      // }
+
+      findTour(x+1, y+2, moves +1);
+      findTour(x+1, y-2, moves +1);
+      findTour(x+2, y+1, moves +1);
+      findTour(x+2, y-1, moves +1);
+      findTour(x-1, y-2, moves +1);
+      findTour(x-1, y+2, moves +1);
+      findTour(x-2, y-1, moves +1);
+      findTour(x-2, y+1, moves +1);
+
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
-        ???
+
+      _board[x][y] = 0;
 
       System.out.println( this ); //refresh screen
     }
