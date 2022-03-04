@@ -18,9 +18,10 @@
  *  Recursively check each adjacent position for a dead end or the exit. If a dead end is reached, check the next possible position.
  *
  * DISCO
- * - 
+ * -
  * QCC
- * - 
+ * - From the recursive part of solve, the maze runs correctly with @ and . swapped (inversed). If they are switched so they are
+ *   representing the correct things, the code does not work. Why?
  ***/
 
 //enable file I/O
@@ -134,27 +135,37 @@ class MazeSolver
       System.exit(0);
     }
     //other base cases
-    else if ( _maze[x][y] == '$' ) {
+    else if ( _maze[x][y] == EXIT ) {
       _solved = true;
       return;
     }
+
+    else if ( _maze[x][y] == WALL || _maze[x][y] == VISITED_PATH){
+      return;
+    }
+
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-      _maze[x][y] = '.';
+      _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
       solve(x+1,y);
       solve(x-1,y);
       solve(x,y+1);
       solve(x,y-1);
       System.out.println( this ); //refresh screen
+      _maze[x][y] = HERO;
+      return;
     }
   }
 
+/*
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
     _maze[x][y] = '@';
+    return;
   }
+*/
 
 }//end class MazeSolver
 
