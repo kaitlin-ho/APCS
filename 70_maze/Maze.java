@@ -159,13 +159,12 @@ class MazeSolver
     }
   }
 
-/*
+
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-    _maze[x][y] = '@';
-    return;
+    return (_maze[x][y] == PATH);
   }
-*/
+
 
 }//end class MazeSolver
 
@@ -195,11 +194,19 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    //ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
     // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+    int startX = (int)(Math.random()*80);
+    int startY = (int)(Math.random()*25);
+    while (ms.onPath(startX, startY) == false){
+      startX = (int)(Math.random()*80);
+      startY = (int)(Math.random()*25);
+    }
+    ms.solve(startX,startY);
+
+    ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
