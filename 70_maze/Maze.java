@@ -106,6 +106,13 @@ class MazeSolver
     return retStr;
   }
 
+  // public getmaze_row(){
+  //   return _maze.length;
+  // }
+  //
+  // public getmaze_column(){
+  //   return _maze[0].length;
+  // }
 
   /**
    * helper method to keep try/catch clutter out of main flow
@@ -140,21 +147,21 @@ class MazeSolver
       return;
     }
 
-    else if ( _maze[x][y] == WALL || _maze[x][y] == VISITED_PATH){
+    else if (_maze[x][y] != PATH){
       return;
     }
 
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
-      _maze[x][y] = VISITED_PATH;
+      _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
       solve(x+1,y);
       solve(x-1,y);
       solve(x,y+1);
       solve(x,y-1);
       System.out.println( this ); //refresh screen
-      _maze[x][y] = HERO;
+      _maze[x][y] = VISITED_PATH;
       return;
     }
   }
@@ -169,8 +176,7 @@ class MazeSolver
 }//end class MazeSolver
 
 
-public class Maze
-{
+public class Maze{
   public static void main( String[] args )
   {
     String mazeInputFile = null;
@@ -206,7 +212,7 @@ public class Maze
     }
     ms.solve(startX,startY);
 
-    ms.solve( startX, startY );
+  //  ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
