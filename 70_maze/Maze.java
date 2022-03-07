@@ -20,8 +20,7 @@
  * DISCO
  * -
  * QCC
- * - From the recursive part of solve, the maze runs correctly with @ and . swapped (inversed). If they are switched so they are
- *   representing the correct things, the code does not work. Why?
+ *
  ***/
 
 //enable file I/O
