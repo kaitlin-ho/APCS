@@ -1,0 +1,12 @@
+The best pivot choice is the one that results in windows that are halved every time. This means that the element at pivot choice is the median of the window, resulting in similar ranged bounds on either side. 
+
+The worst pivot choice is the one that results in windows that reduce by very little every time. This means that the element at pivot choice is the max/min, resulting in a greater number of elements (n) that need to be iterated through. 
+
+Example of best case
+7, 1, 5, 12, 3		Pivot: 2 / Lower: 0 / Upper: 4
+
+1, 3, 5				5, 12, 7
+Pivot: 1 / Lower: 0 / Upper : 2	Pivot: 4 / Lower: 2 / Upper: 4
+
+1, 3 		3, 5			5, 7			7, 12
+Base case	Base case		Base case		Base case

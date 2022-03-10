@@ -15,7 +15,7 @@
  The method's base case is if the array length is 1 or the difference
  between the upper and lower bounds is equal to 1 or the elements between lower and upper-1 are equal. If so, the method ends.
  If not, it continously runs partitions with new upper and lower bounds until the
- base case is fulfilled. The pivot position is the average of the bounds. 
+ base case is fulfilled. The pivot position is the average of the bounds.
  We use the return value of non-base cases to repeat this method from the beginning, but with an updated window. One recursive call uses the return value as the new upper bound, and the other recursive call uses the return value as the new lower bound.
  and lower bound.
  *
@@ -105,7 +105,7 @@ public class QuickSort
   public static void main( String[] args )
   {
     //get-it-up-and-running, static test case:
-    int [] arr1 = {7,1,5,12,3}; 
+    int [] arr1 = {7,1,5,12,3};
     System.out.println("\narr1 init'd to: " );
     printArr(arr1);
 
@@ -113,7 +113,7 @@ public class QuickSort
     System.out.println("arr1 after qsort: " );
     printArr(arr1);
 
-    int [] arr0 = {0, 2, 7, 1, 5}; 
+    int [] arr0 = {0, 2, 7, 1, 5};
     System.out.println("\narr0 init'd to: " );
     printArr(arr0);
 
