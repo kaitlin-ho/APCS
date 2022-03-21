@@ -1,3 +1,9 @@
+Twelves (Kaitlin Ho, Jun Hong Wang, Hugo Jenkins)
+APCS pd6
+L07: But These Go Up To Eleven
+2022-03-19
+time spent: 5 hrs
+
 Activity 2
 1)  A deck owns the cards made by the constructor.
 2)  6
