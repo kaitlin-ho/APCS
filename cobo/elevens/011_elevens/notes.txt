@@ -1,0 +1,84 @@
+Activity 2
+1)  A deck owns the cards made by the constructor.
+2)  6
+3)  String ranks[] = {two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace}
+    String suits[] = {spades, hearts, diamonds, clubs}
+    int pointValues[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11}
+4)  The order of elements in ranks and pointValues matter bu the order of elements in suits does not.
+
+Activity 3
+1)  public static String flip() {
+      int k = (int)(Math.random() * 3);
+      if (k == 2) {return "tails";}
+      else {return "heads";}
+    }
+2)  public static boolean arePermutations(int[] first, int[] second) {
+      boolean ret = false;
+      for (int i = 0; i < first.length; i++) {
+        int check = first[i];
+        ret = false;
+      for (int k = 0; k < second.length; k++) {
+        if (second[k] == check) ret = true;
+      }
+      if (ret == false) return ret;
+      }
+      return ret;
+    }
+3)  0, 0, 0, 0
+
+Activity 6:
+jar file doesn't exist, but still answered questions
+
+1) removal of (either) 5, 6
+nothing else is possible for this board arrangement, until after replacement
+2) They should be J, Q, and K, since the deck is empty, and each card has a complement that allows it to be removed.
+The only cards remaining after the numbers are removed can only be J, Q, and K, and if there are only 3 cards left, they must be J, Q, K.
+3) There doesn't seem to be a strategy, since removing a one specific pair means the other pair is still viable.
+Not only that, but after replacement, there is a chance of another pair forming, regardless of which pair is removed.
+
+Activity 7:
+1) Cards on the table, number of cards, the deck.
+2) Deck will need to be shuffled, then the board will be set up.
+The player will remove pairs/triplets, then replace them from the deck.
+If there are no valid plays left, the game is lost.
+If there are no cards left on the board, the game is won.
+3) ElevensBoard does contain all of the methods and variables needed to play the game, but some of them are not fully implemented (to be implemented later).
+4) dealMyCards is private, and at the end of the class.
+It is called in the method newGame() and ElevensBoard().
+b) isLegal, anotherPlayIsPossible
+c) It will return 0, 1, 3, 6, 7 in an arraylist
+d)
+public static void printCards(ElevensBoard board) {
+  List<Integer> cIndexes = board.cardIndexes();
+  for (int i = 0; i < deckSize(); i++) {
+    if (i == cIndexes.get(i)) {
+      System.out.println(cIndexes.get);
+    }
+  }
+}
+e) isLegal, anotherPlayIsPossible
+
+Activity 8:
+1) The goal of the games are different, with the target number being mentioned in their names.
+The board size is also different.
+The rules of the game will also differ slightly based on the goal, so instead of triplets of J, Q and K being removed in elevens, K is removed in thirteens, and quartets are removed in tens.
+However, the general concept of the games are similar, as are the variables needed.
+There needs to be a deck, board, size of board.
+There also needs to be a valid play method, remove, replace, etc. methods.
+2) Due to ElevensBoard being an extension of boards, it inherits all the methods and values from Boards.
+However, if it inherited exactly the same things from board, all the games would be the same.
+Instead, it inherits the methods and variables of the board, then overrides them with its own implementation.
+In the constructor, it uses arrays of ranks, suits, and point values to create unique decks.
+3) Yes, the methods cover the differences.
+The methods are general enough that they will work for any variation of this game, since it doesn't rely on specifics.
+Also, the methods that are specific, like isLegal and anotherPlayIsPossible will vary between games, which is why they aren't filled in (and we assume they will be filled in their respective game file).
+
+Activity 9:
+code implemented in ElevensBoard
+1) size will always return the length of the array of cards, which the constructor will set.
+It isn't a method that has code specific to each game, and is very general.
+2) Removal of cards depends on the game and its rules.
+In Elevens, we can either remove pairs of numbers or triplets of face cards at a time (assuming JQK).
+However, for 13s, we can also just remove K by itself, which is specific to that game only.
+3) Yes, this would also work as well, but we would have to implement the same methods within each game, which could be inconvenient.
+However, it still satisfies the rules of polymorphism, since the game is-a board.
