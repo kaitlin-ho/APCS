@@ -27,7 +27,7 @@ public class ElevensBoard extends Board {
 	 * The values of the cards for this game to be sent to the deck.
 	 */
 	private static final int[] POINT_VALUES =
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0};
+		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -10, -30, -60};
 
 	/**
 	 * Flag used to control debugging print statements.
@@ -54,7 +54,14 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		return(containsPairSum11(selectedCards) || containsJQK(selectedCards));
+
+		if (selectedCards.size() == 2){
+				return containsPairSum11(selectedCards);
+		}
+		else if (selectedCards.size() == 3){
+				return containsJQK(selectedCards);
+		}
+		return false;
 	}
 
 	/**
@@ -70,6 +77,29 @@ public class ElevensBoard extends Board {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 		// method is supposed to be short, but i don't see how?
 		// also doesn't work
+
+//		List<Integer> cards = cardIndexes();
+//		return containsPairSum11(cards) || containsJQK(cards);
+		List<Integer> selectedCards;
+		for(int indexOf1 = 0; indexOf1 < BOARD_SIZE; indexOf1++) {
+				for(int indexOf2 = 0; indexOf2 < BOARD_SIZE; indexOf2++) {
+						selectedCards = new ArrayList<Integer>();
+						selectedCards.add(indexOf1);
+						selectedCards.add(indexOf2);
+						if (containsPairSum11(selectedCards)) return true;
+
+						for(int indexOf3 = 0; indexOf3 < BOARD_SIZE; indexOf3++) {
+								selectedCards = new ArrayList<Integer>();
+								selectedCards.add(indexOf1);
+								selectedCards.add(indexOf2);
+								selectedCards.add(indexOf3);
+								if (containsJQK(selectedCards)) return true;
+						}
+				}
+		}
+		return false;
+
+/*
 		boolean pair = false;
 		List<Integer> boardLeft = cardIndexes();
 		if (boardLeft.size() == 2) {
@@ -105,6 +135,8 @@ public class ElevensBoard extends Board {
 		}
 
 		return pair;
+		*/
+
 	}
 
 	/**
@@ -120,11 +152,7 @@ public class ElevensBoard extends Board {
 		if (selectedCards.size() != 2) {
 			return false;
 		}
-		if (cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue() == 11) {
-			return true;
-		} else {
-			return false;
-		}
+		return (cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue() == 11);
 	}
 
 	/**
@@ -140,10 +168,6 @@ public class ElevensBoard extends Board {
 		if (selectedCards.size() != 3) {
 			return false;
 		}
-		if (cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue() + cardAt(selectedCards.get(2)).pointValue() == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return (cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue() + cardAt(selectedCards.get(2)).pointValue() == -100);
 	}
 }
