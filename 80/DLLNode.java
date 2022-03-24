@@ -22,9 +22,9 @@ public class DLLNode<T>
   //--------------v  ACCESSORS  v--------------
   public T getCargo() { return _cargo; }
 
-  public DLLNode getNext() { return _nextNode; }
+  public DLLNode<T> getNext() { return _nextNode; }
 
-  public DLLNode getPrev() { return _prevNode; }
+  public DLLNode<T> getPrev() { return _prevNode; }
   //--------------^  ACCESSORS  ^--------------
 
 
