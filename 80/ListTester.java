@@ -6,7 +6,7 @@
  *  overriding List interface from standard Java library
  **/
 
-public class ListTester
+public class ListTester<T>
 {
   public static void main( String[] args )
   {

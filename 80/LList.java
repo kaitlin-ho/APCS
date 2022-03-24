@@ -7,7 +7,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
 {
 
   //instance vars
-  private DLLNode _head, _tail; //pointers to first and last nodes
+  private DLLNode<T> _head, _tail; //pointers to first and last nodes
   private int _size;
 
   // constructor -- initializes instance vars
@@ -37,20 +37,20 @@ public class LList<T> implements List<T> //your List.java must be in same dir
     else if ( index == size() )
       addLast( newVal );
 
-    DLLNode newNode = new DLLNode(newVal, null, null );
+    DLLNode<T> newNode = new DLLNode<T>(newVal, null, null );
 
     //if index==0, insert node before head node
     if ( index == 0 )
       addFirst( newVal );
     else {
-      DLLNode tmp1 = _head; //create alias to head
+      DLLNode<T> tmp1 = _head; //create alias to head
 
       //walk tmp1 to node before desired node
       for( int i=0; i < index-1; i++ )
         tmp1 = tmp1.getNext();
 
       //init a pointer to node at insertion index
-      DLLNode tmp2 = tmp1.getNext();
+      DLLNode<T> tmp2 = tmp1.getNext();
 
       //insert new node
       newNode.setNext( tmp2 );
@@ -75,7 +75,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
     else if ( index == size()-1 )
       return removeLast();
     else {
-      DLLNode tmp1 = _head; //create alias to head
+      DLLNode<T> tmp1 = _head; //create alias to head
 
       //walk to node before desired node
       for( int i=0; i < index-1; i++ ) {
@@ -103,7 +103,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
       throw new IndexOutOfBoundsException();
 
     T retVal;
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<T> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
@@ -120,7 +120,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<T> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
@@ -147,7 +147,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
   public void addFirst( T newFirstVal )
   {
     //insert new node before first node (prev=null, next=_head)
-    _head = new DLLNode( newFirstVal, null, _head );
+    _head = new DLLNode<T>( newFirstVal, null, _head );
 
     if ( _size == 0 )
       _tail = _head;
@@ -160,7 +160,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
   public void addLast( T newLastVal )
   {
     //insert new node after last node (prev=_last, next=null)
-    _tail = new DLLNode( newLastVal, _tail, null );
+    _tail = new DLLNode<T>( newLastVal, _tail, null );
 
     if ( _size == 0 )
       _head = _tail;
@@ -209,7 +209,7 @@ public class LList<T> implements List<T> //your List.java must be in same dir
   public String toString()
   {
     String retStr = "HEAD->";
-    DLLNode tmp = _head; //init tr
+    DLLNode<T> tmp = _head; //init tr
     while( tmp != null ) {
       retStr += tmp.getCargo() + "->";
       tmp = tmp.getNext();
