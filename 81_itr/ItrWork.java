@@ -10,8 +10,12 @@
     QCC
 
     SUMMARY THE FIRST:
+      hasNext() checks if the next node is null. if it is, hasNext() will return false.
+      next() returns the next value but will use hasNext() to check if there even is a next node to return.
+      remove() 
 
     SUMMARY THE SECOND:
+
 
 **/
 
@@ -31,6 +35,10 @@ public class ItrWork
                                 List<Integer> L )
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    for (Integer i: L){
+
+
+    }
   }
 
   //explicitly using an iterator
