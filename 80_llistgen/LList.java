@@ -1,3 +1,20 @@
+/**
+MR. K: May Qiu, Kaitlin Ho, Raven (Ruiwen) Tang
+APCS pd06
+HW80 -- Generically Speaking
+2022-03-24
+time spent: 1.0 hr
+
+DISCO:
+- When updating our list implementation to allow for generic typing, the best first step is to edit the interface first.
+- DLLNode should have been replaced with DLLNode<T> everywhere, even if it appears in the parameters.
+- T, or <T> is generally accepted for "type"
+- Find and replace is scary, make sure to go through each phrase individually; beware of using replace all
+
+QCC:
+- Why does our list implementation work with both DLLNode and DLLNode<T> in the constructor? Is there a difference between the two?
+ */
+
 /***
  * class LList v3
  * Implements a linked list of DLLNodes, each containing Object data
