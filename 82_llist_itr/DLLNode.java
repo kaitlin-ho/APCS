@@ -28,7 +28,7 @@ public class DLLNode<T>
 
 
   // constructor -- initializes instance vars
-  public DLLNode<T> ( T value, DLLNode<T> prev, DLLNode<T> next )
+  public DLLNode( T value, DLLNode<T> prev, DLLNode<T> next )
   {
     _cargo = value;
     _nextNode = next;

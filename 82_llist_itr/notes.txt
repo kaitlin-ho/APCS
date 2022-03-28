@@ -1,0 +1,20 @@
+Mr. K: May Qiu, Raven (Ruiwen) Tang, Kaitlin Ho
+APCS
+HW 82: Roll Your Own Iterator / augment LList to be iterable
+2022-03-27
+time spent: 0.7 hrs
+
+DISCO
+* If a class is Iterable, it must be able to be foreach-ed through (according to the API).
+* If something implements List, it need not also implement Iterable, since List extends Iterable.
+* Exceptions must be constructed. For example: throw new IndexOutOfBoundsException(); 
+
+QCC
+* We learned that an inner class has access to members of its enclosing class. However, when we tried to reference _head in MyIterator, we had some compile-time errors:
+./LList.java:267: error: incompatible types: DLLNode<T#1> cannot be converted to DLLNode<T#2>
+      _dummy = _head;
+               ^
+  where T#1,T#2 are type-variables:
+    T#1 extends Object declared in class LList
+    T#2 extends Object declared in class LList.MyIterator 
+* After we posted the above to Piazza, we received a helpful comment from Thinker SR to remove <T> from MyIterator. This helped us compile everything with no errors. However, we are still uncertain why generically typing MyIterator was a problem.

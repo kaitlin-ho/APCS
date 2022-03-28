@@ -9,11 +9,11 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
-public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
+public class LList<T> implements List<T> //Q: Why no "implements Iterable" ? //List already extends Iterable
 {
   // Your List.java must be in same dir to supersede
   // built-in Java List interface
-
+  
   //instance vars
   private DLLNode<T> _head, _tail; //pointers to first and last nodes
   private int _size;
@@ -47,7 +47,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     else if ( index == size() )
       addLast( newVal );
 
-    DLLNode<T> newNode = new DLLNode<T>( newVal, null, null );
+    DLLNode<T> newNode = new DLLNode(newVal, null, null);
 
     //if index==0, insert node before head node
     if ( index == 0 )
@@ -169,7 +169,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
   public void addFirst( T newFirstVal )
   {
     //insert new node before first node (prev=null, next=_head)
-    _head = new DLLNode<T>( newFirstVal, null, _head );
+    _head = new DLLNode<T>(newFirstVal, null, _head);
 
     if ( _size == 0 )
       _tail = _head;
@@ -182,7 +182,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
   public void addLast( T newLastVal )
   {
     //insert new node before first node (prev=_last, next=null)
-    _tail = new DLLNode<T>( newLastVal, _tail, null );
+    _tail = new DLLNode(newLastVal, _tail, null);
 
     if ( _size == 0 )
       _head = _tail;
@@ -229,7 +229,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
 
 
   // override inherited toString
-  public String toStr ing()
+  public String toString()
   {
     String retStr = "HEAD->";
     DLLNode<T> tmp = _head; //init tr
@@ -257,7 +257,8 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //constructor
     public MyIterator()
     {
-      /* YOUR CODE HERE */
+      _dummy = _head;
+      _okToRemove = false;
     }
 
     //-----------------------------------------------------------
@@ -265,28 +266,48 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
     //return true if iteration has more elements.
     public boolean hasNext()
     {
-      /* YOUR CODE HERE */
+      if(_dummy.getNext() == null) return false;
+      return true;
     }
 
 
     //return next element in this iteration
     public T next()
     {
-      /* YOUR CODE HERE */
+      if(this.hasNext()){
+      _okToRemove = true;
+      _dummy = _dummy.getNext();
+      return _dummy.getCargo();
+    }
+      _okToRemove = false;
+      throw new NoSuchElementException();
     }
 
 
-    //return last element returned by this iterator (from last next() call)
+    //remove last element returned by this iterator (from last next() call)
     //postcondition: maintains invariant that _dummy always points to a node
     //               (...so that hasNext() will not crash)
     public void remove()
     {
-            /* YOUR CODE HERE */
+        if(_okToRemove){
+          if(_dummy.getNext().getNext().equals(null)){
+            _tail = _dummy;
+            _dummy.setNext(null);
+          }
+          else{
+            _dummy.setNext(_dummy.getNext().getNext());
+            _dummy = _dummy.getNext();
+          }
+          _okToRemove = false;
+        }
+        else{
+          throw new IllegalStateException();
+        }
     }
     //--------------^  Iterator interface methods  ^-------------
     //-----------------------------------------------------------
   }//*************** end inner class MyIterator ***************
-
+  
 
 
   //main method for testing
