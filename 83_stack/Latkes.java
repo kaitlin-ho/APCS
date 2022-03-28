@@ -1,3 +1,11 @@
+/**
+Mr. K: May Qiu, Kaitlin Ho, Raven (Ruiwen) Tang
+APCS pd6
+HW83 -- Stacks on Stacks
+2022-03-28
+time spent: 0.3 hrs
+**/
+
 /***
  * class Latkes
  * v1
@@ -7,8 +15,10 @@
 
 /***
     DISCO
+    * It's most efficient to consider the left side of the array the top of the stack. So, we push items on, moving from index 0 to the right. This inner mechanism is more efficient than treating the front of the array as the top of the stack, because it's not necessary to shift all the items after every move.
 
     QCC
+    * We noticed that these methods were really similar to ArrayList. Both have an inner array, and both have an instance variable that acts as a "window" that you are allowed to access.
 
  **/
 
@@ -43,12 +53,18 @@ public class Latkes
        here
     */
     if (isFull()){
-      //make a whole new array + add?
+      String[] storage = new String[_stackSize];
+      for(int i = 0; i < _stackSize; i++){
+        storage[i] = _stack[i];
+      }
+      _stack = new String[_stackSize*2];
+      for(int i = 0; i < _stackSize; i ++){
+        _stack[i] = storage[i];
+      }
     }
-    else{
-      _stack[_stackSize] = s;
-    }
-  }// O(?)
+    _stack[_stackSize] = s;
+    _stackSize += 1;
+  }// O(n)
 
 
   //means of removal
@@ -60,7 +76,15 @@ public class Latkes
        magicks
        here
     */
-  }// O(?)
+    if(isEmpty()){
+      return "null";
+    }
+    else{
+      String old = _stack[_stackSize-1];
+      _stackSize -= 1;
+      return old;
+    }
+  }// O(1)
 
 
   //chk for emptiness
@@ -86,13 +110,12 @@ public class Latkes
        here
     */
     return (_stackSize == _stack.length);
-  }// O(?)
+  }// O(1)
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
     Latkes tastyStack = new Latkes(10);
 
@@ -133,9 +156,9 @@ public class Latkes
     System.out.println( tastyStack.pop() );
     //aoo
     System.out.println( tastyStack.pop() );
-
     //stack empty by now; SOP(null)
     System.out.println( tastyStack.pop() );
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main()
