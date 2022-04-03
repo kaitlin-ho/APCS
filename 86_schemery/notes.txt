@@ -1,0 +1,25 @@
+Mr. K: May Qiu, Raven (Ruiwen) Tang, Kaitlin Ho
+APCS pd6
+HW86 -- What a Racket / Scheme arithmetic interpreter
+2022-03-31
+time spent: 0.7 hrs
+
+DISCO
+- Integer.parseInt() was extremely helpful for converting Strings into numbers.
+- It's not valid to assume that operations will each only have two operands. Therefore, it was important for us to keep this in mind when coding and planning. We couldn't just pop off two numbers. Instead, popping them into a Stack allowed us to take care of all the operands.
+
+QCC
+- For "\\s" in REGEX, the slashes are BACKSLASHES, not FORWARD SLASHES. Also, if you give split() an argument that is not in the String, the entire String is placed as the first element of the array, which makes sense.
+- We used the fact that intVar+"" (attempting to concatenate "" with an integer) will make intVar a String. We confirmed that trying to typecast a String with (int) is invalid. Are there any other ways to change an integer into a String?
+- We were also thinking of using an ArrayList to store the numbers that you want to perform an operation with. We think doing this procedure would be very similar to unload(), and you would just have to pop the numbers off of the storage Stack.
+
+ * ALGORITHM for EVALUATING A SCHEME EXPRESSION:
+ *   1. For each operator, parens, and operand in the expression:
+ *   2. If it is an operator, operand, or open paren, push it onto a storage stack.
+ *   3a. Otherwise, pop and push all numbers from the top of the storage stack into a numbers stack.
+ *   3b. Peek the next element of the stack to determine which operation you will be performing. Pop all the numbers off of the numbers stack, performing the operation as you go.
+ *   3c. Pop off the operator and open paren from the top of the storage stack. Repeat steps 2-3 until you have gone through every operator, parens, and operand in the expression.
+ *   4. Return the remaining element in the storage stack.
+ *
+ * STACK OF CHOICE: ALStack by library code
+ * b/c we are able to understand how it works and were therefore prepared to troubleshoot if any issues came up with ALStack. For example, we received a compile-time error because we forgot to add the Stack interface file, but we were able to recognize and resolve this problem.
