@@ -6,14 +6,27 @@ time spent: 3.0 hrs
 
 
 DISCO
-
+We discovered that you can have java Class < csvFile (you can read a csv file
+right into a Scanner)
 
 QCC
-
+How do we fix the problem with the bad data and splitting at commas???
 
 <TNPG>'s CSV FLOW:
 <insert your description of your tools and workflow in creating, editing CSV files>
-
+Used Hugo's file of world happiness that he randomly had on his computer.
+It is missing data in some places so it wouldn't split at the commas correctly,
+since there was no space between the commas in these places.
+*The file does not run but it would if Hugo's data wasn't faulty (and we did not
+have time to restart with a new csv)*
+For each line, split at commas and made a String array of each value, and then
+initialized a new Myky (a Myky = one entry), entering in corresponding values for
+the parameters.
+We tried to anticipate errors with faulty code but we can't fix the problems with
+comma splitting.
 
 TRUBZ
 <this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
+You have to actually download sinbad.jar yourself.
+PIAZZA FOR TERMINAL!!!
+Problems with bad data (mentioned above)
