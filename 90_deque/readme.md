@@ -1,8 +1,8 @@
 # MR. K (May, Raven, Kaitlin)
-* APCS pd6
-* HW90: Swabbing the Deque
-* 2022-04-12
-* time spent: 1 hrs
+APCS pd6
+HW90: Swabbing the Deque
+2022-04-12
+time spent: 1 hrs
 
 # To-do list
 *based on complexity and importance*
