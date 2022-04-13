@@ -1,7 +1,7 @@
 # Mr. K: May Qiu, Raven (Ruiwen) Tang, Kaitlin Ho
-APCS pd6
-HW90 -- Swabbing the Deque / implementing Deque in compliance with interface
-2022-04-12
+APCS pd6  
+HW90 -- Swabbing the Deque / implementing Deque in compliance with interface  
+2022-04-12  
 time spent: 1.0 hr
 
 # To-do list
