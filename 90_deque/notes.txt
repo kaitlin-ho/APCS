@@ -5,9 +5,10 @@ HW90 -- Swabbing the Deque / implementing Deque in compliance with interface
 time spent: 1.0 hr
 
 DISCO
-* It's very important to import LinkedList if you want to use it without a local version.
+* It's very important to import LinkedList if you want to use it without a local version. It's also necessary to import Iterator. 
 * We felt that this homework was very similar to the previous homework, because it also relies on pass through functionality. For differences between the homeworks, we could only really identify that this homework implements a Deque instead of a Queue and so has more options.
 * We chose to make our Deque based in LinkedList because it has faster add() runtimes than ArrayList and we have also started to like it more than ArrayList.
+* From the API: "When a deque is used as a stack, elements are pushed and popped from the beginning of the deque."
 
 QCC
 * What would be a good real-life analogy for the Deque? The best that our team could come up with was a queue where some people decide to leave the line from the back and some people skip and cut to the very front.
@@ -16,3 +17,4 @@ QCC
     1) contains(), removeFirstOccurrence(), etc.; these methods deal with looking for certain values in the Deque
     2) Iterator methods
     3) Stack methods, where the deque is treated as a stack
+* API references head/tail but also uses language like front/end. Is this difference intentional/communicating an actual difference?  
