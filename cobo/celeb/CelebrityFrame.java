@@ -3,7 +3,7 @@ Erica's Fans and Hugo (Hugo Jenkins, Kaitlin Ho, Ariella Katz)
 APCS pd 6
 L09: Some Folks Call It A Charades
 2022-04-26
-time spent: hrs
+time spent: 5 hrs
 */
 import java.awt.CardLayout;
 
@@ -48,6 +48,8 @@ public class CelebrityFrame extends JFrame
 	{
 		//The first line of any subclass should ALWAYS be a correct call to the super constructor.
 		super();
+		controller = controllerRef;
+		setupFrame();
 
 	}
 
@@ -56,7 +58,11 @@ public class CelebrityFrame extends JFrame
 	 */
 	private void setupFrame()
 	{
-
+		startPanel = new StartPanel(controller);
+		gamePanel = new CelebrityPanel(controller);
+		setContentPane(startPanel);
+		setSize(500,500);
+		setVisible(true);
 	}
 
 	/**
@@ -65,7 +71,12 @@ public class CelebrityFrame extends JFrame
 	 */
 	public void replaceScreen(String screen)
 	{
-
+		if (screen.equals("START")) {
+			setContentPane(startPanel);
+		} else if (screen.equals("GAME")) {
+			gamePanel.addClue(controller.sendClue());
+			setContentPane(gamePanel);
+		}
 	}
 
 }

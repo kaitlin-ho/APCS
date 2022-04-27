@@ -3,7 +3,7 @@ Erica's Fans and Hugo (Hugo Jenkins, Kaitlin Ho, Ariella Katz)
 APCS pd 6
 L09: Some Folks Call It A Charades
 2022-04-26
-time spent: hrs
+time spent: 5 hrs
 */
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -29,6 +29,12 @@ public class StartPanel extends JPanel
    * Reference to the Game to call methods.
    */
   private CelebrityGame controller;
+
+
+  private JRadioButton button;
+
+
+  private String nameOfCelebrity;
 
   /**
    * The layout manager for the screen.
@@ -99,6 +105,7 @@ public class StartPanel extends JPanel
    * String to populate the clueLabel if Class Generated Celebrity is picked.
    */
 
+   private String PoliticalClue;
 
   /**
    * String used for static text in label.
@@ -121,6 +128,8 @@ public class StartPanel extends JPanel
   public StartPanel(CelebrityGame controller)
   {
     super();
+    this.button = new JRadioButton("Political");
+    this.nameOfCelebrity = "List of clues";
     this.controller = controller;
     this.panelLayout = new SpringLayout();
     this.typeGroup = new ButtonGroup();
@@ -164,6 +173,10 @@ public class StartPanel extends JPanel
     {
       validClue = controller.validateClue(clueText, "Literature");
     }
+    else if (button.isSelected())
+    {
+      validClue = controller.validateClue(clueText, "Political");
+    }
     else
     {
       validClue = controller.validateClue(clueText, "");
@@ -184,6 +197,15 @@ public class StartPanel extends JPanel
   private void setupPanel()
   {
     // Adds the RadioButtons to the group so only one can be selected.
+    setLayout(panelLayout);
+    this.add(celebrityRadio);
+    this.add(literatureRadio);
+    this.add(clueLabel);
+    this.add(celebrityCountLabel);
+    this.add(answerField);
+    this.add(clueField);
+    this.add(addCelebrityButton);
+    this.add(startButton);
   }
 
   /**
@@ -206,7 +228,9 @@ public class StartPanel extends JPanel
 
     //Put your custom radio button info here
 
-    panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, button);
+    panelLayout.putConstraint(SpringLayout.WEST, button, 0, SpringLayout.WEST, celebrityRadio);
+    panelLayout.putConstraint(SpringLayout.NORTH, button, 10, SpringLayout.SOUTH, celebrityRadio);
     panelLayout.putConstraint(SpringLayout.WEST, literatureRadio, 0, SpringLayout.WEST, celebrityRadio);
 
     panelLayout.putConstraint(SpringLayout.NORTH, clueLabel, 10, SpringLayout.SOUTH, answerField);
@@ -231,6 +255,9 @@ public class StartPanel extends JPanel
      * Links the submitButton to the validation and submit code. Provides
      * user input if information is not valid.
      */
+     button.addActionListener(select ->
+        clueLabel.setText(PoliticalClue));
+
     startButton.addActionListener(new ActionListener()
                                     {
       public void actionPerformed(ActionEvent mouseClick)
@@ -282,6 +309,9 @@ public class StartPanel extends JPanel
     if (literatureRadio.isSelected())
     {
       type = "Literature";
+    } else if (button.isSelected())
+    {
+      type = "Political";
     }
     String answer = answerField.getText().trim();
     String clue = clueField.getText().trim();

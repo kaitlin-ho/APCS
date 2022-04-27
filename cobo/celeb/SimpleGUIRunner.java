@@ -3,7 +3,7 @@ Erica's Fans and Hugo (Hugo Jenkins, Kaitlin Ho, Ariella Katz)
 APCS pd 6
 L09: Some Folks Call It A Charades
 2022-04-26
-time spent: hrs
+time spent: 5 hrs
 */
 import javax.swing.JFrame;
 

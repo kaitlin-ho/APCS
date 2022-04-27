@@ -3,7 +3,7 @@ Erica's Fans and Hugo (Hugo Jenkins, Kaitlin Ho, Ariella Katz)
 APCS pd 6
 L09: Some Folks Call It A Charades
 2022-04-26
-time spent: hrs
+time spent: 5 hrs
 */
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -39,6 +39,7 @@ public class CelebrityGame
 	{
 		_celebGameList = new ArrayList<Celebrity>();
 		_gameWindow = new CelebrityFrame(this);
+		prepareGame();
 	}
 
 	/**
@@ -60,7 +61,10 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		return (guess.toLowerCase().trim().equals(_gameCelebrity.getAnswer().toLowerCase().trim()));
+		if (guess.toLowerCase().trim().equals(_gameCelebrity.getAnswer().toLowerCase().trim())) {
+			_celebGameList.remove(_gameCelebrity);
+			return true;
+		} else return false;
 	}
 
 	/**
@@ -74,6 +78,7 @@ How to play:
 	*/
 	public void play()
 	{
+		/*
 		if (_celebGameList.size() == 0){
 			System.out.println("Take turns entering your celebs!");
 			for (int i = 0; i < 4; i++){
@@ -97,12 +102,12 @@ How to play:
 		long start = System.currentTimeMillis();
 		while ((System.currentTimeMillis() < start + 60000) &&
 		(_celebGameList.size() > 0)) {
-
+*/
 			if (_celebGameList!= null && _celebGameList.size()>0){
 				this._gameCelebrity=_celebGameList.get(0);
-				//_gameWindow.replaceScreen("GAME");
+				_gameWindow.replaceScreen("GAME");
 			}
-
+/*
 			if (ctr % 2 == 0) { System.out.println("Team 1, guess"); }
 			else { System.out.println("Team 2, guess"); }
 			System.out.println(_gameCelebrity.getClue());
@@ -129,10 +134,9 @@ How to play:
 				}
 				return;
 			}
-
+*/
 		}
 
-	}
 
 	/**
 	 * Adds a Celebrity of specified type to the game list
@@ -146,7 +150,9 @@ How to play:
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		_celebGameList.add(new Celebrity(name,guess));
+		if (type.equals("Literature")) _celebGameList.add(new LiteratureCelebrity(name,guess));
+		else if (type.equals("Political")) _celebGameList.add(new PoliticalCelebrity(name,guess));
+		else {_celebGameList.add(new Celebrity(name,guess));}
 	}
 
 	/**
@@ -168,8 +174,26 @@ How to play:
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return (clue.trim().length() >= 10);
-	}
+		boolean validClue = false;
+		if (clue.trim().length() >= 10) {
+			validClue = true;
+			if (type.equalsIgnoreCase("litterature")) {
+				String[] temp = clue.split(",");
+				if (temp.length > 1) {
+					validClue = true;
+				} else {
+					validClue = false;
+				}
+			}	else {
+					String[] temp = clue.split(",");
+					if (temp.length > 1) {
+						validClue = true;
+					}
+				}
+			}
+			return validClue;
+		}
+
 
 	/**
 	 * Accessor method for the current size of the list of celebrities
