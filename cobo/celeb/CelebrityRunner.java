@@ -12,6 +12,9 @@ time spent: hrs
  */
 public class CelebrityRunner
 {
+
+
+
 	/**
 	 * The entry point of the Java application.
 	 * @param args Unused parameter as it is a GUI based program.
@@ -19,5 +22,6 @@ public class CelebrityRunner
 	public static void main(String [] args)
 	{
 		CelebrityGame game = new CelebrityGame();
+		game.play();
 	}
 }

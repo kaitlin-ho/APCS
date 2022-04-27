@@ -6,6 +6,7 @@ L09: Some Folks Call It A Charades
 time spent: hrs
 */
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The framework for the Celebrity Game project
@@ -29,6 +30,8 @@ public class CelebrityGame
 	 private ArrayList<Celebrity> _celebGameList;
 	 private Celebrity _gameCelebrity;
 	 private CelebrityFrame _gameWindow;
+	 private int _T1score;
+	 private int _T2score;
 	/**
 	 * Builds the game and starts the GUI
 	 */
@@ -67,10 +70,41 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
+		if (_celebGameList.size() == 0){
+			for (int i = 0; i < 4; i++){
+				System.out.println("Input celeb name:");
+				Scanner in = new Scanner(System.in);
+				String name = in.nextLine();
+				System.out.println("Input celeb clue:");
+				Scanner it = new Scanner(System.in);
+				String clue = it.nextLine();
+				if (validateClue(clue, "Celebrity") && validateCelebrity(name)){
+					_celebGameList.add(new Celebrity(name, clue));
+				}
+				else{
+					System.out.println("Invalid");
+					i--;
+				}
+			}
+		}
+
 		if (_celebGameList!= null && _celebGameList.size()>0){
 			this._gameCelebrity=_celebGameList.get(0);
-			_gameWindow.replaceScreen("GAME");
+			//_gameWindow.replaceScreen("GAME");
 		}
+
+		System.out.println(_gameCelebrity.getClue());
+		Scanner is =  new Scanner(System.in);
+		if (processGuess(is.nextLine())){
+			System.out.println("Correct");
+		}
+		else{
+			System.out.println("Wrong");
+		}
+		_celebGameList.remove(0);
+
+		if (_celebGameList,size() == 0){return;}
+
 	}
 
 	/**
@@ -80,7 +114,7 @@ public class CelebrityGame
 	 *            The name of the celebrity
 	 * @param guess
 	 *            The clue(s) for the celebrity
-	 * @param type
+	 * @param type addCelebrity(String name, String guess, String ty
 	 *            What type of celebrity
 	 */
 	public void addCelebrity(String name, String guess, String type)
