@@ -52,4 +52,4 @@ Activity 3:
 
 Activity 4:
   1. Nope
-  2. 
+  2. Same thing, but offers type of celebrity as a hint (LiteratureCelebrity)

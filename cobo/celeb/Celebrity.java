@@ -15,8 +15,8 @@ public class Celebrity
 	/**
 	 * The clue to determine the celebrity
 	 */
-	String _clue;
-	String _answer;
+	protected String _clue;
+	protected String _answer;
 	/**
 	 * The answer or name of the celebrity.
 	 */

@@ -11,6 +11,7 @@
 3. ~~Make a UML diagram of the Celebrity class~~  
 4. ~~Implement Celebrity class while achieving compilability~~  
 ~~5. Play the game again and think about its specific steps~~  
-5. Implement methods and classes as stated in ~~Activity 3~~-4 except GUI  
-6. Read Java GUI  
-7. If we have time, Activity 5  
+5. ~~Implement methods and classes as stated in Activity 3 except GUI (use Scanner instead)~~
+6. Implement Literature Celebrity
+7. Read Java GUI, use it  
+8. If we have time, Activity 5  

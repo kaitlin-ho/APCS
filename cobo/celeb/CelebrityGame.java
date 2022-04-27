@@ -30,8 +30,8 @@ public class CelebrityGame
 	 private ArrayList<Celebrity> _celebGameList;
 	 private Celebrity _gameCelebrity;
 	 private CelebrityFrame _gameWindow;
-	 private int _T1score;
-	 private int _T2score;
+	 private int _t1score;
+	 private int _t2score;
 	/**
 	 * Builds the game and starts the GUI
 	 */
@@ -68,9 +68,14 @@ public class CelebrityGame
 	 * Sets the current celebrity as the first item in the list. Opens the game
 	 * play screen.
 	 */
+	/*
+How to play:
+
+	*/
 	public void play()
 	{
 		if (_celebGameList.size() == 0){
+			System.out.println("Take turns entering your celebs!");
 			for (int i = 0; i < 4; i++){
 				System.out.println("Input celeb name:");
 				Scanner in = new Scanner(System.in);
@@ -88,22 +93,44 @@ public class CelebrityGame
 			}
 		}
 
-		if (_celebGameList!= null && _celebGameList.size()>0){
-			this._gameCelebrity=_celebGameList.get(0);
-			//_gameWindow.replaceScreen("GAME");
-		}
+		int ctr = 0;
+		long start = System.currentTimeMillis();
+		while ((System.currentTimeMillis() < start + 60000) &&
+		(_celebGameList.size() > 0)) {
 
-		System.out.println(_gameCelebrity.getClue());
-		Scanner is =  new Scanner(System.in);
-		if (processGuess(is.nextLine())){
-			System.out.println("Correct");
-		}
-		else{
-			System.out.println("Wrong");
-		}
-		_celebGameList.remove(0);
+			if (_celebGameList!= null && _celebGameList.size()>0){
+				this._gameCelebrity=_celebGameList.get(0);
+				//_gameWindow.replaceScreen("GAME");
+			}
 
-		if (_celebGameList,size() == 0){return;}
+			if (ctr % 2 == 0) { System.out.println("Team 1, guess"); }
+			else { System.out.println("Team 2, guess"); }
+			System.out.println(_gameCelebrity.getClue());
+			Scanner is =  new Scanner(System.in);
+			if (processGuess(is.nextLine())){
+				System.out.println("Correct");
+				if (ctr % 2 == 0) { _t1score ++; }
+				else { _t2score ++; }
+			}
+			else{
+				System.out.println("Wrong");
+				if (ctr % 2 == 0) { _t1score --; }
+				else { _t2score --; }
+			}
+			_celebGameList.remove(0);
+
+			if (_celebGameList.size() == 0){
+				System.out.println("You've finished off the celebs!");
+				if (_t1score > _t2score) {
+					System.out.println("Team 1 is victorious!");
+				}
+				else {
+					System.out.println("Team 2 is victorious!");
+				}
+				return;
+			}
+
+		}
 
 	}
 
