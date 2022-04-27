@@ -1,0 +1,55 @@
+Erica's Fans and Hugo (Hugo Jenkins, Kaitlin Ho, Ariella Katz)
+APCS pd 6
+L09: Some Folks Call It A Charades
+2022-04-26
+time spent: hrs
+
+DISCO:
+
+QCC:
+0. Page 7 suggests divide and conquer. Should we do this? We think not.
+
+
+Activity 1:
+  1. PlayGame, Celebrity, CelebrityGame
+  2. ArrayList<Celebrity> _hat
+     int _team1Score
+     int _team2Score
+     long _startTime
+  3. Play a game
+     Update score
+     Fill the hat
+  4. All of them, because methods are supposed to implement behaviors and all of them seem necessary.
+  5. Ask for user input to create celebrity cards and their hints (new
+     Celebritys)
+     Add all the Celebritys to the _hat and shake it
+     While less than a minute has passed, continue showing user hints,
+     incrementing and decrementing score as necessary
+     After a minute has passed, switch _teamScores to change and repreat
+     Repeat this process until the _hat is empty
+  6. Ball: color, size, bounciness
+     Material might be an object, which has bounciness, color
+
+Activity 2:
+  1. A constructor is used to construct a new object. it is useful for if you want multiple objects of the same type but with different attributes.
+  2. The heading of a constructor is:   public <NameO'CLass>(<Params>(maybe))
+  3. String _hint
+     String _name
+  4. getHint()
+     getName()
+  7. 	public Celebrity()
+  	  {
+  		  _clue = "He inspires learnination and greatness";
+  		  _answer = "Mykolyk";
+  	  }
+
+Activity 3:
+  2. private ArrayList<Celebrity> celebGameList;
+  3. private Celebrity gameCelebrity;
+  4. celebGameList = new ArrayList<Celebrity>();
+  12. CelebrityGame
+  13. None
+
+Activity 4:
+  1. Nope
+  2. 
