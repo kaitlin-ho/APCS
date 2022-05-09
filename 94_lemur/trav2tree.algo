@@ -1,0 +1,93 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW94 -- reverse engineering
+2022-05-06f
+time spent:  hrs
+
+
+DISCO
+------------------------------------------------
+*
+================================================
+
+
+QCC
+------------------------------------------------
+*
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: 1
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: Anywhere upwards of 1, depending on the size of the tree
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: You can infer what the root is and what the rightmost node is.
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: You can infer what the root is and what the leftmost node is.
+
+Q: What does "1-to-1" mean?
+A: In the context of sets of elements, 1-to-1 means that each set contains
+exactly 1 element that corresponds to exactly 1 element of the other.
+
+Q: What does "onto" mean?
+A: A function that maps A to B is considered to be "onto" if every element of B
+corresponds to at least one element of A.
+
+================================================
+
+
+ALGO for Pre-Order and In-Order
+------------------------------------------------
+givens:
+the pre-order and the in-order traversals for the tree
+
+procedure:
+1. The first node in the pre-order traversal is the root node.
+2. Place the next node, comparing the resulting tree to the pre-order and the
+in-order traversals to check:
+  a. Try each available slot, starting with the left child of the previous node,
+  then that node's right child, then working your way up the tree, trying left
+  and then right children (as available) as you go.
+    i. If the first node in the in-order traversal is not the leftmost node on
+    the tree, something is wrong.
+  b. If none of them work, that means the placement of the previous node doesn't
+  work, so try something else for that one.
+  c. If the previous node is the root node, that means there are no possible
+  solutions.
+
+================================================
+
+ALGO for Post-Order and In-Order
+------------------------------------------------
+givens:
+the post-order and the in-order traversals for the tree
+
+procedure:
+1. The last node in the post-order traversal is the root node.
+2. Place the next node, comparing the resulting tree to the post-order and the 
+in-order traversals to check:
+  a. Try each available slot, starting with the left child of the previous node,
+  then that node's right child, then working your way up the tree, trying left
+  and then right children (as available) as you go.
+    i. If the first node in the in-order traversal is not the leftmost node on
+    the tree, something is wrong.
+  b. If none of them work, that means the placement of the previous node doesn't
+  work, so try something else for that one.
+  c. If the previous node is the root node, that means there are no possible
+  solutions.
+
+================================================
+
+(replicate the algo section above as many times as necessary for distinct algos)
