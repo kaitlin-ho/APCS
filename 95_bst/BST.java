@@ -3,7 +3,7 @@ AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
 APCS pd6
 HW 95 - Algorithm as Data Structure
 2022-05-09
-time spent: hrs
+time spent: 1.0 hrs
 */
 
 /**
@@ -98,11 +98,11 @@ public class BST
   public void inOrderTrav( TreeNode currNode )
   {
     if (currNode.getLeft() != null) {
-      preOrderTrav(currNode.getLeft());
+      inOrderTrav(currNode.getLeft());
     }
     System.out.println(currNode.getValue());
     if(currNode.getRight() != null) {
-      preOrderTrav(currNode.getRight());
+      inOrderTrav(currNode.getRight());
     }
   }
 
@@ -114,10 +114,10 @@ public class BST
   public void postOrderTrav( TreeNode currNode )
   {
     if (currNode.getLeft() != null) {
-      preOrderTrav(currNode.getLeft());
+      postOrderTrav(currNode.getLeft());
     }
     if(currNode.getRight() != null) {
-      preOrderTrav(currNode.getRight());
+      postOrderTrav(currNode.getRight());
     }
     System.out.println(currNode.getValue());
   }

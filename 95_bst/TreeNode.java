@@ -3,7 +3,7 @@ AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
 APCS pd6
 HW 95 - Algorithm as Data Structure
 2022-05-09
-time spent: hrs
+time spent: 1.0 hrs
 */
 
 /**

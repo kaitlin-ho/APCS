@@ -2,13 +2,18 @@ AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
 APCS pd6
 HW 95 - Algorithm as Data Structure
 2022-05-09
-time spent: hrs
+time spent: 1.0 hrs
 
 DISCO:
+* The algos for pre-, in- and post-order are almost identical; the only
+difference when the root is processed.
 
 QCC:
 * The current TreeNode setup means that the tree is unidirectional (like a
 singly linked list, as opposed to a doubly linked list).
+* Abstraction!!!
+* Beware copypasta
+* MMMC
 
 With L = level, d = depth, h = height...
 1. a perfect binary tree has sum(0, h, 2^L) nodes.
