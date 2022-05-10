@@ -1,0 +1,16 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW 95 - Algorithm as Data Structure
+2022-05-09
+time spent: hrs
+
+DISCO:
+
+QCC:
+* The current TreeNode setup means that the tree is unidirectional (like a
+singly linked list, as opposed to a doubly linked list).
+
+With L = level, d = depth, h = height...
+1. a perfect binary tree has sum(0, h, 2^L) nodes.
+2. at each level, a perfect binary tree has 2^L nodes.
+3. height of a complete binary tree w/ n nodes is (log_2)(n)
