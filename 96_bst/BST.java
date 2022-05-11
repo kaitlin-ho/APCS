@@ -1,8 +1,8 @@
 /*
 AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
 APCS pd6
-HW 95 - Algorithm as Data Structure
-2022-05-09
+HW 96 - BSTs is the Perfect Place for Shade
+2022-05-10
 time spent: 1.0 hrs
 */
 
@@ -130,8 +130,20 @@ public class BST
        *****************************************************/
       public TreeNode search( int target )
       {
-
-      	/*** YOUR IMPLEMENTATION HERE ***/
+        return search(target, _root);
+      }
+      public TreeNode search(int target, TreeNode stRoot){
+        if (stRoot.getValue() == target){
+          return stRoot;
+        }
+        else if (target < stRoot.getValue()){
+          if (stRoot.getLeft() == null) {return null;} //return null if the node is not there
+          return search(target, stRoot.getLeft());
+        }
+        else{
+          if (stRoot.getRight() == null) {return null;}
+          return search(target, stRoot.getRight());
+        }
       }
 
 
@@ -142,10 +154,24 @@ public class BST
        *****************************************************/
       public int height()
       {
-      	/*** YOUR IMPLEMENTATION HERE ***/
+      	return height(_root);
       }
       public int height(TreeNode stRoot) {
-        
+        if (stRoot.getLeft() == null && stRoot.getRight() == null){
+          return 1;
+        }
+        if (stRoot.getRight() == null){
+          return height(stRoot.getLeft()) + 1;
+        }
+        if (stRoot.getLeft() == null){
+          return height(stRoot.getRight()) + 1;
+        }
+        int n = height(stRoot.getLeft());
+        int m = height(stRoot.getRight());
+        if (n > m) {return n;}
+        else{
+          return m;
+        }
       }
 
       /*****************************************************
@@ -154,7 +180,21 @@ public class BST
        *****************************************************/
       public int numLeaves()
       {
-      	/*** YOUR IMPLEMENTATION HERE ***/
+      	return numLeaves(_root);
+      }
+      public int numLeaves(TreeNode stRoot){
+        if (stRoot.getLeft() == null && stRoot.getRight() == null){
+          return 1;
+        }
+        if (stRoot.getRight() != null && stRoot.getLeft() != null){
+          return numLeaves(stRoot.getRight()) + numLeaves(stRoot.getLeft());
+        }
+        else if (stRoot.getRight() != null){
+          return numLeaves(stRoot.getRight());
+        }
+        else {
+          return numLeaves(stRoot.getLeft());
+        }
       }
 
 
@@ -184,7 +224,7 @@ public class BST
        / \   \
       1   3   6
       */
-
+          /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       System.out.println( "\n-----------------------------");
       System.out.println( "pre-order traversal:" );
       arbol.preOrderTrav();
@@ -201,8 +241,31 @@ public class BST
       System.out.println("expecting: 132654");
 
       System.out.println( "\n-----------------------------");
-          /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
+
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+      System.out.println(arbol.numLeaves());
+      System.out.println("...expecting 3");
+      System.out.println(arbol.height());
+      System.out.println("...expecting 2");
+      System.out.println(arbol.search(6).getValue());
+      System.out.println("...expecting 6");
+
+      BST x = new BST();
+      x.insert( 16 );
+      x.insert( 8 );
+      x.insert( 20 );
+      x.insert( 24 );
+      x.insert( 4 );
+      x.insert( 12 );
+      x.insert( 25 );
+      x.insert( 1 );
+      System.out.println(x.numLeaves());
+      System.out.println("...expecting 3");
+      System.out.println(x.height());
+      System.out.println("...expecting 3");
+      System.out.println(x.search(12).getValue());
+      System.out.println("...expecting 12");
   }
 
 }//end class

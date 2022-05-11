@@ -1,0 +1,13 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW 96 - BSTs is the Perfect Place for Shade
+2022-05-10
+time spent: 1.0 hrs
+
+DISCO
+* The root node of the BST tree does not add 1, so when calculating height recursively,
+  the leaf nodes should return 1 instead of 0.
+* Search is very very similar to binary search on a list
+* Height and numLeaves also have similar algorithms
+
+QCC
