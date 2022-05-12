@@ -1,0 +1,16 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW 97 - Prune Your Tree
+2022-05-11
+time spent: 1.0 hrs
+
+DISCO
+* Ariella is a genius (not rly a discovery tho)
+* Helper methods help, esp to get around QCC2
+
+QCC
+* How to piggyback???
+* How can you *recursively* traverse an array and then complete an entirely
+separate process once the traversal is done, all within the same method?
+* Would this be easier with a doubly linked tree?
+* D...?
