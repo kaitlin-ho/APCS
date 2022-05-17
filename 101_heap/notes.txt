@@ -1,0 +1,18 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW101: Heap o'Trouble
+2022-05-16
+time spent:  hrs
+
+DISCO:
+0. We have to use backtracking to traverse to a node if we don't have a
+convention established for whether a node goes to the right or left child of its
+parent.
+1. TAK doesn't think doing an interactive Bible is a good idea
+2. THJ will not be in school tomorrow
+3. TKH is not on the list and she pr-ed
+
+QCC:
+0. What is the convention in DISCO0?
+1. How much wood would a woodchuck chuck if a woodchuck would chuck wood?
+2. What do you think THJ will get on his AP Chemistry Day of Ultimate Relaxation
