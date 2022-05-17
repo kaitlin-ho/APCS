@@ -1,0 +1,18 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW101: Heap o'Trouble
+2022-05-16
+time spent: 1.0 hrs
+
+
+1) Look at the root and compare it to the new node:
+  a) If the new node is less than the root, make the root the left child of the
+  new node and change the new node to the root
+  b) If the new node is greater than the root, look at the left child of the
+  root:
+    i)If the new node is less than the left child of the root, insert is as the
+    new left child of the root, making the old left child the new node's left
+    child
+    ii) If the new node is greater than the left child of the root, look at the
+    right child of the root:
+      I) Repeat these steps
