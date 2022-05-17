@@ -1,0 +1,12 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW101: Heap o'Trouble
+2022-05-16
+time spent: 1.0 hrs
+
+0) Use recursion to traverse to the node
+1) If the node you want to remove is a leaf, remove it
+2) If the node you want to remove is the parent of one child, replace it with
+its child and the corresponding subtree
+3) If the node you want to remove is the parent of two children, replace it with
+the smaller child, calling remove() on that child
