@@ -1,0 +1,25 @@
+AKH+D :: Ariella Katz, Kaitlin Ho, Hugo Jenkins
+APCS pd6
+HW 103 - Erica's Friends, Hugo, and The One in the Middle
+2022-05-18
+time spent: 1.0 hrs
+
+DISCO:
+0. Erica's Fans are her Friends too
+1. You don't need to put exceptions in the body of a method - you can just put
+"throws <Exception>" after "<methodName>(<params>)" in the header.
+
+QCC:
+0. Since getMedian() returns an Integer, it won't return X.5 if the mean of the
+two middle numbers is taken and one number is odd and the other is even (it'll
+round down).
+
+ALGO:
+1. Create two heaps - a max heap and a min heap - using the first value in the
+_heap array and the middle value in the _heap array.
+2. Iterate through _heap (skipping the roots), adding each value to the min heap
+if it's less than the max heap root or to the max heap otherwise.
+3. Transfer elements of the two heaps to each other until the sizes of the two
+heaps have a difference no greater than 1
+4. If the sizes are the same, the median is the mean of the roots. Otherwise,
+the median is the root of the larger heap.
